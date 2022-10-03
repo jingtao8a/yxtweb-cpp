@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/test_config_log.dir/tests/test_config_log.cpp.o -o ../bin/test_config_log  -Wl,-rpath,/home/yuxintao/yxtweb-cpp/lib ../lib/libyxtwebcpp.so -lpthread -lyaml-cpp 

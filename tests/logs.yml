@@ -1,0 +1,12 @@
+logs:
+  -
+    name: root
+    level: debug
+    appenders: 
+      -
+        type: StdoutLogAppender
+        level: debug
+      -
+        type: FileLogAppender  
+        level: debug
+        file: log.text
