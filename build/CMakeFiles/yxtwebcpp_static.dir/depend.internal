@@ -21,6 +21,17 @@ CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/env.cpp.o
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/singleton.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/thread.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/util.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fiber.cpp.o
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/config.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/fiber.cpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/fiber.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/log.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/macro.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/mutex.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/nocopyable.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/singleton.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/thread.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/util.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/log.cpp.o
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/config.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/env.hpp
@@ -44,6 +55,7 @@ CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/thread.cpp.o
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/thread.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/util.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/util.cpp.o
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/fiber.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/log.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/mutex.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/nocopyable.hpp

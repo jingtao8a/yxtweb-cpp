@@ -21,6 +21,17 @@ CMakeFiles/yxtwebcpp.dir/yxtwebcpp/env.cpp.o: ../yxtwebcpp/singleton.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/env.cpp.o: ../yxtwebcpp/thread.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/env.cpp.o: ../yxtwebcpp/util.hpp
 
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/config.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/fiber.cpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/fiber.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/log.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/macro.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/mutex.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/nocopyable.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/singleton.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/thread.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/util.hpp
+
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/log.cpp.o: ../yxtwebcpp/config.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/log.cpp.o: ../yxtwebcpp/env.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/log.cpp.o: ../yxtwebcpp/log.cpp
@@ -43,6 +54,7 @@ CMakeFiles/yxtwebcpp.dir/yxtwebcpp/thread.cpp.o: ../yxtwebcpp/thread.cpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/thread.cpp.o: ../yxtwebcpp/thread.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/thread.cpp.o: ../yxtwebcpp/util.hpp
 
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/util.cpp.o: ../yxtwebcpp/fiber.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/util.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/util.cpp.o: ../yxtwebcpp/mutex.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/util.cpp.o: ../yxtwebcpp/nocopyable.hpp

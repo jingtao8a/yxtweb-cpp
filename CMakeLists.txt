@@ -11,6 +11,7 @@ set(LIB_SRC
     yxtwebcpp/env.cpp 
     yxtwebcpp/thread.cpp 
     yxtwebcpp/mutex.cpp
+    yxtwebcpp/fiber.cpp
 )
 
 add_library(yxtwebcpp SHARED ${LIB_SRC})
@@ -21,6 +22,10 @@ set(LIB_LIB
     yxtwebcpp 
     pthread 
     yaml-cpp)
+
+add_executable(test tests/test.cpp)
+target_link_libraries(test ${LIB_LIB})
+add_dependencies(test yxtwebcpp)
 
 add_executable(test_thread tests/test_thread.cpp)
 target_link_libraries(test_thread ${LIB_LIB})
@@ -37,6 +42,10 @@ add_dependencies(test_config_log yxtwebcpp)
 add_executable(testutil tests/testutil.cpp)
 target_link_libraries(testutil ${LIB_LIB})
 add_dependencies(testutil yxtwebcpp)
+
+add_executable(testfiber tests/testfiber.cpp)
+target_link_libraries(testfiber ${LIB_LIB})
+add_dependencies(testfiber yxtwebcpp)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

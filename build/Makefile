@@ -130,6 +130,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named testfiber
+
+# Build rule for target.
+testfiber: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testfiber
+.PHONY : testfiber
+
+# fast build rule for target.
+testfiber/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testfiber.dir/build.make CMakeFiles/testfiber.dir/build
+.PHONY : testfiber/fast
+
+#=============================================================================
 # Target rules for targets named test_config_log
 
 # Build rule for target.
@@ -182,6 +195,19 @@ test_thread/fast:
 .PHONY : test_thread/fast
 
 #=============================================================================
+# Target rules for targets named test
+
+# Build rule for target.
+test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
+.PHONY : test
+
+# fast build rule for target.
+test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
+
+#=============================================================================
 # Target rules for targets named yxtwebcpp_static
 
 # Build rule for target.
@@ -206,6 +232,33 @@ yxtwebcpp: cmake_check_build_system
 yxtwebcpp/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/build
 .PHONY : yxtwebcpp/fast
+
+tests/test.o: tests/test.cpp.o
+
+.PHONY : tests/test.o
+
+# target to build an object file
+tests/test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cpp.o
+.PHONY : tests/test.cpp.o
+
+tests/test.i: tests/test.cpp.i
+
+.PHONY : tests/test.i
+
+# target to preprocess a source file
+tests/test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cpp.i
+.PHONY : tests/test.cpp.i
+
+tests/test.s: tests/test.cpp.s
+
+.PHONY : tests/test.s
+
+# target to generate assembly for a file
+tests/test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cpp.s
+.PHONY : tests/test.cpp.s
 
 tests/test_config_log.o: tests/test_config_log.cpp.o
 
@@ -260,6 +313,33 @@ tests/test_thread.s: tests/test_thread.cpp.s
 tests/test_thread.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/tests/test_thread.cpp.s
 .PHONY : tests/test_thread.cpp.s
+
+tests/testfiber.o: tests/testfiber.cpp.o
+
+.PHONY : tests/testfiber.o
+
+# target to build an object file
+tests/testfiber.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testfiber.dir/build.make CMakeFiles/testfiber.dir/tests/testfiber.cpp.o
+.PHONY : tests/testfiber.cpp.o
+
+tests/testfiber.i: tests/testfiber.cpp.i
+
+.PHONY : tests/testfiber.i
+
+# target to preprocess a source file
+tests/testfiber.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testfiber.dir/build.make CMakeFiles/testfiber.dir/tests/testfiber.cpp.i
+.PHONY : tests/testfiber.cpp.i
+
+tests/testfiber.s: tests/testfiber.cpp.s
+
+.PHONY : tests/testfiber.s
+
+# target to generate assembly for a file
+tests/testfiber.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testfiber.dir/build.make CMakeFiles/testfiber.dir/tests/testfiber.cpp.s
+.PHONY : tests/testfiber.cpp.s
 
 tests/testmutex.o: tests/testmutex.cpp.o
 
@@ -374,6 +454,36 @@ yxtwebcpp/env.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/env.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/env.cpp.s
 .PHONY : yxtwebcpp/env.cpp.s
+
+yxtwebcpp/fiber.o: yxtwebcpp/fiber.cpp.o
+
+.PHONY : yxtwebcpp/fiber.o
+
+# target to build an object file
+yxtwebcpp/fiber.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fiber.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.o
+.PHONY : yxtwebcpp/fiber.cpp.o
+
+yxtwebcpp/fiber.i: yxtwebcpp/fiber.cpp.i
+
+.PHONY : yxtwebcpp/fiber.i
+
+# target to preprocess a source file
+yxtwebcpp/fiber.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fiber.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.i
+.PHONY : yxtwebcpp/fiber.cpp.i
+
+yxtwebcpp/fiber.s: yxtwebcpp/fiber.cpp.s
+
+.PHONY : yxtwebcpp/fiber.s
+
+# target to generate assembly for a file
+yxtwebcpp/fiber.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fiber.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.s
+.PHONY : yxtwebcpp/fiber.cpp.s
 
 yxtwebcpp/log.o: yxtwebcpp/log.cpp.o
 
@@ -503,18 +613,26 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... test_config_log"
 	@echo "... test_thread"
+	@echo "... testfiber"
 	@echo "... testmutex"
 	@echo "... testutil"
 	@echo "... yxtwebcpp"
 	@echo "... yxtwebcpp_static"
+	@echo "... tests/test.o"
+	@echo "... tests/test.i"
+	@echo "... tests/test.s"
 	@echo "... tests/test_config_log.o"
 	@echo "... tests/test_config_log.i"
 	@echo "... tests/test_config_log.s"
 	@echo "... tests/test_thread.o"
 	@echo "... tests/test_thread.i"
 	@echo "... tests/test_thread.s"
+	@echo "... tests/testfiber.o"
+	@echo "... tests/testfiber.i"
+	@echo "... tests/testfiber.s"
 	@echo "... tests/testmutex.o"
 	@echo "... tests/testmutex.i"
 	@echo "... tests/testmutex.s"
@@ -527,6 +645,9 @@ help:
 	@echo "... yxtwebcpp/env.o"
 	@echo "... yxtwebcpp/env.i"
 	@echo "... yxtwebcpp/env.s"
+	@echo "... yxtwebcpp/fiber.o"
+	@echo "... yxtwebcpp/fiber.i"
+	@echo "... yxtwebcpp/fiber.s"
 	@echo "... yxtwebcpp/log.o"
 	@echo "... yxtwebcpp/log.i"
 	@echo "... yxtwebcpp/log.s"

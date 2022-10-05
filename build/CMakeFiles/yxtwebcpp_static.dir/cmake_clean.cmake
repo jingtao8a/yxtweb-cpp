@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "../lib/libyxtwebcpp.pdb"
   "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/config.cpp.o"
   "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/env.cpp.o"
+  "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fiber.cpp.o"
   "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/log.cpp.o"
   "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/mutex.cpp.o"
   "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/thread.cpp.o"

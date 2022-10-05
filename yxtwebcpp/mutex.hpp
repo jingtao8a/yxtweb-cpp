@@ -75,7 +75,7 @@ public:
     }
 protected:
     T& m_mutex;
-    bool m_locked;
+    bool m_locked = false;
 };
 
 template <class T>
@@ -104,7 +104,7 @@ public:
     }
 protected:
     T& m_mutex;
-    bool m_locked;
+    bool m_locked = false;
 };
 
 class Mutex : public Nocopyable{

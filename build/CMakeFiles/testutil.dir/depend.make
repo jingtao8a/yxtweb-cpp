@@ -3,6 +3,7 @@
 
 CMakeFiles/testutil.dir/tests/testutil.cpp.o: ../tests/testutil.cpp
 CMakeFiles/testutil.dir/tests/testutil.cpp.o: ../yxtwebcpp/config.hpp
+CMakeFiles/testutil.dir/tests/testutil.cpp.o: ../yxtwebcpp/fiber.hpp
 CMakeFiles/testutil.dir/tests/testutil.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/testutil.dir/tests/testutil.cpp.o: ../yxtwebcpp/macro.hpp
 CMakeFiles/testutil.dir/tests/testutil.cpp.o: ../yxtwebcpp/mutex.hpp

@@ -4,6 +4,7 @@
 CMakeFiles/test_config_log.dir/tests/test_config_log.cpp.o
  /home/yuxintao/yxtweb-cpp/tests/test_config_log.cpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/config.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/fiber.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/log.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/macro.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/mutex.hpp

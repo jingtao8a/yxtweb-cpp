@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-09-29 15:24:58
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-03 11:52:22
+ * @LastEditTime: 2022-10-05 23:31:17
  * @FilePath: /yxtweb-cpp/yxtwebcpp/util.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -12,6 +12,7 @@
 #include <execinfo.h>
 #include <sstream>
 #include "log.hpp"
+#include "fiber.hpp"
 
 namespace YXTWebCpp {
 
@@ -22,7 +23,7 @@ pid_t GetThreadId() {
 }
 
 uint32_t GetFiberId() {
-    return 0;
+    return Fiber::GetFiberId();
 }
 
 void Backtrace(std::vector<std::string>& vec, size_t size, size_t skip) {

@@ -1,9 +1,0 @@
-2022-10-03 12:07:48	12358	UNKNOWN	0	[ERROR]	[root]	/home/yuxintao/yxtweb-cpp/tests/testutil.cpp:12	ASSERTION: false
-backtrace:
-  ../bin/testutil(+0x1f08a) [0x55bc20d8508a]
-  ../bin/testutil(+0x1f1ed) [0x55bc20d851ed]
-  ../bin/testutil(+0x1f1fd) [0x55bc20d851fd]
-  ../bin/testutil(+0x1f287) [0x55bc20d85287]
-  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xd5) [0x7f2670c4d565]
-  ../bin/testutil(+0x1edfe) [0x55bc20d84dfe]
-
