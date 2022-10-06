@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-03 13:02:25
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-05 23:28:01
+ * @LastEditTime: 2022-10-06 15:28:15
  * @FilePath: /yxtweb-cpp/yxtwebcpp/fiber.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -178,7 +178,7 @@ void Fiber::MainFunc() {//执行完成返回到线程主协程
     }
     auto raw_ptr = cur.get();
     cur.reset();
-    raw_ptr->swapOut();
+    raw_ptr->swapOut();//注意协程使用的栈实际上是在堆上开辟的空间
 }
 
 void Fiber::CallerMainFunc() {//执行完成返回到线程调度协程
