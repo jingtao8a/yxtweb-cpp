@@ -130,6 +130,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named testscheduler
+
+# Build rule for target.
+testscheduler: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testscheduler
+.PHONY : testscheduler
+
+# fast build rule for target.
+testscheduler/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testscheduler.dir/build.make CMakeFiles/testscheduler.dir/build
+.PHONY : testscheduler/fast
+
+#=============================================================================
 # Target rules for targets named testfiber
 
 # Build rule for target.
@@ -368,6 +381,33 @@ tests/testmutex.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/testmutex.dir/build.make CMakeFiles/testmutex.dir/tests/testmutex.cpp.s
 .PHONY : tests/testmutex.cpp.s
 
+tests/testscheduler.o: tests/testscheduler.cpp.o
+
+.PHONY : tests/testscheduler.o
+
+# target to build an object file
+tests/testscheduler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testscheduler.dir/build.make CMakeFiles/testscheduler.dir/tests/testscheduler.cpp.o
+.PHONY : tests/testscheduler.cpp.o
+
+tests/testscheduler.i: tests/testscheduler.cpp.i
+
+.PHONY : tests/testscheduler.i
+
+# target to preprocess a source file
+tests/testscheduler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testscheduler.dir/build.make CMakeFiles/testscheduler.dir/tests/testscheduler.cpp.i
+.PHONY : tests/testscheduler.cpp.i
+
+tests/testscheduler.s: tests/testscheduler.cpp.s
+
+.PHONY : tests/testscheduler.s
+
+# target to generate assembly for a file
+tests/testscheduler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testscheduler.dir/build.make CMakeFiles/testscheduler.dir/tests/testscheduler.cpp.s
+.PHONY : tests/testscheduler.cpp.s
+
 tests/testutil.o: tests/testutil.cpp.o
 
 .PHONY : tests/testutil.o
@@ -545,6 +585,36 @@ yxtwebcpp/mutex.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/mutex.cpp.s
 .PHONY : yxtwebcpp/mutex.cpp.s
 
+yxtwebcpp/scheduler.o: yxtwebcpp/scheduler.cpp.o
+
+.PHONY : yxtwebcpp/scheduler.o
+
+# target to build an object file
+yxtwebcpp/scheduler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/scheduler.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/scheduler.cpp.o
+.PHONY : yxtwebcpp/scheduler.cpp.o
+
+yxtwebcpp/scheduler.i: yxtwebcpp/scheduler.cpp.i
+
+.PHONY : yxtwebcpp/scheduler.i
+
+# target to preprocess a source file
+yxtwebcpp/scheduler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/scheduler.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/scheduler.cpp.i
+.PHONY : yxtwebcpp/scheduler.cpp.i
+
+yxtwebcpp/scheduler.s: yxtwebcpp/scheduler.cpp.s
+
+.PHONY : yxtwebcpp/scheduler.s
+
+# target to generate assembly for a file
+yxtwebcpp/scheduler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/scheduler.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/scheduler.cpp.s
+.PHONY : yxtwebcpp/scheduler.cpp.s
+
 yxtwebcpp/thread.o: yxtwebcpp/thread.cpp.o
 
 .PHONY : yxtwebcpp/thread.o
@@ -618,6 +688,7 @@ help:
 	@echo "... test_thread"
 	@echo "... testfiber"
 	@echo "... testmutex"
+	@echo "... testscheduler"
 	@echo "... testutil"
 	@echo "... yxtwebcpp"
 	@echo "... yxtwebcpp_static"
@@ -636,6 +707,9 @@ help:
 	@echo "... tests/testmutex.o"
 	@echo "... tests/testmutex.i"
 	@echo "... tests/testmutex.s"
+	@echo "... tests/testscheduler.o"
+	@echo "... tests/testscheduler.i"
+	@echo "... tests/testscheduler.s"
 	@echo "... tests/testutil.o"
 	@echo "... tests/testutil.i"
 	@echo "... tests/testutil.s"
@@ -654,6 +728,9 @@ help:
 	@echo "... yxtwebcpp/mutex.o"
 	@echo "... yxtwebcpp/mutex.i"
 	@echo "... yxtwebcpp/mutex.s"
+	@echo "... yxtwebcpp/scheduler.o"
+	@echo "... yxtwebcpp/scheduler.i"
+	@echo "... yxtwebcpp/scheduler.s"
 	@echo "... yxtwebcpp/thread.o"
 	@echo "... yxtwebcpp/thread.i"
 	@echo "... yxtwebcpp/thread.s"

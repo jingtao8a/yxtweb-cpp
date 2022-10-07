@@ -8,6 +8,7 @@ CMakeFiles/test_config_log.dir/tests/test_config_log.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/test_config_log.dir/tests/test_config_log.cpp.o: ../yxtwebcpp/macro.hpp
 CMakeFiles/test_config_log.dir/tests/test_config_log.cpp.o: ../yxtwebcpp/mutex.hpp
 CMakeFiles/test_config_log.dir/tests/test_config_log.cpp.o: ../yxtwebcpp/nocopyable.hpp
+CMakeFiles/test_config_log.dir/tests/test_config_log.cpp.o: ../yxtwebcpp/scheduler.hpp
 CMakeFiles/test_config_log.dir/tests/test_config_log.cpp.o: ../yxtwebcpp/singleton.hpp
 CMakeFiles/test_config_log.dir/tests/test_config_log.cpp.o: ../yxtwebcpp/thread.hpp
 CMakeFiles/test_config_log.dir/tests/test_config_log.cpp.o: ../yxtwebcpp/util.hpp

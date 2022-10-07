@@ -116,6 +116,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/testscheduler.dir/DependInfo.cmake"
   "CMakeFiles/testfiber.dir/DependInfo.cmake"
   "CMakeFiles/test_config_log.dir/DependInfo.cmake"
   "CMakeFiles/testmutex.dir/DependInfo.cmake"

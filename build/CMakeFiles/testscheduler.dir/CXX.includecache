@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/yuxintao/yxtweb-cpp/tests/test_config_log.cpp
+/home/yuxintao/yxtweb-cpp/tests/testscheduler.cpp
 ../yxtwebcpp/yxtwebcpp.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/yxtwebcpp.hpp
 

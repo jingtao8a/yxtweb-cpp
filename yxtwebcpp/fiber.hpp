@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-03 13:02:32
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-05 23:31:01
+ * @LastEditTime: 2022-10-07 14:58:45
  * @FilePath: /yxtweb-cpp/yxtwebcpp/fiber.hpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -21,38 +21,34 @@ class Fiber : public std::enable_shared_from_this<Fiber> {
 public:
 enum State {
     INIT,//初始状态
-    READY,//就绪状态
     EXEC,//执行状态
     HOLD,//挂起状态
     TERM,//终止状态
-    EXCEPT//异常状态
 };
 
 private:
 Fiber();
 
 public:
-Fiber(std::function<void()> cb, size_t stackszie = 0, bool use_caller = false);
+Fiber(std::function<void()> cb, size_t stackszie = 0);
 ~Fiber();
 
 void reset(std::function<void()> cb);//重置协程的挂接执行函数，并且设置m_state
 void swapIn();//主协程 -> 当前协程
-void swapOut();//当前协程 ->主协程
-void call();//将当前线程切换到执行状态
-void back();//将当前线程挂起，切换为该协程
 
 uint64_t getId() const { return m_id; }
 State getState() const { return m_state; }
 
+private:
+void swapOut();//当前协程 ->主协程
+
 public:
 static void SetThis(Fiber *f);//设置当前线程的运行协程
-static std::shared_ptr<Fiber> GetThis();//返回当前所在的协程
-static void YieldToReady();//将当前协程切换到后台，设置位READY状态
-static void YieldToHold();//将当前协程切换到后台，设置位HOLD状态
+static std::shared_ptr<Fiber> GetThis();//返回当前线程所执行的协程（如果没有，返回主协程（新创建））
+static void YieldToHold();//当前协程->主协程 state->Hold
 static uint64_t TotalFibers();//总的协程数量
 static void MainFunc();//执行完成返回到线程主协程
-static void CallerMainFunc();//执行完成返回到线程调度协程
-static uint64_t GetFiberId();
+static uint64_t GetFiberId();//获取协程ID
 
 private:
 uint64_t m_id = 0;//协程id

@@ -8,6 +8,7 @@ CMakeFiles/testmutex.dir/tests/testmutex.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/testmutex.dir/tests/testmutex.cpp.o: ../yxtwebcpp/macro.hpp
 CMakeFiles/testmutex.dir/tests/testmutex.cpp.o: ../yxtwebcpp/mutex.hpp
 CMakeFiles/testmutex.dir/tests/testmutex.cpp.o: ../yxtwebcpp/nocopyable.hpp
+CMakeFiles/testmutex.dir/tests/testmutex.cpp.o: ../yxtwebcpp/scheduler.hpp
 CMakeFiles/testmutex.dir/tests/testmutex.cpp.o: ../yxtwebcpp/singleton.hpp
 CMakeFiles/testmutex.dir/tests/testmutex.cpp.o: ../yxtwebcpp/thread.hpp
 CMakeFiles/testmutex.dir/tests/testmutex.cpp.o: ../yxtwebcpp/util.hpp

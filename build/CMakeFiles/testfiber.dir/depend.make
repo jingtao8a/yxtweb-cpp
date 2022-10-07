@@ -8,6 +8,7 @@ CMakeFiles/testfiber.dir/tests/testfiber.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/testfiber.dir/tests/testfiber.cpp.o: ../yxtwebcpp/macro.hpp
 CMakeFiles/testfiber.dir/tests/testfiber.cpp.o: ../yxtwebcpp/mutex.hpp
 CMakeFiles/testfiber.dir/tests/testfiber.cpp.o: ../yxtwebcpp/nocopyable.hpp
+CMakeFiles/testfiber.dir/tests/testfiber.cpp.o: ../yxtwebcpp/scheduler.hpp
 CMakeFiles/testfiber.dir/tests/testfiber.cpp.o: ../yxtwebcpp/singleton.hpp
 CMakeFiles/testfiber.dir/tests/testfiber.cpp.o: ../yxtwebcpp/thread.hpp
 CMakeFiles/testfiber.dir/tests/testfiber.cpp.o: ../yxtwebcpp/util.hpp

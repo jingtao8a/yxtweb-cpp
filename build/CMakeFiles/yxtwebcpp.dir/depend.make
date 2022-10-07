@@ -46,6 +46,17 @@ CMakeFiles/yxtwebcpp.dir/yxtwebcpp/mutex.cpp.o: ../yxtwebcpp/mutex.cpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/mutex.cpp.o: ../yxtwebcpp/mutex.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/mutex.cpp.o: ../yxtwebcpp/nocopyable.hpp
 
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/scheduler.cpp.o: ../yxtwebcpp/fiber.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/scheduler.cpp.o: ../yxtwebcpp/log.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/scheduler.cpp.o: ../yxtwebcpp/macro.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/scheduler.cpp.o: ../yxtwebcpp/mutex.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/scheduler.cpp.o: ../yxtwebcpp/nocopyable.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/scheduler.cpp.o: ../yxtwebcpp/scheduler.cpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/scheduler.cpp.o: ../yxtwebcpp/scheduler.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/scheduler.cpp.o: ../yxtwebcpp/singleton.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/scheduler.cpp.o: ../yxtwebcpp/thread.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/scheduler.cpp.o: ../yxtwebcpp/util.hpp
+
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/thread.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/thread.cpp.o: ../yxtwebcpp/mutex.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/thread.cpp.o: ../yxtwebcpp/nocopyable.hpp

@@ -8,6 +8,7 @@ CMakeFiles/test_thread.dir/tests/test_thread.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/test_thread.dir/tests/test_thread.cpp.o: ../yxtwebcpp/macro.hpp
 CMakeFiles/test_thread.dir/tests/test_thread.cpp.o: ../yxtwebcpp/mutex.hpp
 CMakeFiles/test_thread.dir/tests/test_thread.cpp.o: ../yxtwebcpp/nocopyable.hpp
+CMakeFiles/test_thread.dir/tests/test_thread.cpp.o: ../yxtwebcpp/scheduler.hpp
 CMakeFiles/test_thread.dir/tests/test_thread.cpp.o: ../yxtwebcpp/singleton.hpp
 CMakeFiles/test_thread.dir/tests/test_thread.cpp.o: ../yxtwebcpp/thread.hpp
 CMakeFiles/test_thread.dir/tests/test_thread.cpp.o: ../yxtwebcpp/util.hpp
