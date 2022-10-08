@@ -29,6 +29,7 @@ CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.o
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/macro.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/mutex.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/nocopyable.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/scheduler.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/singleton.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/thread.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/util.hpp

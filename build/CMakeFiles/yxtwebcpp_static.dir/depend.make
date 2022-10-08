@@ -28,6 +28,7 @@ CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/macro.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/mutex.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/nocopyable.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/scheduler.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/singleton.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/thread.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/util.hpp
