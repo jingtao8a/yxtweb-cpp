@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-06 11:36:33
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-07 22:10:29
+ * @LastEditTime: 2022-10-08 11:25:46
  * @FilePath: /yxtweb-cpp/yxtwebcpp/scheduler.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -16,6 +16,7 @@ namespace YXTWebCpp {
 static std::shared_ptr<Logger> g_logger = YXTWebCpp_LOG_NAME("system");
 
 static thread_local Scheduler* t_scheduler = nullptr;
+static thread_local Fiber* t_scheduler_fiber = nullptr;
 
 Scheduler::Scheduler(size_t threads, bool use_caller, const std::string& name) : m_name(name) {
     YXTWebCpp_ASSERT(threads > 0);
@@ -25,7 +26,8 @@ Scheduler::Scheduler(size_t threads, bool use_caller, const std::string& name) :
 
         t_scheduler = this;
         Fiber::GetThis();//创建当前线程的主协程块
-        m_rootFiber.reset(new Fiber(std::bind(&Scheduler::run, this)));//创建一个rootFiber,调度协程（该线程的子协程）
+        m_rootFiber.reset(new Fiber(std::bind(&Scheduler::run, this), 0, true));//创建一个rootFiber,调度协程（该线程的子协程）
+        t_scheduler_fiber = m_rootFiber.get();
         m_rootThreadID = GetThreadId();//返回当前线程的唯一标识ID
         m_threadIDs.push_back(m_rootThreadID);//放进线程池ID数组
     }
@@ -62,7 +64,7 @@ void Scheduler::stop() {//正常清空下由主线程停止调度器
     }
     
     if (m_rootFiber && !stopping()) {//如果use_caller == true 且还无法停止
-        m_rootFiber->swapIn();//主线程也切换到m_rootFiber这个协程上执行，将协程任务队列上的任务消耗完
+        m_rootFiber->call();//主线程也切换到m_rootFiber这个协程上执行，将协程任务队列上的任务消耗完
     }
 
     std::vector<std::shared_ptr<Thread> > thrs;
@@ -79,6 +81,9 @@ void Scheduler::stop() {//正常清空下由主线程停止调度器
 void Scheduler::run() {
     t_scheduler = this;//开启了新线程的时候, 当前前线程的t_scheduler指向本调度器
     Fiber::GetThis();//开启了新线程的时候, 为当前线程创建一个主协程块
+    if (GetThreadId() != m_rootThreadID) {
+        t_scheduler_fiber = Fiber::GetThis().get();
+    }
     std::shared_ptr<Fiber> idle_fiber(new Fiber(std::bind(&Scheduler::idle, this)));//空闲协程块
     //以下两个变量用于取协程队列中的任务
     std::shared_ptr<Fiber> cb_fiber;
@@ -175,6 +180,10 @@ std::ostream& Scheduler::dump(std::ostream& os) {
 //静态成员函数
 Scheduler* Scheduler::GetThis() {
     return t_scheduler;
+}
+
+Fiber* Scheduler::GetMainFiber() {
+    return t_scheduler_fiber;
 }
 
 /////////////////////////////////////////////////////////////////////////////////

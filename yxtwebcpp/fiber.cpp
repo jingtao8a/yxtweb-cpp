@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-03 13:02:25
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-07 22:07:40
+ * @LastEditTime: 2022-10-08 12:09:21
  * @FilePath: /yxtweb-cpp/yxtwebcpp/fiber.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -11,6 +11,7 @@
 #include "log.hpp"
 #include "config.hpp"
 #include "macro.hpp"
+#include "scheduler.hpp"
 
 namespace YXTWebCpp {
 
@@ -33,9 +34,10 @@ Fiber::Fiber() {
     YXTWebCpp_LOG_DEBUG(g_logger) << "Fiber::Fiber main";
 }
 
-Fiber::Fiber(std::function<void()> cb, size_t stacksize) 
+Fiber::Fiber(std::function<void()> cb, size_t stacksize, bool use_caller) 
     :m_id(++s_fiber_id)
-    ,m_cb(cb) {
+    ,m_cb(cb) 
+    ,m_use_caller(use_caller) {
     ++s_fiber_count;
 
     uint32_t config_stacksize = g_fiber_stack_size->getValue();
@@ -48,7 +50,11 @@ Fiber::Fiber(std::function<void()> cb, size_t stacksize)
     m_context.uc_stack.ss_sp = m_stack;
     m_context.uc_stack.ss_size = m_stacksize;
     m_context.uc_stack.ss_flags = 0;
-    makecontext(&m_context, &Fiber::MainFunc, 0);
+    if (!use_caller) {
+        makecontext(&m_context, &Fiber::MainFunc, 0);
+    } else {
+        makecontext(&m_context, &Fiber::CallMainFunc, 0);
+    }
     YXTWebCpp_LOG_DEBUG(g_logger) << "Fiber::Fiber id = " << m_id;
 }
 
@@ -82,7 +88,23 @@ void Fiber::reset(std::function<void()> cb) {//重置协程的挂接执行函数
     m_state = INIT;
 }
 
-void Fiber::swapIn() {//主协程 -> 当前协程
+void Fiber::swapIn() {
+    SetThis(this);
+    YXTWebCpp_ASSERT(m_state != EXEC);
+    m_state = EXEC;
+    if (swapcontext(&(Scheduler::GetMainFiber()->m_context), &m_context)) {
+        YXTWebCpp_ASSERT2(false, "swapcontext");
+    }
+}
+
+void Fiber::swapOut() {
+    SetThis(Scheduler::GetMainFiber());
+    if (swapcontext(&m_context, &(Scheduler::GetMainFiber()->m_context))) {
+        YXTWebCpp_ASSERT2(false, "swapcontext")
+    }
+}
+
+void Fiber::call() {//主协程 -> 当前协程
     SetThis(this);
     YXTWebCpp_ASSERT(m_state != EXEC);
     m_state = EXEC;
@@ -91,11 +113,8 @@ void Fiber::swapIn() {//主协程 -> 当前协程
     }
 }
 
-void Fiber::swapOut() {//当前协程 -> 主协程
+void Fiber::back() {//当前协程 -> 主协程
     SetThis(t_threadFiber.get());
-    if (t_threadFiber.get() == this) {
-        YXTWebCpp_LOG_DEBUG(g_logger) << "similar";
-    }
     if (swapcontext(&m_context, &t_threadFiber->m_context)) {
         YXTWebCpp_ASSERT2(false, "swapcontext");
     }
@@ -117,22 +136,37 @@ std::shared_ptr<Fiber> Fiber::GetThis() {//返回当前线程运行的协程Fibe
 void Fiber::YieldToHold() {//将当前协程设置为HOLD,当前协程 -> 主协程
     auto cur = GetThis();
     cur->m_state = HOLD;
-    cur->swapOut();
-}
-
-uint64_t Fiber::TotalFibers() {//总的协程数量
-    return s_fiber_count;
+    if (!cur->m_use_caller) {
+        cur->swapOut();
+    } else {
+        cur->back();
+    }
 }
 
 void Fiber::MainFunc() {//执行完成返回到线程主协程
+    Fiber* raw_ptr = FunHelper();
+    raw_ptr->swapOut();//注意协程使用的栈实际上是在堆上开辟的空间
+    YXTWebCpp_ASSERT2(false, "never reach")
+}
+
+void Fiber::CallMainFunc() {
+    Fiber* raw_ptr = FunHelper();
+    raw_ptr->back();
+    YXTWebCpp_ASSERT2(false, "never reach");
+}
+
+Fiber* Fiber::FunHelper() {
     std::shared_ptr<Fiber> cur = GetThis();//cur指向的是当前协程Fiber
     cur->m_cb();
     cur->m_cb = nullptr;
     cur->m_state = TERM;
     auto raw_ptr = cur.get();
     cur.reset();
-    raw_ptr->swapOut();//注意协程使用的栈实际上是在堆上开辟的空间
-    YXTWebCpp_ASSERT2(false, "never reach")
+    return raw_ptr;
+}
+
+uint64_t Fiber::TotalFibers() {//总的协程数量
+    return s_fiber_count;
 }
 
 uint64_t Fiber::GetFiberId() {
