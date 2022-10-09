@@ -156,6 +156,19 @@ testfiber/fast:
 .PHONY : testfiber/fast
 
 #=============================================================================
+# Target rules for targets named testiomanager
+
+# Build rule for target.
+testiomanager: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testiomanager
+.PHONY : testiomanager
+
+# fast build rule for target.
+testiomanager/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testiomanager.dir/build.make CMakeFiles/testiomanager.dir/build
+.PHONY : testiomanager/fast
+
+#=============================================================================
 # Target rules for targets named test_config_log
 
 # Build rule for target.
@@ -354,6 +367,33 @@ tests/testfiber.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/testfiber.dir/build.make CMakeFiles/testfiber.dir/tests/testfiber.cpp.s
 .PHONY : tests/testfiber.cpp.s
 
+tests/testiomanager.o: tests/testiomanager.cpp.o
+
+.PHONY : tests/testiomanager.o
+
+# target to build an object file
+tests/testiomanager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testiomanager.dir/build.make CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.o
+.PHONY : tests/testiomanager.cpp.o
+
+tests/testiomanager.i: tests/testiomanager.cpp.i
+
+.PHONY : tests/testiomanager.i
+
+# target to preprocess a source file
+tests/testiomanager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testiomanager.dir/build.make CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.i
+.PHONY : tests/testiomanager.cpp.i
+
+tests/testiomanager.s: tests/testiomanager.cpp.s
+
+.PHONY : tests/testiomanager.s
+
+# target to generate assembly for a file
+tests/testiomanager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testiomanager.dir/build.make CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.s
+.PHONY : tests/testiomanager.cpp.s
+
 tests/testmutex.o: tests/testmutex.cpp.o
 
 .PHONY : tests/testmutex.o
@@ -525,6 +565,36 @@ yxtwebcpp/fiber.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.s
 .PHONY : yxtwebcpp/fiber.cpp.s
 
+yxtwebcpp/iomanager.o: yxtwebcpp/iomanager.cpp.o
+
+.PHONY : yxtwebcpp/iomanager.o
+
+# target to build an object file
+yxtwebcpp/iomanager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/iomanager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.o
+.PHONY : yxtwebcpp/iomanager.cpp.o
+
+yxtwebcpp/iomanager.i: yxtwebcpp/iomanager.cpp.i
+
+.PHONY : yxtwebcpp/iomanager.i
+
+# target to preprocess a source file
+yxtwebcpp/iomanager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/iomanager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.i
+.PHONY : yxtwebcpp/iomanager.cpp.i
+
+yxtwebcpp/iomanager.s: yxtwebcpp/iomanager.cpp.s
+
+.PHONY : yxtwebcpp/iomanager.s
+
+# target to generate assembly for a file
+yxtwebcpp/iomanager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/iomanager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.s
+.PHONY : yxtwebcpp/iomanager.cpp.s
+
 yxtwebcpp/log.o: yxtwebcpp/log.cpp.o
 
 .PHONY : yxtwebcpp/log.o
@@ -687,6 +757,7 @@ help:
 	@echo "... test_config_log"
 	@echo "... test_thread"
 	@echo "... testfiber"
+	@echo "... testiomanager"
 	@echo "... testmutex"
 	@echo "... testscheduler"
 	@echo "... testutil"
@@ -704,6 +775,9 @@ help:
 	@echo "... tests/testfiber.o"
 	@echo "... tests/testfiber.i"
 	@echo "... tests/testfiber.s"
+	@echo "... tests/testiomanager.o"
+	@echo "... tests/testiomanager.i"
+	@echo "... tests/testiomanager.s"
 	@echo "... tests/testmutex.o"
 	@echo "... tests/testmutex.i"
 	@echo "... tests/testmutex.s"
@@ -722,6 +796,9 @@ help:
 	@echo "... yxtwebcpp/fiber.o"
 	@echo "... yxtwebcpp/fiber.i"
 	@echo "... yxtwebcpp/fiber.s"
+	@echo "... yxtwebcpp/iomanager.o"
+	@echo "... yxtwebcpp/iomanager.i"
+	@echo "... yxtwebcpp/iomanager.s"
 	@echo "... yxtwebcpp/log.o"
 	@echo "... yxtwebcpp/log.i"
 	@echo "... yxtwebcpp/log.s"

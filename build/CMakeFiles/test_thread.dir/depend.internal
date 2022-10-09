@@ -5,6 +5,7 @@ CMakeFiles/test_thread.dir/tests/test_thread.cpp.o
  /home/yuxintao/yxtweb-cpp/tests/test_thread.cpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/config.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/fiber.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/log.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/macro.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/mutex.hpp

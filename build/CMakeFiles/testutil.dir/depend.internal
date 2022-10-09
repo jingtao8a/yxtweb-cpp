@@ -5,6 +5,7 @@ CMakeFiles/testutil.dir/tests/testutil.cpp.o
  /home/yuxintao/yxtweb-cpp/tests/testutil.cpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/config.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/fiber.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/log.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/macro.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/mutex.hpp

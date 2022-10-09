@@ -4,6 +4,7 @@
 CMakeFiles/test.dir/tests/test.cpp.o: ../tests/test.cpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/config.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/fiber.hpp
+CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/iomanager.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/macro.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/mutex.hpp

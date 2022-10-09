@@ -33,6 +33,18 @@ CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/singleton.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/thread.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/util.hpp
 
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.o: ../yxtwebcpp/fiber.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.o: ../yxtwebcpp/iomanager.cpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.o: ../yxtwebcpp/iomanager.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.o: ../yxtwebcpp/log.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.o: ../yxtwebcpp/macro.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.o: ../yxtwebcpp/mutex.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.o: ../yxtwebcpp/nocopyable.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.o: ../yxtwebcpp/scheduler.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.o: ../yxtwebcpp/singleton.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.o: ../yxtwebcpp/thread.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.o: ../yxtwebcpp/util.hpp
+
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/log.cpp.o: ../yxtwebcpp/config.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/log.cpp.o: ../yxtwebcpp/env.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/log.cpp.o: ../yxtwebcpp/log.cpp

@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-06 11:36:43
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-08 10:57:41
+ * @LastEditTime: 2022-10-09 13:09:52
  * @FilePath: /yxtweb-cpp/yxtwebcpp/scheduler.hpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -27,7 +27,7 @@ public:
 
     void start();//开启调度器
     void stop();//停止调度器
-    void run();//run函数，用于挂接在调度协程上
+    void run();//run函数
     void switchTo(int Thread = -1);
     std::ostream& dump(std::ostream& os);
 
@@ -58,11 +58,13 @@ protected:
     virtual void tickle();
     virtual bool stopping();
     virtual void idle();
+    
     bool hasIdleThreads() { return m_idleThreadCount > 0; }
 
 public:
     static Scheduler* GetThis();
     static Fiber* GetMainFiber();
+    
 private:
     struct FiberAndThread {
         std::shared_ptr<Fiber> fiber;//协程
@@ -80,7 +82,7 @@ private:
             cb = nullptr;
             threadID = -1;
         }
-    };
+    }; 
 
 private:
     Mutex m_mutex;
@@ -96,7 +98,7 @@ protected:
     std::atomic<size_t> m_idleThreadCount = {0};//空闲线程数量
 
     bool m_stopping = true;//是否正在停止中
-    bool m_autostop = false;//是否自动停止
+    // bool m_autostop = false;//是否自动停止
     int m_rootThreadID = -1;//主线程ID,当user_caller = true时，不为-1
 };
 

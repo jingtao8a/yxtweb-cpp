@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-06 11:36:33
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-08 11:25:46
+ * @LastEditTime: 2022-10-09 14:39:29
  * @FilePath: /yxtweb-cpp/yxtwebcpp/scheduler.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -56,10 +56,8 @@ void Scheduler::start() {
 }
 
 void Scheduler::stop() {//正常清空下由主线程停止调度器
-    m_autostop = true;
     m_stopping = true;
     if (stopping()) {
-        YXTWebCpp_LOG_INFO(g_logger) << "stop";
         return;
     }
     
@@ -73,7 +71,6 @@ void Scheduler::stop() {//正常清空下由主线程停止调度器
         thrs.swap(m_threads);//获得线程池
     }
     for (auto& i : thrs) {
-        YXTWebCpp_LOG_DEBUG(g_logger) << "wait";
         i->join();//等待线程池的线程都结束
     }
 }
@@ -127,6 +124,7 @@ void Scheduler::run() {
         if (idle_fiber->getState() == Fiber::TERM) {
             break;
         }
+        YXTWebCpp_LOG_DEBUG(g_logger) << "toloop";
         ++m_idleThreadCount;
         idle_fiber->swapIn();//切换为空闲协程
         --m_idleThreadCount;
@@ -143,7 +141,7 @@ void Scheduler::idle() {
 
 bool Scheduler::stopping() {
     ScopedLockImpl<Mutex> guard(m_mutex);
-    return m_autostop && m_stopping && m_fibers.empty() && m_activeThreadCount == 0;
+    return m_stopping && m_fibers.empty() && m_activeThreadCount == 0;
 }
 
 void Scheduler::tickle() {

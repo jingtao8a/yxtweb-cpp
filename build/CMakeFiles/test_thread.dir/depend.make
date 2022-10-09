@@ -4,6 +4,7 @@
 CMakeFiles/test_thread.dir/tests/test_thread.cpp.o: ../tests/test_thread.cpp
 CMakeFiles/test_thread.dir/tests/test_thread.cpp.o: ../yxtwebcpp/config.hpp
 CMakeFiles/test_thread.dir/tests/test_thread.cpp.o: ../yxtwebcpp/fiber.hpp
+CMakeFiles/test_thread.dir/tests/test_thread.cpp.o: ../yxtwebcpp/iomanager.hpp
 CMakeFiles/test_thread.dir/tests/test_thread.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/test_thread.dir/tests/test_thread.cpp.o: ../yxtwebcpp/macro.hpp
 CMakeFiles/test_thread.dir/tests/test_thread.cpp.o: ../yxtwebcpp/mutex.hpp

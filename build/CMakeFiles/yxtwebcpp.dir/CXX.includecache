@@ -6,40 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/yuxintao/yxtweb-cpp/yxtwebcpp/config.hpp
-algorithm
--
-boost/lexical_cast.hpp
--
-unordered_map
--
-map
--
-unordered_set
--
-set
--
-yaml-cpp/yaml.h
--
-iostream
--
-mutex.hpp
-/home/yuxintao/yxtweb-cpp/yxtwebcpp/mutex.hpp
-
-/home/yuxintao/yxtweb-cpp/yxtwebcpp/fiber.cpp
-fiber.hpp
-/home/yuxintao/yxtweb-cpp/yxtwebcpp/fiber.hpp
-atomic
--
-log.hpp
-/home/yuxintao/yxtweb-cpp/yxtwebcpp/log.hpp
-config.hpp
-/home/yuxintao/yxtweb-cpp/yxtwebcpp/config.hpp
-macro.hpp
-/home/yuxintao/yxtweb-cpp/yxtwebcpp/macro.hpp
-scheduler.hpp
-/home/yuxintao/yxtweb-cpp/yxtwebcpp/scheduler.hpp
-
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/fiber.hpp
 memory
 -
@@ -47,6 +13,24 @@ functional
 -
 ucontext.h
 -
+
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.cpp
+iomanager.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.hpp
+sys/epoll.h
+-
+unistd.h
+-
+string.h
+-
+fcntl.h
+-
+macro.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/macro.hpp
+
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.hpp
+scheduler.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/scheduler.hpp
 
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/log.hpp
 string
@@ -94,16 +78,6 @@ nocopyable.hpp
 
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/nocopyable.hpp
 
-/home/yuxintao/yxtweb-cpp/yxtwebcpp/scheduler.cpp
-scheduler.hpp
-/home/yuxintao/yxtweb-cpp/yxtwebcpp/scheduler.hpp
-log.hpp
-/home/yuxintao/yxtweb-cpp/yxtwebcpp/log.hpp
-macro.hpp
-/home/yuxintao/yxtweb-cpp/yxtwebcpp/macro.hpp
-iostream
--
-
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/scheduler.hpp
 thread.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/thread.hpp
@@ -137,22 +111,6 @@ nocopyable.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/nocopyable.hpp
 mutex.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/mutex.hpp
-
-/home/yuxintao/yxtweb-cpp/yxtwebcpp/util.cpp
-util.hpp
-/home/yuxintao/yxtweb-cpp/yxtwebcpp/util.hpp
-unistd.h
--
-sys/syscall.h
--
-execinfo.h
--
-sstream
--
-log.hpp
-/home/yuxintao/yxtweb-cpp/yxtwebcpp/log.hpp
-fiber.hpp
-/home/yuxintao/yxtweb-cpp/yxtwebcpp/fiber.hpp
 
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/util.hpp
 pthread.h

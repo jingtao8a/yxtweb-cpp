@@ -1,5 +1,6 @@
 /home/yuxintao/yxtweb-cpp/build/CMakeFiles/testscheduler.dir
 /home/yuxintao/yxtweb-cpp/build/CMakeFiles/testfiber.dir
+/home/yuxintao/yxtweb-cpp/build/CMakeFiles/testiomanager.dir
 /home/yuxintao/yxtweb-cpp/build/CMakeFiles/test_config_log.dir
 /home/yuxintao/yxtweb-cpp/build/CMakeFiles/testmutex.dir
 /home/yuxintao/yxtweb-cpp/build/CMakeFiles/edit_cache.dir

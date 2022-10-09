@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/config.cpp.o"
   "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/env.cpp.o"
   "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.o"
+  "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.o"
   "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/log.cpp.o"
   "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/mutex.cpp.o"
   "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/scheduler.cpp.o"

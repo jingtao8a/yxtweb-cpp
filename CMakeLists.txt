@@ -13,6 +13,7 @@ set(LIB_SRC
     yxtwebcpp/mutex.cpp
     yxtwebcpp/fiber.cpp
     yxtwebcpp/scheduler.cpp
+    yxtwebcpp/iomanager.cpp
 )
 
 add_library(yxtwebcpp SHARED ${LIB_SRC})
@@ -51,6 +52,10 @@ add_dependencies(testfiber yxtwebcpp)
 add_executable(testscheduler tests/testscheduler.cpp)
 target_link_libraries(testscheduler ${LIB_LIB})
 add_dependencies(testscheduler yxtwebcpp)
+
+add_executable(testiomanager tests/testiomanager.cpp)
+target_link_libraries(testiomanager ${LIB_LIB})
+add_dependencies(testiomanager yxtwebcpp)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

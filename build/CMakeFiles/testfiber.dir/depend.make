@@ -4,6 +4,7 @@
 CMakeFiles/testfiber.dir/tests/testfiber.cpp.o: ../tests/testfiber.cpp
 CMakeFiles/testfiber.dir/tests/testfiber.cpp.o: ../yxtwebcpp/config.hpp
 CMakeFiles/testfiber.dir/tests/testfiber.cpp.o: ../yxtwebcpp/fiber.hpp
+CMakeFiles/testfiber.dir/tests/testfiber.cpp.o: ../yxtwebcpp/iomanager.hpp
 CMakeFiles/testfiber.dir/tests/testfiber.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/testfiber.dir/tests/testfiber.cpp.o: ../yxtwebcpp/macro.hpp
 CMakeFiles/testfiber.dir/tests/testfiber.cpp.o: ../yxtwebcpp/mutex.hpp

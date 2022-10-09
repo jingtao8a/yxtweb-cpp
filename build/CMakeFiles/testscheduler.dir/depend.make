@@ -4,6 +4,7 @@
 CMakeFiles/testscheduler.dir/tests/testscheduler.cpp.o: ../tests/testscheduler.cpp
 CMakeFiles/testscheduler.dir/tests/testscheduler.cpp.o: ../yxtwebcpp/config.hpp
 CMakeFiles/testscheduler.dir/tests/testscheduler.cpp.o: ../yxtwebcpp/fiber.hpp
+CMakeFiles/testscheduler.dir/tests/testscheduler.cpp.o: ../yxtwebcpp/iomanager.hpp
 CMakeFiles/testscheduler.dir/tests/testscheduler.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/testscheduler.dir/tests/testscheduler.cpp.o: ../yxtwebcpp/macro.hpp
 CMakeFiles/testscheduler.dir/tests/testscheduler.cpp.o: ../yxtwebcpp/mutex.hpp
