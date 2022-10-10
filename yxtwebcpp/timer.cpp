@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-09 15:36:35
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-10 15:58:07
+ * @LastEditTime: 2022-10-10 19:55:19
  * @FilePath: /yxtweb-cpp/yxtwebcpp/timer.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -146,6 +146,14 @@ void TimerManager::listExpiredCb(std::vector<std::function<void()> >& cbs) {
     }
 
     WriteScopedLockImpl<RWMutex> guard(m_mutex);
+    if (m_timers.empty()) {
+        return;
+    }
+    bool rollover = detectClockRollover(now_ms);
+    if (!rollover && (*m_timers.begin())->m_next > now_ms) {
+        return;
+    }
+
     std::shared_ptr<Timer> now_timer(new Timer(now_ms, nullptr, false, nullptr));
     auto it = m_timers.lower_bound(now_timer);
     while (it != m_timers.end() && (*it)->m_next == now_ms) {
@@ -175,4 +183,14 @@ void TimerManager::addTimer(std::shared_ptr<Timer> val) {
         onTimerInsertedAtFront();//纯虚函数
     }
 }
+
+bool TimerManager::detectClockRollover(uint64_t now_ms) {
+    bool rollover = false;
+    if (now_ms < m_previousTime && now_ms < (m_previousTime - 60 * 60 * 1000)) {
+        rollover == true;
+    }
+    m_previousTime = now_ms;
+    return rollover;
+}
+
 }

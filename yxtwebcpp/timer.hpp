@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-09 15:36:45
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-10 15:46:27
+ * @LastEditTime: 2022-10-10 19:53:40
  * @FilePath: /yxtweb-cpp/yxtwebcpp/timer.hpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -57,11 +57,11 @@ protected:
 
 private:
     void addTimer(std::shared_ptr<Timer> val);
-
+    bool detectClockRollover(uint64_t now_ms);
 private:
     RWMutex m_mutex;
     std::set<std::shared_ptr<Timer>, Timer::Comparator> m_timers;
-    uint64_t m_previousTime = 0;//上次定时器触发的时间
+    uint64_t m_previousTime = 0;//上次执行listExpiredCb的时间
 };
 
 }

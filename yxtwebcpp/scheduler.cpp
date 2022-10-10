@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-06 11:36:33
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-10 15:54:18
+ * @LastEditTime: 2022-10-10 20:09:16
  * @FilePath: /yxtweb-cpp/yxtwebcpp/scheduler.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -60,11 +60,15 @@ void Scheduler::stop() {//正常清空下由主线程停止调度器
     if (stopping()) {
         return;
     }
+
+    for (size_t i = 0; i < m_threadCount; ++i) {
+        tickle();
+    }
     
     if (m_rootFiber && !stopping()) {//如果use_caller == true 且还无法停止
         m_rootFiber->call();//主线程也切换到m_rootFiber这个协程上执行，将协程任务队列上的任务消耗完
     }
-
+    
     std::vector<std::shared_ptr<Thread> > thrs;
     {
         ScopedLockImpl<Mutex> guard(m_mutex);

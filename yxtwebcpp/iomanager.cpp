@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-08 13:33:14
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-10 15:53:55
+ * @LastEditTime: 2022-10-10 20:29:32
  * @FilePath: /yxtweb-cpp/yxtwebcpp/iomanager.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -239,7 +239,7 @@ void IOManager::idle() {
         do {
             static const int MAX_TIMEOUT = 3000;
             if (next_timeout != ~0uLL) {//有定时器的情况
-                next_timeout = (int)next_timeout < MAX_TIMEOUT ? next_timeout : MAX_TIMEOUT;
+                next_timeout = next_timeout < (uint64_t)MAX_TIMEOUT ? next_timeout : MAX_TIMEOUT;
             } else {//没有定时器的情况
                 next_timeout = MAX_TIMEOUT;
             }
