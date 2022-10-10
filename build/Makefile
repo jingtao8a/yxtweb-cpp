@@ -130,30 +130,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named testscheduler
+# Target rules for targets named testtimer
 
 # Build rule for target.
-testscheduler: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testscheduler
-.PHONY : testscheduler
+testtimer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testtimer
+.PHONY : testtimer
 
 # fast build rule for target.
-testscheduler/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testscheduler.dir/build.make CMakeFiles/testscheduler.dir/build
-.PHONY : testscheduler/fast
-
-#=============================================================================
-# Target rules for targets named testfiber
-
-# Build rule for target.
-testfiber: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testfiber
-.PHONY : testfiber
-
-# fast build rule for target.
-testfiber/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testfiber.dir/build.make CMakeFiles/testfiber.dir/build
-.PHONY : testfiber/fast
+testtimer/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testtimer.dir/build.make CMakeFiles/testtimer.dir/build
+.PHONY : testtimer/fast
 
 #=============================================================================
 # Target rules for targets named testiomanager
@@ -167,71 +154,6 @@ testiomanager: cmake_check_build_system
 testiomanager/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/testiomanager.dir/build.make CMakeFiles/testiomanager.dir/build
 .PHONY : testiomanager/fast
-
-#=============================================================================
-# Target rules for targets named test_config_log
-
-# Build rule for target.
-test_config_log: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_config_log
-.PHONY : test_config_log
-
-# fast build rule for target.
-test_config_log/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_config_log.dir/build.make CMakeFiles/test_config_log.dir/build
-.PHONY : test_config_log/fast
-
-#=============================================================================
-# Target rules for targets named testmutex
-
-# Build rule for target.
-testmutex: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testmutex
-.PHONY : testmutex
-
-# fast build rule for target.
-testmutex/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testmutex.dir/build.make CMakeFiles/testmutex.dir/build
-.PHONY : testmutex/fast
-
-#=============================================================================
-# Target rules for targets named testutil
-
-# Build rule for target.
-testutil: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testutil
-.PHONY : testutil
-
-# fast build rule for target.
-testutil/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutil.dir/build.make CMakeFiles/testutil.dir/build
-.PHONY : testutil/fast
-
-#=============================================================================
-# Target rules for targets named test_thread
-
-# Build rule for target.
-test_thread: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_thread
-.PHONY : test_thread
-
-# fast build rule for target.
-test_thread/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/build
-.PHONY : test_thread/fast
-
-#=============================================================================
-# Target rules for targets named test
-
-# Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
-.PHONY : test
-
-# fast build rule for target.
-test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-.PHONY : test/fast
 
 #=============================================================================
 # Target rules for targets named yxtwebcpp_static
@@ -258,114 +180,6 @@ yxtwebcpp: cmake_check_build_system
 yxtwebcpp/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/build
 .PHONY : yxtwebcpp/fast
-
-tests/test.o: tests/test.cpp.o
-
-.PHONY : tests/test.o
-
-# target to build an object file
-tests/test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cpp.o
-.PHONY : tests/test.cpp.o
-
-tests/test.i: tests/test.cpp.i
-
-.PHONY : tests/test.i
-
-# target to preprocess a source file
-tests/test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cpp.i
-.PHONY : tests/test.cpp.i
-
-tests/test.s: tests/test.cpp.s
-
-.PHONY : tests/test.s
-
-# target to generate assembly for a file
-tests/test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cpp.s
-.PHONY : tests/test.cpp.s
-
-tests/test_config_log.o: tests/test_config_log.cpp.o
-
-.PHONY : tests/test_config_log.o
-
-# target to build an object file
-tests/test_config_log.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_config_log.dir/build.make CMakeFiles/test_config_log.dir/tests/test_config_log.cpp.o
-.PHONY : tests/test_config_log.cpp.o
-
-tests/test_config_log.i: tests/test_config_log.cpp.i
-
-.PHONY : tests/test_config_log.i
-
-# target to preprocess a source file
-tests/test_config_log.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_config_log.dir/build.make CMakeFiles/test_config_log.dir/tests/test_config_log.cpp.i
-.PHONY : tests/test_config_log.cpp.i
-
-tests/test_config_log.s: tests/test_config_log.cpp.s
-
-.PHONY : tests/test_config_log.s
-
-# target to generate assembly for a file
-tests/test_config_log.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_config_log.dir/build.make CMakeFiles/test_config_log.dir/tests/test_config_log.cpp.s
-.PHONY : tests/test_config_log.cpp.s
-
-tests/test_thread.o: tests/test_thread.cpp.o
-
-.PHONY : tests/test_thread.o
-
-# target to build an object file
-tests/test_thread.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/tests/test_thread.cpp.o
-.PHONY : tests/test_thread.cpp.o
-
-tests/test_thread.i: tests/test_thread.cpp.i
-
-.PHONY : tests/test_thread.i
-
-# target to preprocess a source file
-tests/test_thread.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/tests/test_thread.cpp.i
-.PHONY : tests/test_thread.cpp.i
-
-tests/test_thread.s: tests/test_thread.cpp.s
-
-.PHONY : tests/test_thread.s
-
-# target to generate assembly for a file
-tests/test_thread.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/tests/test_thread.cpp.s
-.PHONY : tests/test_thread.cpp.s
-
-tests/testfiber.o: tests/testfiber.cpp.o
-
-.PHONY : tests/testfiber.o
-
-# target to build an object file
-tests/testfiber.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testfiber.dir/build.make CMakeFiles/testfiber.dir/tests/testfiber.cpp.o
-.PHONY : tests/testfiber.cpp.o
-
-tests/testfiber.i: tests/testfiber.cpp.i
-
-.PHONY : tests/testfiber.i
-
-# target to preprocess a source file
-tests/testfiber.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testfiber.dir/build.make CMakeFiles/testfiber.dir/tests/testfiber.cpp.i
-.PHONY : tests/testfiber.cpp.i
-
-tests/testfiber.s: tests/testfiber.cpp.s
-
-.PHONY : tests/testfiber.s
-
-# target to generate assembly for a file
-tests/testfiber.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testfiber.dir/build.make CMakeFiles/testfiber.dir/tests/testfiber.cpp.s
-.PHONY : tests/testfiber.cpp.s
 
 tests/testiomanager.o: tests/testiomanager.cpp.o
 
@@ -394,86 +208,32 @@ tests/testiomanager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/testiomanager.dir/build.make CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.s
 .PHONY : tests/testiomanager.cpp.s
 
-tests/testmutex.o: tests/testmutex.cpp.o
+tests/testtimer.o: tests/testtimer.cpp.o
 
-.PHONY : tests/testmutex.o
-
-# target to build an object file
-tests/testmutex.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testmutex.dir/build.make CMakeFiles/testmutex.dir/tests/testmutex.cpp.o
-.PHONY : tests/testmutex.cpp.o
-
-tests/testmutex.i: tests/testmutex.cpp.i
-
-.PHONY : tests/testmutex.i
-
-# target to preprocess a source file
-tests/testmutex.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testmutex.dir/build.make CMakeFiles/testmutex.dir/tests/testmutex.cpp.i
-.PHONY : tests/testmutex.cpp.i
-
-tests/testmutex.s: tests/testmutex.cpp.s
-
-.PHONY : tests/testmutex.s
-
-# target to generate assembly for a file
-tests/testmutex.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testmutex.dir/build.make CMakeFiles/testmutex.dir/tests/testmutex.cpp.s
-.PHONY : tests/testmutex.cpp.s
-
-tests/testscheduler.o: tests/testscheduler.cpp.o
-
-.PHONY : tests/testscheduler.o
+.PHONY : tests/testtimer.o
 
 # target to build an object file
-tests/testscheduler.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testscheduler.dir/build.make CMakeFiles/testscheduler.dir/tests/testscheduler.cpp.o
-.PHONY : tests/testscheduler.cpp.o
+tests/testtimer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testtimer.dir/build.make CMakeFiles/testtimer.dir/tests/testtimer.cpp.o
+.PHONY : tests/testtimer.cpp.o
 
-tests/testscheduler.i: tests/testscheduler.cpp.i
+tests/testtimer.i: tests/testtimer.cpp.i
 
-.PHONY : tests/testscheduler.i
-
-# target to preprocess a source file
-tests/testscheduler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testscheduler.dir/build.make CMakeFiles/testscheduler.dir/tests/testscheduler.cpp.i
-.PHONY : tests/testscheduler.cpp.i
-
-tests/testscheduler.s: tests/testscheduler.cpp.s
-
-.PHONY : tests/testscheduler.s
-
-# target to generate assembly for a file
-tests/testscheduler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testscheduler.dir/build.make CMakeFiles/testscheduler.dir/tests/testscheduler.cpp.s
-.PHONY : tests/testscheduler.cpp.s
-
-tests/testutil.o: tests/testutil.cpp.o
-
-.PHONY : tests/testutil.o
-
-# target to build an object file
-tests/testutil.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutil.dir/build.make CMakeFiles/testutil.dir/tests/testutil.cpp.o
-.PHONY : tests/testutil.cpp.o
-
-tests/testutil.i: tests/testutil.cpp.i
-
-.PHONY : tests/testutil.i
+.PHONY : tests/testtimer.i
 
 # target to preprocess a source file
-tests/testutil.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutil.dir/build.make CMakeFiles/testutil.dir/tests/testutil.cpp.i
-.PHONY : tests/testutil.cpp.i
+tests/testtimer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testtimer.dir/build.make CMakeFiles/testtimer.dir/tests/testtimer.cpp.i
+.PHONY : tests/testtimer.cpp.i
 
-tests/testutil.s: tests/testutil.cpp.s
+tests/testtimer.s: tests/testtimer.cpp.s
 
-.PHONY : tests/testutil.s
+.PHONY : tests/testtimer.s
 
 # target to generate assembly for a file
-tests/testutil.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testutil.dir/build.make CMakeFiles/testutil.dir/tests/testutil.cpp.s
-.PHONY : tests/testutil.cpp.s
+tests/testtimer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testtimer.dir/build.make CMakeFiles/testtimer.dir/tests/testtimer.cpp.s
+.PHONY : tests/testtimer.cpp.s
 
 yxtwebcpp/config.o: yxtwebcpp/config.cpp.o
 
@@ -715,6 +475,36 @@ yxtwebcpp/thread.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/thread.cpp.s
 .PHONY : yxtwebcpp/thread.cpp.s
 
+yxtwebcpp/timer.o: yxtwebcpp/timer.cpp.o
+
+.PHONY : yxtwebcpp/timer.o
+
+# target to build an object file
+yxtwebcpp/timer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/timer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/timer.cpp.o
+.PHONY : yxtwebcpp/timer.cpp.o
+
+yxtwebcpp/timer.i: yxtwebcpp/timer.cpp.i
+
+.PHONY : yxtwebcpp/timer.i
+
+# target to preprocess a source file
+yxtwebcpp/timer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/timer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/timer.cpp.i
+.PHONY : yxtwebcpp/timer.cpp.i
+
+yxtwebcpp/timer.s: yxtwebcpp/timer.cpp.s
+
+.PHONY : yxtwebcpp/timer.s
+
+# target to generate assembly for a file
+yxtwebcpp/timer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/timer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/timer.cpp.s
+.PHONY : yxtwebcpp/timer.cpp.s
+
 yxtwebcpp/util.o: yxtwebcpp/util.cpp.o
 
 .PHONY : yxtwebcpp/util.o
@@ -753,40 +543,16 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test"
-	@echo "... test_config_log"
-	@echo "... test_thread"
-	@echo "... testfiber"
 	@echo "... testiomanager"
-	@echo "... testmutex"
-	@echo "... testscheduler"
-	@echo "... testutil"
+	@echo "... testtimer"
 	@echo "... yxtwebcpp"
 	@echo "... yxtwebcpp_static"
-	@echo "... tests/test.o"
-	@echo "... tests/test.i"
-	@echo "... tests/test.s"
-	@echo "... tests/test_config_log.o"
-	@echo "... tests/test_config_log.i"
-	@echo "... tests/test_config_log.s"
-	@echo "... tests/test_thread.o"
-	@echo "... tests/test_thread.i"
-	@echo "... tests/test_thread.s"
-	@echo "... tests/testfiber.o"
-	@echo "... tests/testfiber.i"
-	@echo "... tests/testfiber.s"
 	@echo "... tests/testiomanager.o"
 	@echo "... tests/testiomanager.i"
 	@echo "... tests/testiomanager.s"
-	@echo "... tests/testmutex.o"
-	@echo "... tests/testmutex.i"
-	@echo "... tests/testmutex.s"
-	@echo "... tests/testscheduler.o"
-	@echo "... tests/testscheduler.i"
-	@echo "... tests/testscheduler.s"
-	@echo "... tests/testutil.o"
-	@echo "... tests/testutil.i"
-	@echo "... tests/testutil.s"
+	@echo "... tests/testtimer.o"
+	@echo "... tests/testtimer.i"
+	@echo "... tests/testtimer.s"
 	@echo "... yxtwebcpp/config.o"
 	@echo "... yxtwebcpp/config.i"
 	@echo "... yxtwebcpp/config.s"
@@ -811,6 +577,9 @@ help:
 	@echo "... yxtwebcpp/thread.o"
 	@echo "... yxtwebcpp/thread.i"
 	@echo "... yxtwebcpp/thread.s"
+	@echo "... yxtwebcpp/timer.o"
+	@echo "... yxtwebcpp/timer.i"
+	@echo "... yxtwebcpp/timer.s"
 	@echo "... yxtwebcpp/util.o"
 	@echo "... yxtwebcpp/util.i"
 	@echo "... yxtwebcpp/util.s"

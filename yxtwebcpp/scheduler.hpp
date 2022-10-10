@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-06 11:36:43
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-09 13:09:52
+ * @LastEditTime: 2022-10-10 15:29:16
  * @FilePath: /yxtweb-cpp/yxtwebcpp/scheduler.hpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -43,10 +43,24 @@ public:
             tickle();
         }
     }
-
+    
+    template<class InputIterator>
+    void schedule(InputIterator begin, InputIterator end) {
+        bool need_tickle = false;
+        {
+            ScopedLockImpl<Mutex> guard(m_mutex);
+            while (begin != end) {
+                need_tickle |= scheduleNoLock(*begin);
+                ++begin;
+            }
+        }
+        if (need_tickle) {
+            tickle();
+        }
+    }
 private:
     template <class FiberOrCb>
-    bool scheduleNoLock(FiberOrCb fc, int thread) {
+    bool scheduleNoLock(FiberOrCb fc, int thread = -1) {
         bool need_tickle = m_fibers.empty();
         FiberAndThread ft(fc, thread);
         if (ft.fiber || ft.cb) {

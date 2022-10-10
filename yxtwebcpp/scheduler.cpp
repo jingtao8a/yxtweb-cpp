@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-06 11:36:33
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-09 14:39:29
+ * @LastEditTime: 2022-10-10 15:54:18
  * @FilePath: /yxtweb-cpp/yxtwebcpp/scheduler.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -124,7 +124,6 @@ void Scheduler::run() {
         if (idle_fiber->getState() == Fiber::TERM) {
             break;
         }
-        YXTWebCpp_LOG_DEBUG(g_logger) << "toloop";
         ++m_idleThreadCount;
         idle_fiber->swapIn();//切换为空闲协程
         --m_idleThreadCount;

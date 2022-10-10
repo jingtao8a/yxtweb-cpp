@@ -12,6 +12,7 @@ CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.o: ../yxtwebcpp/nocopyable.
 CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.o: ../yxtwebcpp/scheduler.hpp
 CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.o: ../yxtwebcpp/singleton.hpp
 CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.o: ../yxtwebcpp/thread.hpp
+CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.o: ../yxtwebcpp/timer.hpp
 CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.o: ../yxtwebcpp/util.hpp
 CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.o: ../yxtwebcpp/yxtwebcpp.hpp
 

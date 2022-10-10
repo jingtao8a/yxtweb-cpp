@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-08 13:33:14
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-09 14:40:54
+ * @LastEditTime: 2022-10-10 15:53:55
  * @FilePath: /yxtweb-cpp/yxtwebcpp/iomanager.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -218,7 +218,8 @@ void IOManager::tickle() {
 }
 
 bool IOManager::stopping() {
-    return Scheduler::stopping() && m_pendingEventCount == 0;
+    uint64_t time_out = 0;
+    return stopping(time_out);
 }
 
 void IOManager::idle() {
@@ -229,18 +230,32 @@ void IOManager::idle() {
         delete[] ev;
     });//自定义删除器
     
-    while (!stopping()) {
+    while (true) {
+        uint64_t next_timeout = 0;
+        if (stopping(next_timeout)) {
+            break;
+        }
         int rt = 0;
         do {
-            static const int MAX_TIMEOUT = 5000;
+            static const int MAX_TIMEOUT = 3000;
+            if (next_timeout != ~0uLL) {//有定时器的情况
+                next_timeout = (int)next_timeout < MAX_TIMEOUT ? next_timeout : MAX_TIMEOUT;
+            } else {//没有定时器的情况
+                next_timeout = MAX_TIMEOUT;
+            }
             rt = epoll_wait(m_epfd, events, MAX_EVENTS, MAX_TIMEOUT);//最多只阻塞等5sec
             if (rt < 0 && errno == EINTR) {
-
             } else {
                 break;
             }
         } while (true);
-    
+        
+        std::vector<std::function<void()> > cbs;
+        listExpiredCb(cbs);
+        if (!cbs.empty()) {
+            schedule(cbs.begin(), cbs.end());
+            cbs.clear();
+        }
 
         for (int i = 0; i < rt; ++i) {
             epoll_event& event = events[i];
@@ -283,9 +298,12 @@ void IOManager::idle() {
                 }
             }
         }
-        YXTWebCpp_LOG_DEBUG(g_logger) << "loop";
         Fiber::YieldToHold();
     }
+}
+
+void IOManager::onTimerInsertedAtFront() {
+    tickle();
 }
 
 void IOManager::contextResize(size_t size) {
@@ -297,6 +315,14 @@ void IOManager::contextResize(size_t size) {
         }
     }
 }
+
+bool IOManager::stopping(uint64_t& timeout) {
+    timeout = getNextTimer();
+    return timeout == ~0uLL
+        && m_pendingEventCount == 0//监听事件数为0
+        && Scheduler::stopping();
+}
+
 
 //静态成员函数
 IOManager* IOManager::GetThis() {

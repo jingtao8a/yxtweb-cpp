@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-09-29 15:24:58
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-09 18:52:00
+ * @LastEditTime: 2022-10-10 15:19:32
  * @FilePath: /yxtweb-cpp/yxtwebcpp/util.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -55,13 +55,13 @@ std::string  BacktraceToString(size_t size, size_t skip, const std::string& pref
 uint64_t GetCurrentMS() {//毫秒
     struct timeval tv;
     gettimeofday(&tv, NULL);
-    return tv.tv_sec * 1000uL + tv.tv_usec / 1000;
+    return tv.tv_sec * 1000uLL + tv.tv_usec / 1000;
 }
 
 uint64_t GetCurrentUS() {//微秒
     struct timeval tv;
     gettimeofday(&tv, NULL);
-    return tv.tv_sec * 1000 * 1000uL + tv.tv_usec;
+    return tv.tv_sec * 1000 * 1000uLL + tv.tv_usec;
 }
 
 }

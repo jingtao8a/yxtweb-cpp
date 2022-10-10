@@ -2,17 +2,18 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-08 13:33:06
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-09 12:59:31
+ * @LastEditTime: 2022-10-10 15:06:19
  * @FilePath: /yxtweb-cpp/yxtwebcpp/iomanager.hpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 #ifndef _IOMANAGER_HPP_
 #define _IOMANAGER_HPP_
 #include "scheduler.hpp"
+#include "timer.hpp"
 
 namespace YXTWebCpp {
 
-class IOManager : public Scheduler {
+class IOManager : public Scheduler, public TimerManager {
 public:
     enum Event {
         NONE = 0x0,
@@ -56,7 +57,11 @@ protected:
     void tickle() override;
     bool stopping() override;
     void idle() override;
+    void onTimerInsertedAtFront() override;
+
+private:
     void contextResize(size_t size);
+    bool stopping(uint64_t& timeout);
 
 private:
     int m_epfd = 0;//epoll句柄

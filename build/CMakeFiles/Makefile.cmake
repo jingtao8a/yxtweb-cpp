@@ -45,14 +45,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/testscheduler.dir/DependInfo.cmake"
-  "CMakeFiles/testfiber.dir/DependInfo.cmake"
+  "CMakeFiles/testtimer.dir/DependInfo.cmake"
   "CMakeFiles/testiomanager.dir/DependInfo.cmake"
-  "CMakeFiles/test_config_log.dir/DependInfo.cmake"
-  "CMakeFiles/testmutex.dir/DependInfo.cmake"
-  "CMakeFiles/testutil.dir/DependInfo.cmake"
-  "CMakeFiles/test_thread.dir/DependInfo.cmake"
-  "CMakeFiles/test.dir/DependInfo.cmake"
   "CMakeFiles/yxtwebcpp_static.dir/DependInfo.cmake"
   "CMakeFiles/yxtwebcpp.dir/DependInfo.cmake"
   )
