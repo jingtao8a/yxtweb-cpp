@@ -2,13 +2,14 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-06 11:36:33
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-10 20:09:16
+ * @LastEditTime: 2022-10-11 13:38:08
  * @FilePath: /yxtweb-cpp/yxtwebcpp/scheduler.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 #include "scheduler.hpp"
 #include "log.hpp"
 #include "macro.hpp"
+#include "hook.hpp"
 #include <iostream>
 
 namespace YXTWebCpp {
@@ -85,6 +86,7 @@ void Scheduler::run() {
     if (GetThreadId() != m_rootThreadID) {
         t_scheduler_fiber = Fiber::GetThis().get();
     }
+    set_hook_enable(true);
     std::shared_ptr<Fiber> idle_fiber(new Fiber(std::bind(&Scheduler::idle, this)));//空闲协程块
     //以下两个变量用于取协程队列中的任务
     std::shared_ptr<Fiber> cb_fiber;

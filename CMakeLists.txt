@@ -15,6 +15,7 @@ set(LIB_SRC
     yxtwebcpp/scheduler.cpp
     yxtwebcpp/iomanager.cpp
     yxtwebcpp/timer.cpp
+    yxtwebcpp/hook.cpp
 )
 
 add_library(yxtwebcpp SHARED ${LIB_SRC})
@@ -22,7 +23,8 @@ add_library(yxtwebcpp_static STATIC ${LIB_SRC})
 set_target_properties(yxtwebcpp_static PROPERTIES OUTPUT_NAME "yxtwebcpp")
 
 set(LIB_LIB 
-    yxtwebcpp 
+    yxtwebcpp
+    dl 
     pthread 
     yaml-cpp)
 
@@ -61,6 +63,10 @@ add_dependencies(testiomanager yxtwebcpp)
 add_executable(testtimer tests/testtimer.cpp)
 target_link_libraries(testtimer ${LIB_LIB})
 add_dependencies(testtimer yxtwebcpp)
+
+add_executable(testhook tests/testhook.cpp)
+target_link_libraries(testhook ${LIB_LIB})
+add_dependencies(testhook yxtwebcpp)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

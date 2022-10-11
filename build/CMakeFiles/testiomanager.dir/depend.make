@@ -4,6 +4,7 @@
 CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.o: ../tests/testiomanager.cpp
 CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.o: ../yxtwebcpp/config.hpp
 CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.o: ../yxtwebcpp/fiber.hpp
+CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.o: ../yxtwebcpp/hook.hpp
 CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.o: ../yxtwebcpp/iomanager.hpp
 CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.o: ../yxtwebcpp/macro.hpp

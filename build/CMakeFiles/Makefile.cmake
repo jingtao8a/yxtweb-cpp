@@ -47,6 +47,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/testtimer.dir/DependInfo.cmake"
   "CMakeFiles/testiomanager.dir/DependInfo.cmake"
+  "CMakeFiles/testhook.dir/DependInfo.cmake"
   "CMakeFiles/yxtwebcpp_static.dir/DependInfo.cmake"
   "CMakeFiles/yxtwebcpp.dir/DependInfo.cmake"
   )

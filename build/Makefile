@@ -156,6 +156,19 @@ testiomanager/fast:
 .PHONY : testiomanager/fast
 
 #=============================================================================
+# Target rules for targets named testhook
+
+# Build rule for target.
+testhook: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testhook
+.PHONY : testhook
+
+# fast build rule for target.
+testhook/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testhook.dir/build.make CMakeFiles/testhook.dir/build
+.PHONY : testhook/fast
+
+#=============================================================================
 # Target rules for targets named yxtwebcpp_static
 
 # Build rule for target.
@@ -180,6 +193,33 @@ yxtwebcpp: cmake_check_build_system
 yxtwebcpp/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/build
 .PHONY : yxtwebcpp/fast
+
+tests/testhook.o: tests/testhook.cpp.o
+
+.PHONY : tests/testhook.o
+
+# target to build an object file
+tests/testhook.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testhook.dir/build.make CMakeFiles/testhook.dir/tests/testhook.cpp.o
+.PHONY : tests/testhook.cpp.o
+
+tests/testhook.i: tests/testhook.cpp.i
+
+.PHONY : tests/testhook.i
+
+# target to preprocess a source file
+tests/testhook.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testhook.dir/build.make CMakeFiles/testhook.dir/tests/testhook.cpp.i
+.PHONY : tests/testhook.cpp.i
+
+tests/testhook.s: tests/testhook.cpp.s
+
+.PHONY : tests/testhook.s
+
+# target to generate assembly for a file
+tests/testhook.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testhook.dir/build.make CMakeFiles/testhook.dir/tests/testhook.cpp.s
+.PHONY : tests/testhook.cpp.s
 
 tests/testiomanager.o: tests/testiomanager.cpp.o
 
@@ -324,6 +364,36 @@ yxtwebcpp/fiber.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fiber.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.s
 .PHONY : yxtwebcpp/fiber.cpp.s
+
+yxtwebcpp/hook.o: yxtwebcpp/hook.cpp.o
+
+.PHONY : yxtwebcpp/hook.o
+
+# target to build an object file
+yxtwebcpp/hook.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/hook.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/hook.cpp.o
+.PHONY : yxtwebcpp/hook.cpp.o
+
+yxtwebcpp/hook.i: yxtwebcpp/hook.cpp.i
+
+.PHONY : yxtwebcpp/hook.i
+
+# target to preprocess a source file
+yxtwebcpp/hook.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/hook.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/hook.cpp.i
+.PHONY : yxtwebcpp/hook.cpp.i
+
+yxtwebcpp/hook.s: yxtwebcpp/hook.cpp.s
+
+.PHONY : yxtwebcpp/hook.s
+
+# target to generate assembly for a file
+yxtwebcpp/hook.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/hook.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/hook.cpp.s
+.PHONY : yxtwebcpp/hook.cpp.s
 
 yxtwebcpp/iomanager.o: yxtwebcpp/iomanager.cpp.o
 
@@ -543,10 +613,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... testhook"
 	@echo "... testiomanager"
 	@echo "... testtimer"
 	@echo "... yxtwebcpp"
 	@echo "... yxtwebcpp_static"
+	@echo "... tests/testhook.o"
+	@echo "... tests/testhook.i"
+	@echo "... tests/testhook.s"
 	@echo "... tests/testiomanager.o"
 	@echo "... tests/testiomanager.i"
 	@echo "... tests/testiomanager.s"
@@ -562,6 +636,9 @@ help:
 	@echo "... yxtwebcpp/fiber.o"
 	@echo "... yxtwebcpp/fiber.i"
 	@echo "... yxtwebcpp/fiber.s"
+	@echo "... yxtwebcpp/hook.o"
+	@echo "... yxtwebcpp/hook.i"
+	@echo "... yxtwebcpp/hook.s"
 	@echo "... yxtwebcpp/iomanager.o"
 	@echo "... yxtwebcpp/iomanager.i"
 	@echo "... yxtwebcpp/iomanager.s"

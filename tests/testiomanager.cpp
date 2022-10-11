@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-09 12:57:35
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-09 15:03:54
+ * @LastEditTime: 2022-10-11 11:40:43
  * @FilePath: /yxtweb-cpp/tests/testiomanager.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -25,7 +25,7 @@ void test() {
     sockaddr_in addr;
     addr.sin_family = AF_INET;
     addr.sin_port = 80;
-    addr.sin_addr.s_addr = inet_addr("14.215.177.39");
+    addr.sin_addr.s_addr = inet_addr("14.215.177.38");
     YXTWebCpp_LOG_INFO(g_logger) << "connecting ....";
     connect(sockfd, (sockaddr *)&addr, sizeof(sockaddr));
     YXTWebCpp_LOG_INFO(g_logger) << "connect success";
@@ -34,9 +34,11 @@ void test() {
         close(sockfd);
     });
 }
+
 void test1() {
-    YXTWebCpp::IOManager ioManager(1, false, "test");
-    ioManager.schedule(test);
+    YXTWebCpp::IOManager ioManager(1, true, "test");
+    // ioManager.schedule(test);
+    test();
 }
 
 int main() {

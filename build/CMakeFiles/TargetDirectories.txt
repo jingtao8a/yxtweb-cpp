@@ -2,5 +2,6 @@
 /home/yuxintao/yxtweb-cpp/build/CMakeFiles/testtimer.dir
 /home/yuxintao/yxtweb-cpp/build/CMakeFiles/testiomanager.dir
 /home/yuxintao/yxtweb-cpp/build/CMakeFiles/rebuild_cache.dir
+/home/yuxintao/yxtweb-cpp/build/CMakeFiles/testhook.dir
 /home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp_static.dir
 /home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir
