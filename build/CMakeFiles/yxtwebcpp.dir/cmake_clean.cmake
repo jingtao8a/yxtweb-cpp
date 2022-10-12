@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "../lib/libyxtwebcpp.so"
   "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/config.cpp.o"
   "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/env.cpp.o"
+  "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fd_manager.cpp.o"
   "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.o"
   "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/hook.cpp.o"
   "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.o"

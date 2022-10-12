@@ -9,6 +9,22 @@
 /home/yuxintao/yxtweb-cpp/tests/testhook.cpp
 ../yxtwebcpp/yxtwebcpp.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/yxtwebcpp.hpp
+sys/types.h
+-
+sys/socket.h
+-
+fcntl.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+stdlib.h
+-
+unistd.h
+-
+stdio.h
+-
 
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/config.hpp
 algorithm
@@ -40,6 +56,18 @@ ucontext.h
 
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/hook.hpp
 unistd.h
+-
+time.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+sys/uio.h
+-
+fcntl.h
+-
+sys/ioctl.h
 -
 
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.hpp

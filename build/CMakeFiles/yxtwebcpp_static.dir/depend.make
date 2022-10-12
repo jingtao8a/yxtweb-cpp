@@ -21,6 +21,13 @@ CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/env.cpp.o: ../yxtwebcpp/singleton.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/env.cpp.o: ../yxtwebcpp/thread.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/env.cpp.o: ../yxtwebcpp/util.hpp
 
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fd_manager.cpp.o: ../yxtwebcpp/fd_manager.cpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fd_manager.cpp.o: ../yxtwebcpp/fd_manager.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fd_manager.cpp.o: ../yxtwebcpp/hook.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fd_manager.cpp.o: ../yxtwebcpp/mutex.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fd_manager.cpp.o: ../yxtwebcpp/nocopyable.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fd_manager.cpp.o: ../yxtwebcpp/singleton.hpp
+
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/config.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/fiber.cpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/fiber.hpp
@@ -33,15 +40,20 @@ CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/singleton.hp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/thread.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fiber.cpp.o: ../yxtwebcpp/util.hpp
 
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/hook.cpp.o: ../yxtwebcpp/config.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/hook.cpp.o: ../yxtwebcpp/fd_manager.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/hook.cpp.o: ../yxtwebcpp/fiber.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/hook.cpp.o: ../yxtwebcpp/hook.cpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/hook.cpp.o: ../yxtwebcpp/hook.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/hook.cpp.o: ../yxtwebcpp/iomanager.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/hook.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/hook.cpp.o: ../yxtwebcpp/mutex.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/hook.cpp.o: ../yxtwebcpp/nocopyable.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/hook.cpp.o: ../yxtwebcpp/scheduler.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/hook.cpp.o: ../yxtwebcpp/singleton.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/hook.cpp.o: ../yxtwebcpp/thread.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/hook.cpp.o: ../yxtwebcpp/timer.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/hook.cpp.o: ../yxtwebcpp/util.hpp
 
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/iomanager.cpp.o: ../yxtwebcpp/fiber.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/iomanager.cpp.o: ../yxtwebcpp/iomanager.cpp

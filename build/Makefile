@@ -335,6 +335,36 @@ yxtwebcpp/env.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/env.cpp.s
 .PHONY : yxtwebcpp/env.cpp.s
 
+yxtwebcpp/fd_manager.o: yxtwebcpp/fd_manager.cpp.o
+
+.PHONY : yxtwebcpp/fd_manager.o
+
+# target to build an object file
+yxtwebcpp/fd_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fd_manager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fd_manager.cpp.o
+.PHONY : yxtwebcpp/fd_manager.cpp.o
+
+yxtwebcpp/fd_manager.i: yxtwebcpp/fd_manager.cpp.i
+
+.PHONY : yxtwebcpp/fd_manager.i
+
+# target to preprocess a source file
+yxtwebcpp/fd_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fd_manager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fd_manager.cpp.i
+.PHONY : yxtwebcpp/fd_manager.cpp.i
+
+yxtwebcpp/fd_manager.s: yxtwebcpp/fd_manager.cpp.s
+
+.PHONY : yxtwebcpp/fd_manager.s
+
+# target to generate assembly for a file
+yxtwebcpp/fd_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fd_manager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fd_manager.cpp.s
+.PHONY : yxtwebcpp/fd_manager.cpp.s
+
 yxtwebcpp/fiber.o: yxtwebcpp/fiber.cpp.o
 
 .PHONY : yxtwebcpp/fiber.o
@@ -633,6 +663,9 @@ help:
 	@echo "... yxtwebcpp/env.o"
 	@echo "... yxtwebcpp/env.i"
 	@echo "... yxtwebcpp/env.s"
+	@echo "... yxtwebcpp/fd_manager.o"
+	@echo "... yxtwebcpp/fd_manager.i"
+	@echo "... yxtwebcpp/fd_manager.s"
 	@echo "... yxtwebcpp/fiber.o"
 	@echo "... yxtwebcpp/fiber.i"
 	@echo "... yxtwebcpp/fiber.s"

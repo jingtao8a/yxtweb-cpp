@@ -16,6 +16,7 @@ set(LIB_SRC
     yxtwebcpp/iomanager.cpp
     yxtwebcpp/timer.cpp
     yxtwebcpp/hook.cpp
+    yxtwebcpp/fd_manager.cpp
 )
 
 add_library(yxtwebcpp SHARED ${LIB_SRC})

@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-08 13:33:14
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-10 20:29:32
+ * @LastEditTime: 2022-10-12 21:43:14
  * @FilePath: /yxtweb-cpp/yxtwebcpp/iomanager.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -116,7 +116,7 @@ int IOManager::addEvent(int fd, Event event, std::function<void()> cb) {
     if (cb) {
         eventContext.cb.swap(cb);
     } else {
-        //never reach
+        //如果加事件的时候没有带function参数，将设置该事件的fiber为本协程的fiber
         eventContext.fiber = Fiber::GetThis();
         YXTWebCpp_ASSERT2(eventContext.fiber->getState() == Fiber::EXEC, "state = " << eventContext.fiber->getState());
     }
