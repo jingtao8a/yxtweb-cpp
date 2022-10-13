@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-08 13:33:14
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-13 15:01:20
+ * @LastEditTime: 2022-10-13 20:13:13
  * @FilePath: /yxtweb-cpp/yxtwebcpp/iomanager.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -51,7 +51,7 @@ IOManager::IOManager(size_t threads, bool use_caller, const std::string& name)
     : Scheduler(threads, use_caller, name) {
     m_epfd = epoll_create(1);//创建epoll句柄
     YXTWebCpp_ASSERT(m_epfd > 0);
-    
+
     int rt = pipe(m_tickleFds);//打开一对pipe套接字
     YXTWebCpp_ASSERT(rt == 0);
 
@@ -139,7 +139,7 @@ bool IOManager::delEvent(int fd, Event event) {
     epoll_event epevent;
     epevent.events = EPOLLET | newEvents;
     epevent.data.ptr = fdContext;
-    
+
     int rt = epoll_ctl(m_epfd, op, fd, &epevent);
     YXTWebCpp_ASSERT(!rt);
 
@@ -237,7 +237,7 @@ void IOManager::idle() {
         }
         int rt = 0;
         do {
-            static const int MAX_TIMEOUT = 3000;
+            static const int MAX_TIMEOUT = 1000;
             if (next_timeout != ~0uLL) {//有定时器的情况
                 next_timeout = next_timeout < (uint64_t)MAX_TIMEOUT ? next_timeout : MAX_TIMEOUT;
             } else {//没有定时器的情况
@@ -253,7 +253,10 @@ void IOManager::idle() {
         std::vector<std::function<void()> > cbs;
         listExpiredCb(cbs);
         if (!cbs.empty()) {
-            schedule(cbs.begin(), cbs.end());
+            // schedule<std::vector<std::function<void()> >::iterator >(cbs.begin(), cbs.end());
+            for (auto cb : cbs) {
+                schedule(cb);
+            }
             cbs.clear();
         }
 

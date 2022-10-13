@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-09-17 16:37:43
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-13 14:46:16
+ * @LastEditTime: 2022-10-13 20:08:25
  * @FilePath: /YXTWebCpp/tests/test.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -44,6 +44,30 @@ public:
     }
 };
 
+struct Node{ 
+    int m_a;
+    int m_b;
+    Node(int a, int b):m_a(a), m_b(b) {}
+    struct compartor {
+        bool operator()(const std::shared_ptr<Node>& lhs, const std::shared_ptr<Node>& rhs) {
+            if (lhs->m_a < rhs->m_a) {
+                return true;
+            } else if (lhs->m_a > rhs->m_a) {
+                return false;
+            } else {
+                if (lhs->m_b < rhs->m_b) {
+                    return true;
+                } else if (lhs->m_b > rhs->m_b) {
+                    return false;
+                } else {
+                    return lhs.get() < rhs.get();
+                }
+            }
+        }
+    };
+};
+
+
 int main() {
     // std::shared_ptr<YXTWebCpp::Logger> logger(new YXTWebCpp::Logger());
     // std::shared_ptr<YXTWebCpp::FileLogAppender> fileLogAppender(new YXTWebCpp::FileLogAppender("./logtxt.txt"));
@@ -56,8 +80,16 @@ int main() {
     // t.join();
     // Base* obj = new Son;
     // obj->Base::fun1();
-    std::set<int> rbtree{1, 23, 43};
-    auto it = rbtree.find(3);
-    rbtree.erase(it);
+    // std::set<int> rbtree{1, 23, 43};
+    // auto it = rbtree.find(3);
+    // rbtree.erase(it);
+    std::set<std::shared_ptr<Node>, Node::compartor> heap;
+    heap.insert(std::make_shared<Node>(1, 2));
+    heap.insert(std::make_shared<Node>(1, 5));
+    heap.insert(std::make_shared<Node>(3, 4));
+    auto ptr = std::make_shared<Node>(1, 4);
+
+    auto iter = heap.lower_bound(ptr);
+    std::cout << (*iter)->m_a << (*iter)->m_b;
     return 0;
 }

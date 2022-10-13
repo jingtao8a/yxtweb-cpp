@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-09 15:36:35
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-13 14:44:02
+ * @LastEditTime: 2022-10-13 20:13:29
  * @FilePath: /yxtweb-cpp/yxtwebcpp/timer.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -156,14 +156,14 @@ void TimerManager::listExpiredCb(std::vector<std::function<void()> >& cbs) {
         return;
     }
 
-    std::shared_ptr<Timer> now_timer(new Timer(now_ms, nullptr, false, nullptr));
+    std::shared_ptr<Timer> now_timer(new Timer(0, nullptr, false, nullptr));
+    now_timer->m_next = now_ms;
     auto it = m_timers.lower_bound(now_timer);
     while (it != m_timers.end() && (*it)->m_next == now_ms) {
         ++it;
     }
     expiredTimers.insert(expiredTimers.begin(), m_timers.begin(), it);
     m_timers.erase(m_timers.begin(), it);
-
     cbs.reserve(expiredTimers.size());//只修改vector的capacity
     for (auto& timer : expiredTimers) {
         cbs.push_back(timer->m_cb);
