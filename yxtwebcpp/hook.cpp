@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-11 11:00:19
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-12 21:50:40
+ * @LastEditTime: 2022-10-13 15:17:43
  * @FilePath: /yxtweb-cpp/yxtwebcpp/hook.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -82,6 +82,7 @@ struct TimerInfo {
     int cancelled = 0;
 };
 
+//IO操作
 template<typename OriginFun, typename ... Args>
 static ssize_t do_io(int fd, OriginFun fun, const char* hook_fun_name, 
             uint32_t event, int timeout_so, Args&& ...args) {
@@ -92,34 +93,30 @@ static ssize_t do_io(int fd, OriginFun fun, const char* hook_fun_name,
     if (!fdContext) {//该fd没有被FdManager管辖
         return fun(fd, std::forward<Args>(args)...);
     }
-
     if (fdContext->isClose()) {//fd关闭了
         errno = EBADF;//bad file number
         return -1;
     }
-
     if (!fdContext->isSocket()) {//不是socket fd
-        //一般不会进入
         return fun(fd, std::forward<Args>(args)...);
     }
 
     while (true) {
         uint64_t timeOut = fdContext->getTimeout(timeout_so);//获得该fd设置的超时时间
         std::shared_ptr<TimerInfo> sharedTimerInfo(new TimerInfo);
-        
         size_t n = fun(fd, std::forward<Args>(args)...);
         while (n == -1 && errno == EINTR) {//io被中断
             n = fun(fd, std::forward<Args>(args)...);
         }
+        
         YXTWebCpp::IOManager* iom = YXTWebCpp::IOManager::GetThis();
         std::shared_ptr<YXTWebCpp::Timer> timer;
-
-        if (n == -1 && errno == EAGAIN) {//try again
+        if (n == -1 && errno == EAGAIN) {//try again,非阻塞流的读写发生缓冲区满或者缓冲区空,需要再稍等一会再进行IO操作
             std::weak_ptr<TimerInfo> weakTimerInfo(sharedTimerInfo);
             if (timeOut != (uint64_t)-1) {//如果设置了fd的超时时间
                 timer = iom->addConditionTimer(timeOut, [weakTimerInfo, fd, iom, event]() {//添加条件定时器
                     auto tmpSharedTimerInfo = weakTimerInfo.lock();
-                    if (!tmpSharedTimerInfo || tmpSharedTimerInfo->cancelled) {
+                    if (!tmpSharedTimerInfo) {
                         return;
                     }
                     tmpSharedTimerInfo->cancelled = ETIMEDOUT;//连接超时110
@@ -136,12 +133,11 @@ static ssize_t do_io(int fd, OriginFun fun, const char* hook_fun_name,
                 }
             } else {//添加事件成功
                 YXTWebCpp::Fiber::YieldToHold();
-                if (timer) {
-                    timer->cancel();
-                }
                 if (sharedTimerInfo->cancelled) {//如果sharedTimerInfo->cancelled有信息，那么说明超时定时器已经触发了
                     errno = sharedTimerInfo->cancelled;
                     return -1;
+                } else if (timer) {//IO事件被唤醒，还未超时取消条件定时器
+                    timer->cancel();
                 }
             }
         } else {
@@ -207,18 +203,17 @@ int socket(int domain, int type, int protocol) {
     }
     return fd;
 }
-
+//三次握手的时候，限定TCP连接超时时间
 int connect_with_timeout(int sockfd, const struct sockaddr *addr, socklen_t addrlen, uint64_t s_connect_timeout) {
     if (!YXTWebCpp::t_hook_enable) {
+        YXTWebCpp_LOG_DEBUG(g_logger) << "begin";
         return connect_f(sockfd, addr, addrlen);
     }
+
     auto context = YXTWebCpp::FdMgr::GetInstance()->get(sockfd);
-    if (!context || !context->isClose()) {
-        errno = EBADF;
+    if (!context || context->isClose() || !context->isSocket()) {
+        errno = EBADF;//bad fd
         return -1;
-    }
-    if (!context->isSocket()) {
-        return connect_f(sockfd, addr, addrlen);
     }
 
     if (context->getUserNonblock()) {
@@ -227,7 +222,7 @@ int connect_with_timeout(int sockfd, const struct sockaddr *addr, socklen_t addr
 
     int n = connect_f(sockfd, addr, addrlen);
     if (n == 0) {
-        return 0;
+        return 0;//连接成功
     } else if (n != -1 || errno != EINPROGRESS) {
         return n;
     }
@@ -240,10 +235,10 @@ int connect_with_timeout(int sockfd, const struct sockaddr *addr, socklen_t addr
     if(s_connect_timeout != (uint64_t)-1) {
         timer = iom->addConditionTimer(s_connect_timeout, [weakTimerInfo, sockfd, iom]() {
                 auto tmpSharedTimerInfo = weakTimerInfo.lock();
-                if(!tmpSharedTimerInfo || tmpSharedTimerInfo->cancelled) {
+                if(!tmpSharedTimerInfo) {
                     return;
                 }
-                tmpSharedTimerInfo->cancelled = ETIMEDOUT;
+                tmpSharedTimerInfo->cancelled = ETIMEDOUT;//110 连接超时
                 iom->cancelEvent(sockfd, YXTWebCpp::IOManager::WRITE);
         }, weakTimerInfo);
     }
@@ -251,12 +246,11 @@ int connect_with_timeout(int sockfd, const struct sockaddr *addr, socklen_t addr
     int rt = iom->addEvent(sockfd, YXTWebCpp::IOManager::WRITE);
     if(rt == 0) {
         YXTWebCpp::Fiber::YieldToHold();
-        if(timer) {
-            timer->cancel();
-        }
         if(sharedTimerInfo->cancelled) {//说明已经触发了条件超时定时器
             errno = sharedTimerInfo->cancelled;
             return -1;
+        } else if (timer) {
+            timer->cancel();
         }
     } else {
         if(timer) {
@@ -271,9 +265,10 @@ int connect_with_timeout(int sockfd, const struct sockaddr *addr, socklen_t addr
         return -1;
     }
     if(!error) {
-        return 0;
+        return 0;//连接成功
     } else {
         errno = error;
+        YXTWebCpp_LOG_DEBUG(g_logger) << "connect error = " << errno;
         return -1;
     }
 }

@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-11 12:50:06
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-12 21:54:00
+ * @LastEditTime: 2022-10-13 15:50:59
  * @FilePath: /yxtweb-cpp/tests/testhook.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <netdb.h>
 
 static std::shared_ptr<YXTWebCpp::Logger> g_logger = YXTWebCpp_LOG_ROOT();
 
@@ -41,22 +42,52 @@ int sockfd = 0;
 void test_socket() {
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
     sockaddr_in addr;
+    memset(&addr, 0, sizeof(addr));
     addr.sin_family = AF_INET;
-    addr.sin_port = 80;
-    addr.sin_addr.s_addr = inet_addr("14.215.177.38");
+    addr.sin_port = 7766;
+    addr.sin_addr.s_addr = inet_addr("127.0.0.1");
     YXTWebCpp_LOG_INFO(g_logger) << "connecting ....";
-    int rt = connect(sockfd, (sockaddr *)&addr, sizeof(sockaddr));
-    YXTWebCpp_LOG_INFO(g_logger) << "rt = " << rt;
-    // YXTWebCpp::IOManager::GetThis()->addEvent(sockfd, YXTWebCpp::IOManager::WRITE, []() {
-    //     YXTWebCpp_LOG_INFO(g_logger) << "write event";
-    //     close(sockfd);
-    // });
+    int rt = connect(sockfd, (sockaddr *)&addr, sizeof(addr));
+    if (rt == -1) {
+        YXTWebCpp_LOG_INFO(g_logger) << "connect rt = " << rt << " errno = " << errno;
+        return;
+    }
+    YXTWebCpp::IOManager::GetThis()->addEvent(sockfd, YXTWebCpp::IOManager::WRITE, []() {
+        YXTWebCpp_LOG_INFO(g_logger) << "write event";
+        const char data[] = "GET / HTTP/1.0\r\n\r\n";
+        auto sockfdContext = YXTWebCpp::FdMgr::GetInstance()->get(sockfd);
+        sockfdContext->setTimeout(3000, SO_SNDTIMEO);
+        sockfdContext->setTimeout(3000, SO_RCVTIMEO);
+
+        int rt = send(sockfd, data, sizeof(data), 0);
+        
+
+        if (rt <= 0) {
+            YXTWebCpp_LOG_INFO(g_logger) << "send rt=" << rt << " errno=" << errno;
+            close(sockfd);
+            return;
+        }
+
+        std::string buff;
+        buff.resize(4096);
+
+        rt = recv(sockfd, &buff[0], buff.size(), 0);
+        
+        if (rt <= 0) {
+            YXTWebCpp_LOG_INFO(g_logger) << "recv rt=" << rt << " errno=" << errno;
+            close(sockfd);
+            return;
+        }
+        
+        buff.resize(rt);
+        YXTWebCpp_LOG_INFO(g_logger) << buff;
+    });
 }
 
 int main() {
     // test_sleep();
-    //YXTWebCpp::IOManager iom;
-    //iom.schedule(test_socket);
-    test_socket();
+    YXTWebCpp::IOManager iom;
+    iom.schedule(test_socket);
+    // test_socket();
     return 0;
 }

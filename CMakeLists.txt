@@ -29,9 +29,9 @@ set(LIB_LIB
     pthread 
     yaml-cpp)
 
-# add_executable(test tests/test.cpp)
-# target_link_libraries(test ${LIB_LIB})
-# add_dependencies(test yxtwebcpp)
+add_executable(test tests/test.cpp)
+target_link_libraries(test ${LIB_LIB})
+add_dependencies(test yxtwebcpp)
 
 # add_executable(test_thread tests/test_thread.cpp)
 # target_link_libraries(test_thread ${LIB_LIB})
@@ -69,5 +69,7 @@ add_executable(testhook tests/testhook.cpp)
 target_link_libraries(testhook ${LIB_LIB})
 add_dependencies(testhook yxtwebcpp)
 
+add_executable(testA tests/testA.cpp)
+add_executable(testB tests/testB.cpp)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

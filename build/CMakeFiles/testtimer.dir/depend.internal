@@ -4,6 +4,7 @@
 CMakeFiles/testtimer.dir/tests/testtimer.cpp.o
  /home/yuxintao/yxtweb-cpp/tests/testtimer.cpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/config.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/fd_manager.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/fiber.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/hook.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.hpp

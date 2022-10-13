@@ -45,8 +45,11 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/testB.dir/DependInfo.cmake"
+  "CMakeFiles/testA.dir/DependInfo.cmake"
   "CMakeFiles/testtimer.dir/DependInfo.cmake"
   "CMakeFiles/testiomanager.dir/DependInfo.cmake"
+  "CMakeFiles/test.dir/DependInfo.cmake"
   "CMakeFiles/testhook.dir/DependInfo.cmake"
   "CMakeFiles/yxtwebcpp_static.dir/DependInfo.cmake"
   "CMakeFiles/yxtwebcpp.dir/DependInfo.cmake"

@@ -30,6 +30,14 @@ iostream
 mutex.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/mutex.hpp
 
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/fd_manager.hpp
+vector
+-
+mutex.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/mutex.hpp
+singleton.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/singleton.hpp
+
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/fiber.hpp
 memory
 -
@@ -179,4 +187,6 @@ iomanager.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.hpp
 hook.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/hook.hpp
+fd_manager.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/fd_manager.hpp
 

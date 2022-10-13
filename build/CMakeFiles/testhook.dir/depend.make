@@ -3,6 +3,7 @@
 
 CMakeFiles/testhook.dir/tests/testhook.cpp.o: ../tests/testhook.cpp
 CMakeFiles/testhook.dir/tests/testhook.cpp.o: ../yxtwebcpp/config.hpp
+CMakeFiles/testhook.dir/tests/testhook.cpp.o: ../yxtwebcpp/fd_manager.hpp
 CMakeFiles/testhook.dir/tests/testhook.cpp.o: ../yxtwebcpp/fiber.hpp
 CMakeFiles/testhook.dir/tests/testhook.cpp.o: ../yxtwebcpp/hook.hpp
 CMakeFiles/testhook.dir/tests/testhook.cpp.o: ../yxtwebcpp/iomanager.hpp

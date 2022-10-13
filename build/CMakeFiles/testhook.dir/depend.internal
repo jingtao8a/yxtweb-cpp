@@ -4,6 +4,7 @@
 CMakeFiles/testhook.dir/tests/testhook.cpp.o
  /home/yuxintao/yxtweb-cpp/tests/testhook.cpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/config.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/fd_manager.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/fiber.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/hook.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.hpp

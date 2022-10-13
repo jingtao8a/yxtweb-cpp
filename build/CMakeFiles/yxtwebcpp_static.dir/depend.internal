@@ -103,8 +103,10 @@ CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/thread.cpp.o
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/thread.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/util.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/timer.cpp.o
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/log.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/mutex.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/nocopyable.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/singleton.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/thread.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/timer.cpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/timer.hpp

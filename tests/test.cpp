@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-09-17 16:37:43
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-08 13:48:55
+ * @LastEditTime: 2022-10-13 14:46:16
  * @FilePath: /YXTWebCpp/tests/test.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -54,7 +54,10 @@ int main() {
     
     // YXTWebCpp::Thread t(thread1, "test");
     // t.join();
-    Base* obj = new Son;
-    obj->Base::fun1();
+    // Base* obj = new Son;
+    // obj->Base::fun1();
+    std::set<int> rbtree{1, 23, 43};
+    auto it = rbtree.find(3);
+    rbtree.erase(it);
     return 0;
 }

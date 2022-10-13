@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yuxintao/yxtweb-cpp/tests/testB.cpp
+sys/types.h
+-
+sys/socket.h
+-
+fcntl.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+stdlib.h
+-
+unistd.h
+-
+stdio.h
+-
+netdb.h
+-
+iostream
+-
+

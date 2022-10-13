@@ -3,6 +3,7 @@
 
 CMakeFiles/testtimer.dir/tests/testtimer.cpp.o: ../tests/testtimer.cpp
 CMakeFiles/testtimer.dir/tests/testtimer.cpp.o: ../yxtwebcpp/config.hpp
+CMakeFiles/testtimer.dir/tests/testtimer.cpp.o: ../yxtwebcpp/fd_manager.hpp
 CMakeFiles/testtimer.dir/tests/testtimer.cpp.o: ../yxtwebcpp/fiber.hpp
 CMakeFiles/testtimer.dir/tests/testtimer.cpp.o: ../yxtwebcpp/hook.hpp
 CMakeFiles/testtimer.dir/tests/testtimer.cpp.o: ../yxtwebcpp/iomanager.hpp

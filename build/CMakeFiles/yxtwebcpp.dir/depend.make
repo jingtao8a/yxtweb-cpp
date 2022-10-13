@@ -102,8 +102,10 @@ CMakeFiles/yxtwebcpp.dir/yxtwebcpp/thread.cpp.o: ../yxtwebcpp/thread.cpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/thread.cpp.o: ../yxtwebcpp/thread.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/thread.cpp.o: ../yxtwebcpp/util.hpp
 
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/timer.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/timer.cpp.o: ../yxtwebcpp/mutex.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/timer.cpp.o: ../yxtwebcpp/nocopyable.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/timer.cpp.o: ../yxtwebcpp/singleton.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/timer.cpp.o: ../yxtwebcpp/thread.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/timer.cpp.o: ../yxtwebcpp/timer.cpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/timer.cpp.o: ../yxtwebcpp/timer.hpp
