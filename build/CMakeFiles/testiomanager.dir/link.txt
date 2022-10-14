@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.o -o ../bin/testiomanager  -Wl,-rpath,/home/yuxintao/yxtweb-cpp/lib ../lib/libyxtwebcpp.so -ldl -lpthread -lyaml-cpp 

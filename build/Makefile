@@ -130,58 +130,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named testB
-
-# Build rule for target.
-testB: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testB
-.PHONY : testB
-
-# fast build rule for target.
-testB/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testB.dir/build.make CMakeFiles/testB.dir/build
-.PHONY : testB/fast
-
-#=============================================================================
-# Target rules for targets named testA
-
-# Build rule for target.
-testA: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testA
-.PHONY : testA
-
-# fast build rule for target.
-testA/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testA.dir/build.make CMakeFiles/testA.dir/build
-.PHONY : testA/fast
-
-#=============================================================================
-# Target rules for targets named testtimer
-
-# Build rule for target.
-testtimer: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testtimer
-.PHONY : testtimer
-
-# fast build rule for target.
-testtimer/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testtimer.dir/build.make CMakeFiles/testtimer.dir/build
-.PHONY : testtimer/fast
-
-#=============================================================================
-# Target rules for targets named testiomanager
-
-# Build rule for target.
-testiomanager: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testiomanager
-.PHONY : testiomanager
-
-# fast build rule for target.
-testiomanager/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testiomanager.dir/build.make CMakeFiles/testiomanager.dir/build
-.PHONY : testiomanager/fast
-
-#=============================================================================
 # Target rules for targets named test
 
 # Build rule for target.
@@ -219,6 +167,19 @@ yxtwebcpp_static: cmake_check_build_system
 yxtwebcpp_static/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/build
 .PHONY : yxtwebcpp_static/fast
+
+#=============================================================================
+# Target rules for targets named testaddress
+
+# Build rule for target.
+testaddress: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testaddress
+.PHONY : testaddress
+
+# fast build rule for target.
+testaddress/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testaddress.dir/build.make CMakeFiles/testaddress.dir/build
+.PHONY : testaddress/fast
 
 #=============================================================================
 # Target rules for targets named yxtwebcpp
@@ -260,59 +221,32 @@ tests/test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cpp.s
 .PHONY : tests/test.cpp.s
 
-tests/testA.o: tests/testA.cpp.o
+tests/testaddress.o: tests/testaddress.cpp.o
 
-.PHONY : tests/testA.o
-
-# target to build an object file
-tests/testA.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testA.dir/build.make CMakeFiles/testA.dir/tests/testA.cpp.o
-.PHONY : tests/testA.cpp.o
-
-tests/testA.i: tests/testA.cpp.i
-
-.PHONY : tests/testA.i
-
-# target to preprocess a source file
-tests/testA.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testA.dir/build.make CMakeFiles/testA.dir/tests/testA.cpp.i
-.PHONY : tests/testA.cpp.i
-
-tests/testA.s: tests/testA.cpp.s
-
-.PHONY : tests/testA.s
-
-# target to generate assembly for a file
-tests/testA.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testA.dir/build.make CMakeFiles/testA.dir/tests/testA.cpp.s
-.PHONY : tests/testA.cpp.s
-
-tests/testB.o: tests/testB.cpp.o
-
-.PHONY : tests/testB.o
+.PHONY : tests/testaddress.o
 
 # target to build an object file
-tests/testB.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testB.dir/build.make CMakeFiles/testB.dir/tests/testB.cpp.o
-.PHONY : tests/testB.cpp.o
+tests/testaddress.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testaddress.dir/build.make CMakeFiles/testaddress.dir/tests/testaddress.cpp.o
+.PHONY : tests/testaddress.cpp.o
 
-tests/testB.i: tests/testB.cpp.i
+tests/testaddress.i: tests/testaddress.cpp.i
 
-.PHONY : tests/testB.i
+.PHONY : tests/testaddress.i
 
 # target to preprocess a source file
-tests/testB.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testB.dir/build.make CMakeFiles/testB.dir/tests/testB.cpp.i
-.PHONY : tests/testB.cpp.i
+tests/testaddress.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testaddress.dir/build.make CMakeFiles/testaddress.dir/tests/testaddress.cpp.i
+.PHONY : tests/testaddress.cpp.i
 
-tests/testB.s: tests/testB.cpp.s
+tests/testaddress.s: tests/testaddress.cpp.s
 
-.PHONY : tests/testB.s
+.PHONY : tests/testaddress.s
 
 # target to generate assembly for a file
-tests/testB.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testB.dir/build.make CMakeFiles/testB.dir/tests/testB.cpp.s
-.PHONY : tests/testB.cpp.s
+tests/testaddress.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testaddress.dir/build.make CMakeFiles/testaddress.dir/tests/testaddress.cpp.s
+.PHONY : tests/testaddress.cpp.s
 
 tests/testhook.o: tests/testhook.cpp.o
 
@@ -341,59 +275,35 @@ tests/testhook.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/testhook.dir/build.make CMakeFiles/testhook.dir/tests/testhook.cpp.s
 .PHONY : tests/testhook.cpp.s
 
-tests/testiomanager.o: tests/testiomanager.cpp.o
+yxtwebcpp/address.o: yxtwebcpp/address.cpp.o
 
-.PHONY : tests/testiomanager.o
-
-# target to build an object file
-tests/testiomanager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testiomanager.dir/build.make CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.o
-.PHONY : tests/testiomanager.cpp.o
-
-tests/testiomanager.i: tests/testiomanager.cpp.i
-
-.PHONY : tests/testiomanager.i
-
-# target to preprocess a source file
-tests/testiomanager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testiomanager.dir/build.make CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.i
-.PHONY : tests/testiomanager.cpp.i
-
-tests/testiomanager.s: tests/testiomanager.cpp.s
-
-.PHONY : tests/testiomanager.s
-
-# target to generate assembly for a file
-tests/testiomanager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testiomanager.dir/build.make CMakeFiles/testiomanager.dir/tests/testiomanager.cpp.s
-.PHONY : tests/testiomanager.cpp.s
-
-tests/testtimer.o: tests/testtimer.cpp.o
-
-.PHONY : tests/testtimer.o
+.PHONY : yxtwebcpp/address.o
 
 # target to build an object file
-tests/testtimer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testtimer.dir/build.make CMakeFiles/testtimer.dir/tests/testtimer.cpp.o
-.PHONY : tests/testtimer.cpp.o
+yxtwebcpp/address.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/address.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/address.cpp.o
+.PHONY : yxtwebcpp/address.cpp.o
 
-tests/testtimer.i: tests/testtimer.cpp.i
+yxtwebcpp/address.i: yxtwebcpp/address.cpp.i
 
-.PHONY : tests/testtimer.i
+.PHONY : yxtwebcpp/address.i
 
 # target to preprocess a source file
-tests/testtimer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testtimer.dir/build.make CMakeFiles/testtimer.dir/tests/testtimer.cpp.i
-.PHONY : tests/testtimer.cpp.i
+yxtwebcpp/address.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/address.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/address.cpp.i
+.PHONY : yxtwebcpp/address.cpp.i
 
-tests/testtimer.s: tests/testtimer.cpp.s
+yxtwebcpp/address.s: yxtwebcpp/address.cpp.s
 
-.PHONY : tests/testtimer.s
+.PHONY : yxtwebcpp/address.s
 
 # target to generate assembly for a file
-tests/testtimer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testtimer.dir/build.make CMakeFiles/testtimer.dir/tests/testtimer.cpp.s
-.PHONY : tests/testtimer.cpp.s
+yxtwebcpp/address.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/address.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/address.cpp.s
+.PHONY : yxtwebcpp/address.cpp.s
 
 yxtwebcpp/config.o: yxtwebcpp/config.cpp.o
 
@@ -764,31 +674,22 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... testA"
-	@echo "... testB"
+	@echo "... testaddress"
 	@echo "... testhook"
-	@echo "... testiomanager"
-	@echo "... testtimer"
 	@echo "... yxtwebcpp"
 	@echo "... yxtwebcpp_static"
 	@echo "... tests/test.o"
 	@echo "... tests/test.i"
 	@echo "... tests/test.s"
-	@echo "... tests/testA.o"
-	@echo "... tests/testA.i"
-	@echo "... tests/testA.s"
-	@echo "... tests/testB.o"
-	@echo "... tests/testB.i"
-	@echo "... tests/testB.s"
+	@echo "... tests/testaddress.o"
+	@echo "... tests/testaddress.i"
+	@echo "... tests/testaddress.s"
 	@echo "... tests/testhook.o"
 	@echo "... tests/testhook.i"
 	@echo "... tests/testhook.s"
-	@echo "... tests/testiomanager.o"
-	@echo "... tests/testiomanager.i"
-	@echo "... tests/testiomanager.s"
-	@echo "... tests/testtimer.o"
-	@echo "... tests/testtimer.i"
-	@echo "... tests/testtimer.s"
+	@echo "... yxtwebcpp/address.o"
+	@echo "... yxtwebcpp/address.i"
+	@echo "... yxtwebcpp/address.s"
 	@echo "... yxtwebcpp/config.o"
 	@echo "... yxtwebcpp/config.i"
 	@echo "... yxtwebcpp/config.s"

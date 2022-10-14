@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/testtimer.dir/tests/testtimer.cpp.o -o ../bin/testtimer  -Wl,-rpath,/home/yuxintao/yxtweb-cpp/lib ../lib/libyxtwebcpp.so -ldl -lpthread -lyaml-cpp 

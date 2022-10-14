@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-14 10:49:24
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-14 16:49:12
+ * @LastEditTime: 2022-10-14 20:29:58
  * @FilePath: /yxtweb-cpp/yxtwebcpp/address.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -11,6 +11,7 @@
 #include "endian.hpp"
 #include "macro.hpp"
 #include <string>
+#include <sys/types.h>
 
 static std::shared_ptr<YXTWebCpp::Logger> g_logger = YXTWebCpp_LOG_NAME("system");
 
@@ -39,9 +40,9 @@ std::shared_ptr<Address> Address::Create(const sockaddr* addr, __socklen_t addrl
     }
     switch(addr->sa_family) {
         case AF_INET:
-            return std::make_shared<IPv4Address>((const sockaddr_in*)addr);
+            return std::make_shared<IPv4Address>(*(const sockaddr_in*)addr);
         case AF_INET6:
-            return std::make_shared<IPv6Address>((const sockaddr_in6*)addr);
+            return std::make_shared<IPv6Address>(*(const sockaddr_in6*)addr);
         default:
             return std::make_shared<UnknownAddress>(*addr);
     }
@@ -49,7 +50,7 @@ std::shared_ptr<Address> Address::Create(const sockaddr* addr, __socklen_t addrl
 }
 
 bool Address::Lookup(std::vector<std::shared_ptr<Address> >& result, const std::string& host,
-            int family = AF_INET, int type = 0, int protocol = 0) {//查找域名的所有Address
+            int family, int type, int protocol) {//查找域名的所有Address
     std::string node;
     const char* service = NULL;
 
@@ -57,7 +58,7 @@ bool Address::Lookup(std::vector<std::shared_ptr<Address> >& result, const std::
         const char* endipv6 = (const char*)memchr(host.c_str() + 1, ']', host.size() - 1);
         if (endipv6) {//sure
             if (*(endipv6 + 1) == ':') {
-                service = endipv6 + 2;//指向端口字符串
+                service = endipv6 + 2;//指向端口字符串，或者服务名称
             }
             node = host.substr(1, endipv6 - host.c_str() + 1);//存储IPv6地址
         }
@@ -69,7 +70,7 @@ bool Address::Lookup(std::vector<std::shared_ptr<Address> >& result, const std::
             if (!memchr(service + 1, ':', host.c_str() + host.size() - service - 1)) {//sure
                 node = host.substr(0, service - host.c_str());//存储IPv4地址
             }
-                ++service;//指向端口字符串
+                ++service;//指向端口字符串,或者服务名称
         }
     }
 
@@ -103,7 +104,7 @@ bool Address::Lookup(std::vector<std::shared_ptr<Address> >& result, const std::
 }
 
 std::shared_ptr<Address> Address::LookupAny(const std::string& host,
-            int family = AF_INET, int type = 0, int protocol = 0) {//查找域名对应的任意一个Address
+            int family, int type, int protocol) {//查找域名对应的任意一个Address
     std::vector<std::shared_ptr<Address> > result;
     if (Lookup(result, host, family, type, protocol)) {
         return result[0];
@@ -112,7 +113,7 @@ std::shared_ptr<Address> Address::LookupAny(const std::string& host,
 }
 
 std::shared_ptr<IPAddress> Address::LookupAnyIPAddress(const std::string& host,
-            int family = AF_INET, int type = 0, int protocol = 0) {//查找域名对应的任意一个IPAddress
+            int family, int type, int protocol) {//查找域名对应的任意一个IPAddress
     std::vector<std::shared_ptr<Address> > result;
     if (Lookup(result, host, family, type, protocol)) {
         for (auto& i : result) {
@@ -125,12 +126,74 @@ std::shared_ptr<IPAddress> Address::LookupAnyIPAddress(const std::string& host,
     return nullptr; 
 }
 
-bool GetInterfaceAddresses(std::multimap<std::string
-                    ,std::pair<std::shared_ptr<Address>, uint32_t> >& result,
-                    int family = AF_INET);//返回本机所有网卡<网卡名，地址， 子网掩码数>
+bool Address::GetInterfaceAddresses(std::multimap<std::string, std::pair<std::shared_ptr<Address>, uint32_t> >& result,
+                    int family) {//返回本机所有网卡<网卡名，地址， 子网掩码数>
+    ifaddrs *next = nullptr, *results = nullptr;
+    if (getifaddrs(&results) != 0) {
+        YXTWebCpp_LOG_DEBUG(g_logger) << "Address::GetInterfaceAddresses getifaddrs "
+            " err=" << errno << " errstr=" << strerror(errno);
+        return false;
+    }
 
-bool GetInterfaceAddresses(std::vector<std::pair<std::shared_ptr<Address>, uint32_t> >&result
-                    ,const std::string& iface, int family = AF_INET);//获取指定网卡的地址和掩码数
+    try {
+        next = results;
+        while (next) {
+            std::shared_ptr<Address> addr;
+            uint32_t prefix_len = ~0u;
+            if (family != AF_UNSPEC && family != next->ifa_addr->sa_family) {
+                next = next->ifa_next;
+                continue;
+            }
+
+            
+            switch (next->ifa_addr->sa_family) {
+                case AF_INET:
+                    {
+                        addr = Create(next->ifa_addr, sizeof(next->ifa_addr));
+                        uint32_t netmask = ((sockaddr_in*)next->ifa_netmask)->sin_addr.s_addr;
+                        prefix_len = CountNumOfOne(netmask);
+                    }
+                    break;
+                case AF_INET6:
+                    {
+                        in6_addr& netmask = ((sockaddr_in6*)next->ifa_netmask)->sin6_addr;
+                        for (int i = 0; i < 16; ++i) {
+                            prefix_len += CountNumOfOne(netmask.s6_addr[i]);
+                        }
+                    }
+                    break;
+            } 
+            if (addr) {
+                result.insert(std::make_pair(next->ifa_name, std::make_pair(addr, prefix_len)));
+            }
+            next = next->ifa_next;
+        }
+    } catch(...) {
+        YXTWebCpp_LOG_ERROR(g_logger) << "Address::GetInterfaceAddresses exception";
+        freeifaddrs(results);
+        return false;
+    }
+    freeifaddrs(results);
+    return !result.empty();
+}
+
+bool Address::GetInterfaceAddresses(std::vector<std::pair<std::shared_ptr<Address>, uint32_t> >&result
+                    ,const std::string& iface, int family) {//获取指定网卡的地址和掩码数
+    if (iface.empty() || iface == "*") {
+        return false;
+    }
+    std::multimap<std::string, std::pair<std::shared_ptr<Address>, uint32_t> > results;
+    if (!GetInterfaceAddresses(results, family)) {
+        return false;
+    }
+    auto its = results.equal_range(iface);
+    while (its.first != its.second) {
+        auto tmp = *(its.first);
+        result.push_back(tmp.second);
+        ++its.first;
+    }
+    return !result.empty();
+}
 
 //非静态
 //模板方法模式
@@ -172,9 +235,8 @@ std::shared_ptr<IPAddress> IPAddress::Create(const char* address, uint16_t port)
     addrinfo hints, *results;
     memset(&hints, 0, sizeof(hints));
 
-    hints.ai_flags = AI_NUMERICHOST;
     hints.ai_family = AF_UNSPEC;
-
+    
     int error = getaddrinfo(address, NULL, &hints, &results);
     if (error) {
         YXTWebCpp_LOG_DEBUG(g_logger) << "IPAddress::Create(" << address
@@ -194,7 +256,6 @@ std::shared_ptr<IPAddress> IPAddress::Create(const char* address, uint16_t port)
         return nullptr;
     }
 }
-
 
 //IPv4Address
 //静态
@@ -225,6 +286,7 @@ IPv4Address::IPv4Address(uint32_t address, uint16_t port) {
 const sockaddr* IPv4Address::getAddr() const {
     return (sockaddr*)&m_addr;
 }
+
 sockaddr* IPv4Address::getAddr() {
     return (sockaddr*)&m_addr;
 }
@@ -235,10 +297,10 @@ socklen_t IPv4Address::getAddrLen() const {
 
 std::ostream& IPv4Address::insert(std::ostream& os) const {
     uint32_t addr = byteswapOnLittleEndian(m_addr.sin_addr.s_addr);
-    os  << ((addr >> 24) && 0xff) << "."
-        << ((addr >> 16) && 0xff) << "."
-        << ((addr >> 8) && 0xff) << "."
-        << (addr && 0xff);
+    os  << ((addr >> 24) & 0xff) << "."
+        << ((addr >> 16) & 0xff) << "."
+        << ((addr >> 8) & 0xff) << "."
+        << (addr & 0xff);
     os << ":" << byteswapOnLittleEndian(m_addr.sin_port);
     return os;
 }
@@ -313,6 +375,7 @@ sockaddr* IPv6Address::getAddr() {
 socklen_t IPv6Address::getAddrLen() const {
     return sizeof(m_addr);
 }
+
 std::ostream& IPv6Address::insert(std::ostream& os) const {
     os << "[";
     bool use_zeros = false;
@@ -370,8 +433,6 @@ uint16_t IPv6Address::getPort() const{
 void IPv6Address::setPort(uint16_t v) {
     m_addr.sin6_port = byteswapOnLittleEndian(v);
 }
-
-
 
 static const size_t MAX_PATH_LEN = sizeof(((sockaddr_un*)0)->sun_path) - 1;
 //UnixAddress
@@ -442,6 +503,7 @@ UnknownAddress::UnknownAddress(int family) {
 UnknownAddress::UnknownAddress(const sockaddr& addr) {
     m_addr = addr;
 }
+
 //Address interface
 const sockaddr* UnknownAddress::getAddr() const {
     return &m_addr;

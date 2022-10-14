@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-14 10:49:39
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-14 15:57:23
+ * @LastEditTime: 2022-10-14 20:02:55
  * @FilePath: /yxtweb-cpp/yxtwebcpp/address.hpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -13,6 +13,7 @@
 #include <memory>
 #include <sys/types.h>
 #include <sys/socket.h>
+#include <ifaddrs.h>
 #include <sys/un.h>
 #include <fcntl.h>
 #include <netinet/in.h>
@@ -31,17 +32,17 @@ public:
     static std::shared_ptr<Address> Create(const sockaddr* addr, __socklen_t addrlen);
 
     static bool Lookup(std::vector<std::shared_ptr<Address> >& result, const std::string& host,
-            int family = AF_INET, int type = 0, int protocol = 0);//查找域名的所有Address
+            int family = AF_INET, int type = 0, int protocol = 0);//查找域名或主机号的所有Address
 
     static std::shared_ptr<Address> LookupAny(const std::string& host,
-            int family = AF_INET, int type = 0, int protocol = 0);//查找域名对应的任意一个Address
+            int family = AF_INET, int type = 0, int protocol = 0);//查找域名或主机号对应的任意一个Address
 
     static std::shared_ptr<IPAddress> LookupAnyIPAddress(const std::string& host,
-            int family = AF_INET, int type = 0, int protocol = 0);//查找域名对应的任意一个IPAddress
+            int family = AF_INET, int type = 0, int protocol = 0);//查找域名或主机号对应的任意一个IPAddress
 
     static bool GetInterfaceAddresses(std::multimap<std::string
                     ,std::pair<std::shared_ptr<Address>, uint32_t> >& result,
-                    int family = AF_INET);//返回本机所有网卡<网卡名，地址， 子网掩码数>
+                    int family = AF_INET);//返回本机所有网卡<网卡名，地址，子网掩码数>
 
     static bool GetInterfaceAddresses(std::vector<std::pair<std::shared_ptr<Address>, uint32_t> >&result
                     ,const std::string& iface, int family = AF_INET);//获取指定网卡的地址和掩码数
@@ -87,7 +88,7 @@ public:
 public:
     IPv4Address();
     IPv4Address(const sockaddr_in& address);
-    IPv4Address(uint32_t address = INADDR_ANY, uint16_t port = 0);
+    IPv4Address(uint32_t address, uint16_t port = 0);
 
 public:
     const sockaddr* getAddr() const override;
@@ -162,6 +163,8 @@ public:
 private:
     sockaddr m_addr;
 };
+
+std::ostream& operator<<(std::ostream& os, const Address& addr);
 
 }
 

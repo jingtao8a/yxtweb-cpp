@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/testB.dir/tests/testB.cpp.o -o ../bin/testB 

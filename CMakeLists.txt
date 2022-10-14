@@ -17,6 +17,7 @@ set(LIB_SRC
     yxtwebcpp/timer.cpp
     yxtwebcpp/hook.cpp
     yxtwebcpp/fd_manager.cpp
+    yxtwebcpp/address.cpp
 )
 
 add_library(yxtwebcpp SHARED ${LIB_SRC})
@@ -68,6 +69,10 @@ add_dependencies(test yxtwebcpp)
 add_executable(testhook tests/testhook.cpp)
 target_link_libraries(testhook ${LIB_LIB})
 add_dependencies(testhook yxtwebcpp)
+
+add_executable(testaddress tests/testaddress.cpp)
+target_link_libraries(testaddress ${LIB_LIB})
+add_dependencies(testaddress yxtwebcpp)
 
 # add_executable(testA tests/testA.cpp)
 # add_executable(testB tests/testB.cpp)

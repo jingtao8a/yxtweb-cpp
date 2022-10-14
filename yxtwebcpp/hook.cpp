@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-11 11:00:19
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-13 20:21:16
+ * @LastEditTime: 2022-10-14 19:19:49
  * @FilePath: /yxtweb-cpp/yxtwebcpp/hook.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -207,7 +207,6 @@ int socket(int domain, int type, int protocol) {
 //三次握手的时候，限定TCP连接超时时间
 int connect_with_timeout(int sockfd, const struct sockaddr *addr, socklen_t addrlen, uint64_t s_connect_timeout) {
     if (!YXTWebCpp::t_hook_enable) {
-        YXTWebCpp_LOG_DEBUG(g_logger) << "begin";
         return connect_f(sockfd, addr, addrlen);
     }
 

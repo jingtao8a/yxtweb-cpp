@@ -10,6 +10,34 @@
 ../yxtwebcpp/yxtwebcpp.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/yxtwebcpp.hpp
 
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/address.hpp
+stdint.h
+-
+memory
+-
+sys/types.h
+-
+sys/socket.h
+-
+ifaddrs.h
+-
+sys/un.h
+-
+fcntl.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+unistd.h
+-
+netdb.h
+-
+vector
+-
+map
+-
+
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/config.hpp
 algorithm
 -
@@ -29,6 +57,14 @@ iostream
 -
 mutex.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/mutex.hpp
+
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/endian.hpp
+byteswap.h
+-
+stdint.h
+-
+type_traits
+-
 
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/fd_manager.hpp
 vector
@@ -191,4 +227,8 @@ hook.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/hook.hpp
 fd_manager.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/fd_manager.hpp
+address.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/address.hpp
+endian.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/endian.hpp
 

@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../lib/libyxtwebcpp.a"
   "../lib/libyxtwebcpp.pdb"
+  "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/address.cpp.o"
   "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/config.cpp.o"
   "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/env.cpp.o"
   "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/fd_manager.cpp.o"
