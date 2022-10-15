@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/testB.dir/tests/testB.cpp.o -o ../bin/testB  -Wl,-rpath,/home/yuxintao/yxtweb-cpp/lib ../lib/libyxtwebcpp.so -ldl -lpthread -lyaml-cpp 

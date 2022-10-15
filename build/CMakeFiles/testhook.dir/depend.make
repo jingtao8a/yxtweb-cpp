@@ -15,6 +15,7 @@ CMakeFiles/testhook.dir/tests/testhook.cpp.o: ../yxtwebcpp/mutex.hpp
 CMakeFiles/testhook.dir/tests/testhook.cpp.o: ../yxtwebcpp/nocopyable.hpp
 CMakeFiles/testhook.dir/tests/testhook.cpp.o: ../yxtwebcpp/scheduler.hpp
 CMakeFiles/testhook.dir/tests/testhook.cpp.o: ../yxtwebcpp/singleton.hpp
+CMakeFiles/testhook.dir/tests/testhook.cpp.o: ../yxtwebcpp/socket.hpp
 CMakeFiles/testhook.dir/tests/testhook.cpp.o: ../yxtwebcpp/thread.hpp
 CMakeFiles/testhook.dir/tests/testhook.cpp.o: ../yxtwebcpp/timer.hpp
 CMakeFiles/testhook.dir/tests/testhook.cpp.o: ../yxtwebcpp/util.hpp

@@ -130,6 +130,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named testB
+
+# Build rule for target.
+testB: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testB
+.PHONY : testB
+
+# fast build rule for target.
+testB/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testB.dir/build.make CMakeFiles/testB.dir/build
+.PHONY : testB/fast
+
+#=============================================================================
+# Target rules for targets named testA
+
+# Build rule for target.
+testA: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testA
+.PHONY : testA
+
+# fast build rule for target.
+testA/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testA.dir/build.make CMakeFiles/testA.dir/build
+.PHONY : testA/fast
+
+#=============================================================================
 # Target rules for targets named test
 
 # Build rule for target.
@@ -220,6 +246,60 @@ tests/test.s: tests/test.cpp.s
 tests/test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cpp.s
 .PHONY : tests/test.cpp.s
+
+tests/testA.o: tests/testA.cpp.o
+
+.PHONY : tests/testA.o
+
+# target to build an object file
+tests/testA.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testA.dir/build.make CMakeFiles/testA.dir/tests/testA.cpp.o
+.PHONY : tests/testA.cpp.o
+
+tests/testA.i: tests/testA.cpp.i
+
+.PHONY : tests/testA.i
+
+# target to preprocess a source file
+tests/testA.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testA.dir/build.make CMakeFiles/testA.dir/tests/testA.cpp.i
+.PHONY : tests/testA.cpp.i
+
+tests/testA.s: tests/testA.cpp.s
+
+.PHONY : tests/testA.s
+
+# target to generate assembly for a file
+tests/testA.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testA.dir/build.make CMakeFiles/testA.dir/tests/testA.cpp.s
+.PHONY : tests/testA.cpp.s
+
+tests/testB.o: tests/testB.cpp.o
+
+.PHONY : tests/testB.o
+
+# target to build an object file
+tests/testB.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testB.dir/build.make CMakeFiles/testB.dir/tests/testB.cpp.o
+.PHONY : tests/testB.cpp.o
+
+tests/testB.i: tests/testB.cpp.i
+
+.PHONY : tests/testB.i
+
+# target to preprocess a source file
+tests/testB.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testB.dir/build.make CMakeFiles/testB.dir/tests/testB.cpp.i
+.PHONY : tests/testB.cpp.i
+
+tests/testB.s: tests/testB.cpp.s
+
+.PHONY : tests/testB.s
+
+# target to generate assembly for a file
+tests/testB.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testB.dir/build.make CMakeFiles/testB.dir/tests/testB.cpp.s
+.PHONY : tests/testB.cpp.s
 
 tests/testaddress.o: tests/testaddress.cpp.o
 
@@ -575,6 +655,36 @@ yxtwebcpp/scheduler.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/scheduler.cpp.s
 .PHONY : yxtwebcpp/scheduler.cpp.s
 
+yxtwebcpp/socket.o: yxtwebcpp/socket.cpp.o
+
+.PHONY : yxtwebcpp/socket.o
+
+# target to build an object file
+yxtwebcpp/socket.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/socket.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.o
+.PHONY : yxtwebcpp/socket.cpp.o
+
+yxtwebcpp/socket.i: yxtwebcpp/socket.cpp.i
+
+.PHONY : yxtwebcpp/socket.i
+
+# target to preprocess a source file
+yxtwebcpp/socket.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/socket.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.i
+.PHONY : yxtwebcpp/socket.cpp.i
+
+yxtwebcpp/socket.s: yxtwebcpp/socket.cpp.s
+
+.PHONY : yxtwebcpp/socket.s
+
+# target to generate assembly for a file
+yxtwebcpp/socket.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/socket.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.s
+.PHONY : yxtwebcpp/socket.cpp.s
+
 yxtwebcpp/thread.o: yxtwebcpp/thread.cpp.o
 
 .PHONY : yxtwebcpp/thread.o
@@ -674,6 +784,8 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... testA"
+	@echo "... testB"
 	@echo "... testaddress"
 	@echo "... testhook"
 	@echo "... yxtwebcpp"
@@ -681,6 +793,12 @@ help:
 	@echo "... tests/test.o"
 	@echo "... tests/test.i"
 	@echo "... tests/test.s"
+	@echo "... tests/testA.o"
+	@echo "... tests/testA.i"
+	@echo "... tests/testA.s"
+	@echo "... tests/testB.o"
+	@echo "... tests/testB.i"
+	@echo "... tests/testB.s"
 	@echo "... tests/testaddress.o"
 	@echo "... tests/testaddress.i"
 	@echo "... tests/testaddress.s"
@@ -717,6 +835,9 @@ help:
 	@echo "... yxtwebcpp/scheduler.o"
 	@echo "... yxtwebcpp/scheduler.i"
 	@echo "... yxtwebcpp/scheduler.s"
+	@echo "... yxtwebcpp/socket.o"
+	@echo "... yxtwebcpp/socket.i"
+	@echo "... yxtwebcpp/socket.s"
 	@echo "... yxtwebcpp/thread.o"
 	@echo "... yxtwebcpp/thread.i"
 	@echo "... yxtwebcpp/thread.s"

@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-11 11:00:13
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-12 20:36:29
+ * @LastEditTime: 2022-10-15 16:18:06
  * @FilePath: /yxtweb-cpp/yxtwebcpp/hook.hpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -15,6 +15,7 @@
 #include <sys/uio.h>
 #include <fcntl.h>
 #include <sys/ioctl.h>
+#include <stdint.h>
 
 namespace YXTWebCpp {
 
@@ -51,6 +52,7 @@ extern "C" {//C没有函数重载
 
     //int socket(int domain, int type, int protocol);
     //int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen);
+    int connect_with_timeout(int sockfd, const struct sockaddr *addr, socklen_t addrlen, uint64_t s_connect_timeout);
     //int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
 
 //read

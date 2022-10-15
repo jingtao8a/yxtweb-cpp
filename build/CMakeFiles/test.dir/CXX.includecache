@@ -97,6 +97,8 @@ fcntl.h
 -
 sys/ioctl.h
 -
+stdint.h
+-
 
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.hpp
 scheduler.hpp
@@ -170,6 +172,18 @@ iostream
 memory
 -
 
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/socket.hpp
+memory
+-
+sys/types.h
+-
+sys/socket.h
+-
+nocopyable.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/nocopyable.hpp
+address.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/address.hpp
+
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/thread.hpp
 thread
 -
@@ -231,4 +245,6 @@ address.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/address.hpp
 endian.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/endian.hpp
+socket.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/socket.hpp
 

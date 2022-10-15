@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-08 13:33:14
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-13 20:13:13
+ * @LastEditTime: 2022-10-15 19:58:40
  * @FilePath: /yxtweb-cpp/yxtwebcpp/iomanager.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -253,10 +253,7 @@ void IOManager::idle() {
         std::vector<std::function<void()> > cbs;
         listExpiredCb(cbs);
         if (!cbs.empty()) {
-            // schedule<std::vector<std::function<void()> >::iterator >(cbs.begin(), cbs.end());
-            for (auto cb : cbs) {
-                schedule(cb);
-            }
+            schedule<std::vector<std::function<void()> >::iterator >(cbs.begin(), cbs.end());
             cbs.clear();
         }
 
@@ -268,8 +265,8 @@ void IOManager::idle() {
             } else {
                 FdContext* fdContext = static_cast<FdContext *>(event.data.ptr);
                 ScopedLockImpl<Mutex> guard(fdContext->mutex);
-                //如果是对方主动关闭socket，会触发EPOLLRDHUP、EPOLLIN、EPOLLOUT事件
-                if (event.events & (EPOLLERR | EPOLLHUP)) {//如果是自己方的socket出现问题，会触发该fd的EPOLLERR和EPOLLHUP事件
+                //如果是对端正常close，会触发EPOLLRDHUP、EPOLLIN、EPOLLOUT事件
+                if (event.events & (EPOLLERR | EPOLLHUP)) {//EPOLLERR(对方异常断开连接）和EPOLLHUP（服务器这边出错）
                     YXTWebCpp_LOG_DEBUG(g_logger) << "socket error";
                     event.events |= (EPOLLIN | EPOLLOUT) & fdContext->events;
                 }

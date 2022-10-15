@@ -105,6 +105,23 @@ CMakeFiles/yxtwebcpp.dir/yxtwebcpp/scheduler.cpp.o: ../yxtwebcpp/singleton.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/scheduler.cpp.o: ../yxtwebcpp/thread.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/scheduler.cpp.o: ../yxtwebcpp/util.hpp
 
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.o: ../yxtwebcpp/address.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.o: ../yxtwebcpp/fd_manager.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.o: ../yxtwebcpp/fiber.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.o: ../yxtwebcpp/hook.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.o: ../yxtwebcpp/iomanager.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.o: ../yxtwebcpp/log.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.o: ../yxtwebcpp/macro.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.o: ../yxtwebcpp/mutex.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.o: ../yxtwebcpp/nocopyable.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.o: ../yxtwebcpp/scheduler.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.o: ../yxtwebcpp/singleton.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.o: ../yxtwebcpp/socket.cpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.o: ../yxtwebcpp/socket.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.o: ../yxtwebcpp/thread.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.o: ../yxtwebcpp/timer.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.o: ../yxtwebcpp/util.hpp
+
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/thread.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/thread.cpp.o: ../yxtwebcpp/mutex.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/thread.cpp.o: ../yxtwebcpp/nocopyable.hpp

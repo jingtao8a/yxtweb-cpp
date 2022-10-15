@@ -15,6 +15,7 @@ CMakeFiles/testaddress.dir/tests/testaddress.cpp.o: ../yxtwebcpp/mutex.hpp
 CMakeFiles/testaddress.dir/tests/testaddress.cpp.o: ../yxtwebcpp/nocopyable.hpp
 CMakeFiles/testaddress.dir/tests/testaddress.cpp.o: ../yxtwebcpp/scheduler.hpp
 CMakeFiles/testaddress.dir/tests/testaddress.cpp.o: ../yxtwebcpp/singleton.hpp
+CMakeFiles/testaddress.dir/tests/testaddress.cpp.o: ../yxtwebcpp/socket.hpp
 CMakeFiles/testaddress.dir/tests/testaddress.cpp.o: ../yxtwebcpp/thread.hpp
 CMakeFiles/testaddress.dir/tests/testaddress.cpp.o: ../yxtwebcpp/timer.hpp
 CMakeFiles/testaddress.dir/tests/testaddress.cpp.o: ../yxtwebcpp/util.hpp

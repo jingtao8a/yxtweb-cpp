@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-14 10:49:39
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-14 20:02:55
+ * @LastEditTime: 2022-10-15 14:46:45
  * @FilePath: /yxtweb-cpp/yxtwebcpp/address.hpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -153,6 +153,7 @@ private:
 
 class UnknownAddress : public Address{
 public:
+    UnknownAddress() {}
     UnknownAddress(int family);
     UnknownAddress(const sockaddr& addr);
 public:

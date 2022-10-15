@@ -11,6 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/log.cpp.o"
   "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/mutex.cpp.o"
   "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/scheduler.cpp.o"
+  "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/socket.cpp.o"
   "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/thread.cpp.o"
   "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/timer.cpp.o"
   "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/util.cpp.o"

@@ -15,6 +15,7 @@ CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/mutex.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/nocopyable.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/scheduler.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/singleton.hpp
+CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/socket.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/thread.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/timer.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/util.hpp

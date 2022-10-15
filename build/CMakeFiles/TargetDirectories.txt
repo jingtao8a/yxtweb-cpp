@@ -1,3 +1,5 @@
+/home/yuxintao/yxtweb-cpp/build/CMakeFiles/testB.dir
+/home/yuxintao/yxtweb-cpp/build/CMakeFiles/testA.dir
 /home/yuxintao/yxtweb-cpp/build/CMakeFiles/edit_cache.dir
 /home/yuxintao/yxtweb-cpp/build/CMakeFiles/test.dir
 /home/yuxintao/yxtweb-cpp/build/CMakeFiles/rebuild_cache.dir

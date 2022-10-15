@@ -18,6 +18,7 @@ set(LIB_SRC
     yxtwebcpp/hook.cpp
     yxtwebcpp/fd_manager.cpp
     yxtwebcpp/address.cpp
+    yxtwebcpp/socket.cpp
 )
 
 add_library(yxtwebcpp SHARED ${LIB_SRC})
@@ -74,7 +75,13 @@ add_executable(testaddress tests/testaddress.cpp)
 target_link_libraries(testaddress ${LIB_LIB})
 add_dependencies(testaddress yxtwebcpp)
 
-# add_executable(testA tests/testA.cpp)
-# add_executable(testB tests/testB.cpp)
+add_executable(testA tests/testA.cpp)
+target_link_libraries(testA ${LIB_LIB})
+add_dependencies(testA yxtwebcpp)
+
+add_executable(testB tests/testB.cpp)
+target_link_libraries(testB ${LIB_LIB})
+add_dependencies(testB yxtwebcpp)
+
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
