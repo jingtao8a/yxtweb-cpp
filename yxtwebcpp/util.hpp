@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-09-29 15:24:45
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-09 18:49:01
+ * @LastEditTime: 2022-10-16 20:26:34
  * @FilePath: /yxtweb-cpp/yxtwebcpp/util.hpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -28,6 +28,24 @@ std::string  BacktraceToString(size_t size = 64, size_t skip = 2, const std::str
 uint64_t GetCurrentMS();//毫秒
 
 uint64_t GetCurrentUS();//微秒
+
+class StringUtil {
+public:
+    static std::string Format(const char* fmt, ...);
+    static std::string Formatv(const char* fmt, va_list ap);
+
+    static std::string UrlEncode(const std::string& str, bool space_as_plus = true);
+    static std::string UrlDecode(const std::string& str, bool space_as_plus = true);
+
+    static std::string Trim(const std::string& str, const std::string& delimit = " \t\r\n");
+    static std::string TrimLeft(const std::string& str, const std::string& delimit = " \t\r\n");
+    static std::string TrimRight(const std::string& str, const std::string& delimit = " \t\r\n");
+
+
+    static std::string WStringToString(const std::wstring& ws);
+    static std::wstring StringToWString(const std::string& s);
+
+};
 
 }
 
