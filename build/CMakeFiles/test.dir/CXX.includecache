@@ -9,6 +9,8 @@
 /home/yuxintao/yxtweb-cpp/tests/test.cpp
 ../yxtwebcpp/yxtwebcpp.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/yxtwebcpp.hpp
+iomanip
+-
 
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/address.hpp
 stdint.h
@@ -36,6 +38,18 @@ netdb.h
 vector
 -
 map
+-
+
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/bytearray.hpp
+stddef.h
+-
+stdint.h
+-
+string
+-
+hook.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/hook.hpp
+vector
 -
 
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/config.hpp
@@ -247,4 +261,6 @@ endian.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/endian.hpp
 socket.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/socket.hpp
+bytearray.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/bytearray.hpp
 

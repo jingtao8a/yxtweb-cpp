@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-15 11:03:50
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-15 19:30:59
+ * @LastEditTime: 2022-10-16 10:38:12
  * @FilePath: /yxtweb-cpp/yxtwebcpp/socket.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -15,9 +15,12 @@
 #include "iomanager.hpp"
 #include <netinet/tcp.h>
 
-static std::shared_ptr<YXTWebCpp::Logger> g_logger = YXTWebCpp_LOG_NAME("system");
+
 
 namespace YXTWebCpp {
+
+static std::shared_ptr<Logger> g_logger = YXTWebCpp_LOG_NAME("system");
+
 //静态
 std::shared_ptr<Socket> Socket::CreateTCPSocket() {
     std::shared_ptr<Socket> result = std::make_shared<Socket>(IPv4, TCP, 0);

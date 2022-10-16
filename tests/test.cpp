@@ -2,12 +2,12 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-09-17 16:37:43
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-13 20:08:25
+ * @LastEditTime: 2022-10-16 14:27:15
  * @FilePath: /YXTWebCpp/tests/test.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 #include "../yxtwebcpp/yxtwebcpp.hpp"
-
+#include <iomanip>
 // static bool flag = true;
 
 // static std::shared_ptr<YXTWebCpp::Logger> g_logger = YXTWebCpp_LOG_ROOT();
@@ -67,6 +67,21 @@ struct Node{
     };
 };
 
+static uint32_t EncodeZigzag32(const int32_t& v) {
+        return ((uint32_t)v << 1) ^ (v >> 31);
+}
+
+static int32_t DecodeZigzag32(const uint32_t& v) {
+    return (v >> 1) ^ -(v & 1);
+}
+
+static uint64_t EncodeZigzag64(const int64_t& v) {
+        return ((uint64_t)v << 1) ^ (v >> 63);
+}
+
+static int64_t DecodeZigzag64(const uint64_t& v) {
+    return (v >> 1) ^ -(v & 1);
+}
 
 int main() {
     // std::shared_ptr<YXTWebCpp::Logger> logger(new YXTWebCpp::Logger());
@@ -83,13 +98,14 @@ int main() {
     // std::set<int> rbtree{1, 23, 43};
     // auto it = rbtree.find(3);
     // rbtree.erase(it);
-    std::set<std::shared_ptr<Node>, Node::compartor> heap;
-    heap.insert(std::make_shared<Node>(1, 2));
-    heap.insert(std::make_shared<Node>(1, 5));
-    heap.insert(std::make_shared<Node>(3, 4));
-    auto ptr = std::make_shared<Node>(1, 4);
+    // std::set<std::shared_ptr<Node>, Node::compartor> heap;
+    // heap.insert(std::make_shared<Node>(1, 2));
+    // heap.insert(std::make_shared<Node>(1, 5));
+    // heap.insert(std::make_shared<Node>(3, 4));
+    // auto ptr = std::make_shared<Node>(1, 4);
 
-    auto iter = heap.lower_bound(ptr);
-    std::cout << (*iter)->m_a << (*iter)->m_b;
+    // auto iter = heap.lower_bound(ptr);
+    // std::cout << (*iter)->m_a << (*iter)->m_b;
+    std::cout << std::setw(6) << std::setfill('0') << std::hex << 0xABC << " ";
     return 0;
 }

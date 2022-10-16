@@ -12,6 +12,17 @@ CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/address.cpp.o: ../yxtwebcpp/singleton.
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/address.cpp.o: ../yxtwebcpp/thread.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/address.cpp.o: ../yxtwebcpp/util.hpp
 
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/bytearray.cpp.o: ../yxtwebcpp/bytearray.cpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/bytearray.cpp.o: ../yxtwebcpp/bytearray.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/bytearray.cpp.o: ../yxtwebcpp/endian.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/bytearray.cpp.o: ../yxtwebcpp/hook.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/bytearray.cpp.o: ../yxtwebcpp/log.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/bytearray.cpp.o: ../yxtwebcpp/mutex.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/bytearray.cpp.o: ../yxtwebcpp/nocopyable.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/bytearray.cpp.o: ../yxtwebcpp/singleton.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/bytearray.cpp.o: ../yxtwebcpp/thread.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/bytearray.cpp.o: ../yxtwebcpp/util.hpp
+
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/config.cpp.o: ../yxtwebcpp/config.cpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/config.cpp.o: ../yxtwebcpp/config.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/config.cpp.o: ../yxtwebcpp/env.hpp

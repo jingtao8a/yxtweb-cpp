@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-11 11:00:19
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-15 19:20:32
+ * @LastEditTime: 2022-10-16 10:41:38
  * @FilePath: /yxtweb-cpp/yxtwebcpp/hook.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -14,10 +14,11 @@
 #include "config.hpp"
 #include "iomanager.hpp"
 
-static std::shared_ptr<YXTWebCpp::Logger> g_logger = YXTWebCpp_LOG_NAME("system");
-static std::shared_ptr<YXTWebCpp::ConfigVar<int> > g_tcp_connect_timeout = YXTWebCpp::Config::Lookup("tcp.connect.timeout", 5000, "tcp connect timeout");
 
 namespace YXTWebCpp {
+
+static std::shared_ptr<Logger> g_logger = YXTWebCpp_LOG_NAME("system");
+static std::shared_ptr<ConfigVar<int> > g_tcp_connect_timeout = YXTWebCpp::Config::Lookup("tcp.connect.timeout", 5000, "tcp connect timeout");
 
 static thread_local bool t_hook_enable = false;
 
@@ -113,7 +114,7 @@ static ssize_t do_io(int fd, OriginFun fun, const char* hook_fun_name,
             std::weak_ptr<TimerInfo> weakTimerInfo(sharedTimerInfo);
             if (timeOut != (uint64_t)-1) {//如果设置了fd的超时时间
                 timer = iom->addConditionTimer(timeOut, [weakTimerInfo, fd, iom, event]() {//添加条件定时器
-                    YXTWebCpp_LOG_DEBUG(g_logger) << "do_io Timer out";
+                    YXTWebCpp_LOG_DEBUG(YXTWebCpp::g_logger) << "do_io Timer out";
                     auto tmpSharedTimerInfo = weakTimerInfo.lock();
                     if (!tmpSharedTimerInfo) {
                         return;
@@ -124,7 +125,7 @@ static ssize_t do_io(int fd, OriginFun fun, const char* hook_fun_name,
             }
             int rt = iom->addEvent(fd, (YXTWebCpp::IOManager::Event)(event));
             if (rt) {//添加事件失败
-                YXTWebCpp_LOG_ERROR(g_logger) << hook_fun_name << "addEvent("
+                YXTWebCpp_LOG_ERROR(YXTWebCpp::g_logger) << hook_fun_name << "addEvent("
                     << fd << ", " << event ;
                 if (timer) {
                     timer->cancel();//取消定时器
@@ -157,7 +158,7 @@ unsigned int sleep(unsigned int seconds) {
     std::shared_ptr<YXTWebCpp::Fiber> fiber = YXTWebCpp::Fiber::GetThis();//获得指向本协程的Fiber块
     YXTWebCpp::IOManager* iom = YXTWebCpp::IOManager::GetThis();
     iom->addTimer(seconds * 1000, [fiber, iom]() {
-        YXTWebCpp_LOG_DEBUG(g_logger) << "sleep Timer out";
+        YXTWebCpp_LOG_DEBUG(YXTWebCpp::g_logger) << "sleep Timer out";
         iom->schedule(fiber);
     });
     YXTWebCpp::Fiber::YieldToHold();
@@ -171,7 +172,7 @@ int usleep(useconds_t usec) {
     std::shared_ptr<YXTWebCpp::Fiber> fiber = YXTWebCpp::Fiber::GetThis();//获得指向本协程的Fiber块
     YXTWebCpp::IOManager* iom = YXTWebCpp::IOManager::GetThis();
     iom->addTimer(usec / 1000, [fiber, iom](){
-        YXTWebCpp_LOG_DEBUG(g_logger) << "usleep Timer out";
+        YXTWebCpp_LOG_DEBUG(YXTWebCpp::g_logger) << "usleep Timer out";
         iom->schedule(fiber);
     });
     YXTWebCpp::Fiber::YieldToHold();
@@ -186,7 +187,7 @@ int nanosleep(const struct timespec *req, struct timespec *rem) {
     std::shared_ptr<YXTWebCpp::Fiber> fiber = YXTWebCpp::Fiber::GetThis();//获得指向本协程的Fiber块
     YXTWebCpp::IOManager* iom = YXTWebCpp::IOManager::GetThis();
     iom->addTimer(timeout_ms, [fiber, iom](){
-        YXTWebCpp_LOG_DEBUG(g_logger) << "nanosleep Timer out";
+        YXTWebCpp_LOG_DEBUG(YXTWebCpp::g_logger) << "nanosleep Timer out";
         iom->schedule(fiber);
     });
     YXTWebCpp::Fiber::YieldToHold();
@@ -234,7 +235,7 @@ int connect_with_timeout(int sockfd, const struct sockaddr *addr, socklen_t addr
 
     if(s_connect_timeout != (uint64_t)-1) {
         timer = iom->addConditionTimer(s_connect_timeout, [weakTimerInfo, sockfd, iom]() {
-                YXTWebCpp_LOG_DEBUG(g_logger) << "connect Timer out";
+                YXTWebCpp_LOG_DEBUG(YXTWebCpp::g_logger) << "connect Timer out";
                 auto tmpSharedTimerInfo = weakTimerInfo.lock();
                 if(!tmpSharedTimerInfo) {
                     return;
@@ -257,7 +258,7 @@ int connect_with_timeout(int sockfd, const struct sockaddr *addr, socklen_t addr
         if(timer) {
             timer->cancel();
         }
-        YXTWebCpp_LOG_ERROR(g_logger) << "connect addEvent(" << sockfd << ", WRITE) error";
+        YXTWebCpp_LOG_ERROR(YXTWebCpp::g_logger) << "connect addEvent(" << sockfd << ", WRITE) error";
     }
 
     int error = 0;
@@ -269,7 +270,7 @@ int connect_with_timeout(int sockfd, const struct sockaddr *addr, socklen_t addr
         return 0;//连接成功
     } else {
         errno = error;
-        YXTWebCpp_LOG_DEBUG(g_logger) << "connect error = " << errno;
+        YXTWebCpp_LOG_DEBUG(YXTWebCpp::g_logger) << "connect error = " << errno;
         return -1;
     }
 }

@@ -3,6 +3,7 @@
 
 CMakeFiles/test.dir/tests/test.cpp.o: ../tests/test.cpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/address.hpp
+CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/bytearray.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/config.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/endian.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/fd_manager.hpp
