@@ -112,6 +112,18 @@ sys/ioctl.h
 stdint.h
 -
 
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http.hpp
+string
+-
+map
+-
+memory
+-
+vector
+-
+boost/lexical_cast.hpp
+-
+
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.hpp
 scheduler.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/scheduler.hpp
@@ -261,4 +273,6 @@ socket.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/socket.hpp
 bytearray.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/bytearray.hpp
+http/http.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http.hpp
 

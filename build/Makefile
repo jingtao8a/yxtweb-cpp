@@ -130,6 +130,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named testhttp
+
+# Build rule for target.
+testhttp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testhttp
+.PHONY : testhttp
+
+# fast build rule for target.
+testhttp/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testhttp.dir/build.make CMakeFiles/testhttp.dir/build
+.PHONY : testhttp/fast
+
+#=============================================================================
 # Target rules for targets named testbytearray
 
 # Build rule for target.
@@ -234,6 +247,33 @@ tests/testbytearray.s: tests/testbytearray.cpp.s
 tests/testbytearray.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/testbytearray.dir/build.make CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.s
 .PHONY : tests/testbytearray.cpp.s
+
+tests/testhttp.o: tests/testhttp.cpp.o
+
+.PHONY : tests/testhttp.o
+
+# target to build an object file
+tests/testhttp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testhttp.dir/build.make CMakeFiles/testhttp.dir/tests/testhttp.cpp.o
+.PHONY : tests/testhttp.cpp.o
+
+tests/testhttp.i: tests/testhttp.cpp.i
+
+.PHONY : tests/testhttp.i
+
+# target to preprocess a source file
+tests/testhttp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testhttp.dir/build.make CMakeFiles/testhttp.dir/tests/testhttp.cpp.i
+.PHONY : tests/testhttp.cpp.i
+
+tests/testhttp.s: tests/testhttp.cpp.s
+
+.PHONY : tests/testhttp.s
+
+# target to generate assembly for a file
+tests/testhttp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testhttp.dir/build.make CMakeFiles/testhttp.dir/tests/testhttp.cpp.s
+.PHONY : tests/testhttp.cpp.s
 
 yxtwebcpp/address.o: yxtwebcpp/address.cpp.o
 
@@ -444,6 +484,36 @@ yxtwebcpp/hook.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/hook.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/hook.cpp.s
 .PHONY : yxtwebcpp/hook.cpp.s
+
+yxtwebcpp/http/http.o: yxtwebcpp/http/http.cpp.o
+
+.PHONY : yxtwebcpp/http/http.o
+
+# target to build an object file
+yxtwebcpp/http/http.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/http.cpp.o
+.PHONY : yxtwebcpp/http/http.cpp.o
+
+yxtwebcpp/http/http.i: yxtwebcpp/http/http.cpp.i
+
+.PHONY : yxtwebcpp/http/http.i
+
+# target to preprocess a source file
+yxtwebcpp/http/http.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/http.cpp.i
+.PHONY : yxtwebcpp/http/http.cpp.i
+
+yxtwebcpp/http/http.s: yxtwebcpp/http/http.cpp.s
+
+.PHONY : yxtwebcpp/http/http.s
+
+# target to generate assembly for a file
+yxtwebcpp/http/http.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/http.cpp.s
+.PHONY : yxtwebcpp/http/http.cpp.s
 
 yxtwebcpp/iomanager.o: yxtwebcpp/iomanager.cpp.o
 
@@ -695,6 +765,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... testbytearray"
+	@echo "... testhttp"
 	@echo "... yxtwebcpp"
 	@echo "... yxtwebcpp_static"
 	@echo "... tests/test.o"
@@ -703,6 +774,9 @@ help:
 	@echo "... tests/testbytearray.o"
 	@echo "... tests/testbytearray.i"
 	@echo "... tests/testbytearray.s"
+	@echo "... tests/testhttp.o"
+	@echo "... tests/testhttp.i"
+	@echo "... tests/testhttp.s"
 	@echo "... yxtwebcpp/address.o"
 	@echo "... yxtwebcpp/address.i"
 	@echo "... yxtwebcpp/address.s"
@@ -724,6 +798,9 @@ help:
 	@echo "... yxtwebcpp/hook.o"
 	@echo "... yxtwebcpp/hook.i"
 	@echo "... yxtwebcpp/hook.s"
+	@echo "... yxtwebcpp/http/http.o"
+	@echo "... yxtwebcpp/http/http.i"
+	@echo "... yxtwebcpp/http/http.s"
 	@echo "... yxtwebcpp/iomanager.o"
 	@echo "... yxtwebcpp/iomanager.i"
 	@echo "... yxtwebcpp/iomanager.s"

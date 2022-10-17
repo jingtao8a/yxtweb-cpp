@@ -9,6 +9,7 @@ CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/endian.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/fd_manager.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/fiber.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/hook.hpp
+CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/http/http.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/iomanager.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/macro.hpp

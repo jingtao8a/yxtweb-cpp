@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-09-29 15:24:45
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-16 20:26:34
+ * @LastEditTime: 2022-10-17 10:57:25
  * @FilePath: /yxtweb-cpp/yxtwebcpp/util.hpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -28,6 +28,10 @@ std::string  BacktraceToString(size_t size = 64, size_t skip = 2, const std::str
 uint64_t GetCurrentMS();//毫秒
 
 uint64_t GetCurrentUS();//微秒
+
+std::string Time2Str(time_t ts, const std::string& format);
+
+time_t Str2Time(const char* str, const char* format);
 
 class StringUtil {
 public:

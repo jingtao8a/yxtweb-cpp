@@ -20,6 +20,7 @@ set(LIB_SRC
     yxtwebcpp/address.cpp
     yxtwebcpp/socket.cpp
     yxtwebcpp/bytearray.cpp
+    yxtwebcpp/http/http.cpp
 )
 
 add_library(yxtwebcpp SHARED ${LIB_SRC})
@@ -28,7 +29,7 @@ set_target_properties(yxtwebcpp_static PROPERTIES OUTPUT_NAME "yxtwebcpp")
 
 set(LIB_LIB 
     yxtwebcpp
-    dl 
+    dl
     pthread 
     yaml-cpp)
 
@@ -87,6 +88,10 @@ add_dependencies(test yxtwebcpp)
 add_executable(testbytearray tests/testbytearray.cpp)
 target_link_libraries(testbytearray ${LIB_LIB})
 add_dependencies(testbytearray yxtwebcpp)
+
+add_executable(testhttp tests/testhttp.cpp)
+target_link_libraries(testhttp ${LIB_LIB})
+add_dependencies(testhttp yxtwebcpp)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

@@ -10,6 +10,7 @@ CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.o
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/fd_manager.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/fiber.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/hook.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/log.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/macro.hpp

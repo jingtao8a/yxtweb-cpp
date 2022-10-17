@@ -2,14 +2,14 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-16 18:21:59
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-16 21:03:57
+ * @LastEditTime: 2022-10-17 11:16:54
  * @FilePath: /yxtweb-cpp/yxtwebcpp/http/http.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 #include "http.hpp"
-#include "log.hpp"
+#include "../log.hpp"
 #include <string.h>
-#include "util.hpp"
+#include "../util.hpp"
 
 namespace YXTWebCpp {
 
@@ -215,7 +215,7 @@ void HttpRequest::initParam() {
     initCookies();
 }
 
-void HttpRequest::initQueryParam() {
+void HttpRequest::initQueryParam() {//将m_query中的参数放入m_params
     if(m_parserParamFlag & 0x1) {
         return;
     }
@@ -251,7 +251,7 @@ void HttpRequest::initBodyParam() {
         m_parserParamFlag |= 0x2;
         return;
     }
-    PARSE_PARAM(m_body, m_params, '&',);
+    PARSE_PARAM(m_body, m_params, '&',);//将m_body中的访问参数放入m_params
     m_parserParamFlag |= 0x2;
 }
 
@@ -264,8 +264,99 @@ void HttpRequest::initCookies() {
         m_parserParamFlag |= 0x4;
         return;
     }
-    PARSE_PARAM(cookie, m_cookies, ';', YXTWebCpp::StringUtil::Trim);
+    PARSE_PARAM(cookie, m_cookies, ';', YXTWebCpp::StringUtil::Trim);//将cookie的键值对放入m_cookies
     m_parserParamFlag |= 0x4;
+}
+HttpResponse::HttpResponse(uint8_t version, bool close)
+    :m_status(HttpStatus::OK)
+    ,m_version(version)
+    ,m_close(close)
+    ,m_websocket(false) {
+}
+
+std::string HttpResponse::getHeader(const std::string& key, const std::string& def) const {
+    auto it = m_headers.find(key);
+    return it == m_headers.end() ? def : it->second;
+}
+
+void HttpResponse::setHeader(const std::string& key, const std::string& val) {
+    m_headers[key] = val;
+}
+
+void HttpResponse::delHeader(const std::string& key) {
+    m_headers.erase(key);
+}
+
+void HttpResponse::setRedirect(const std::string& uri) {
+    m_status = HttpStatus::FOUND;
+    setHeader("Location", uri);
+}
+
+void HttpResponse::setCookie(const std::string& key, const std::string& val,
+                            time_t expired, const std::string& path,
+                            const std::string& domain, bool secure) {
+    std::stringstream ss;
+    ss << key << "=" << val;
+    if(expired > 0) {
+        ss << ";expires=" << YXTWebCpp::Time2Str(expired, "%a, %d %b %Y %H:%M:%S") << " GMT";
+    }
+    if(!domain.empty()) {
+        ss << ";domain=" << domain;
+    }
+    if(!path.empty()) {
+        ss << ";path=" << path;
+    }
+    if(secure) {
+        ss << ";secure";
+    }
+    m_cookies.push_back(ss.str());
+}
+
+
+std::string HttpResponse::toString() const {
+    std::stringstream ss;
+    dump(ss);
+    return ss.str();
+}
+
+std::ostream& HttpResponse::dump(std::ostream& os) const {
+    os << "HTTP/"
+        << ((uint32_t)(m_version >> 4))
+        << "."
+        << ((uint32_t)(m_version & 0x0F))
+        << " "
+        << (uint32_t)m_status
+        << " "
+        << (m_reason.empty() ? HttpStatusToString(m_status) : m_reason)
+        << "\r\n";
+
+    for(auto& i : m_headers) {
+        if(!m_websocket && strcasecmp(i.first.c_str(), "connection") == 0) {
+            continue;
+        }
+        os << i.first << ": " << i.second << "\r\n";
+    }
+    for(auto& i : m_cookies) {
+        os << "Set-Cookie: " << i << "\r\n";
+    }
+    if(!m_websocket) {
+        os << "connection: " << (m_close ? "close" : "keep-alive") << "\r\n";
+    }
+    if(!m_body.empty()) {
+        os << "content-length: " << m_body.size() << "\r\n\r\n"
+            << m_body;
+    } else {
+        os << "\r\n";
+    }
+    return os;
+}
+
+std::ostream& operator<<(std::ostream& os, const HttpRequest& req) {
+    return req.dump(os);
+}
+
+std::ostream& operator<<(std::ostream& os, const HttpResponse& rsp) {
+    return rsp.dump(os);
 }
 
 }

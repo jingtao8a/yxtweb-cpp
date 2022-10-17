@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-09-17 16:37:43
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-16 14:27:15
+ * @LastEditTime: 2022-10-17 10:38:20
  * @FilePath: /YXTWebCpp/tests/test.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -106,6 +106,8 @@ int main() {
 
     // auto iter = heap.lower_bound(ptr);
     // std::cout << (*iter)->m_a << (*iter)->m_b;
-    std::cout << std::setw(6) << std::setfill('0') << std::hex << 0xABC << " ";
+    // std::cout << std::setw(6) << std::setfill('0') << std::hex << 0xABC << " ";
+    std::string str = "yuxintao";
+    std::cout << str.substr(5, -1);
     return 0;
 }

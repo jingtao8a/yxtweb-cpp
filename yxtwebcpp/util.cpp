@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-09-29 15:24:58
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-16 20:49:39
+ * @LastEditTime: 2022-10-17 10:57:15
  * @FilePath: /yxtweb-cpp/yxtwebcpp/util.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -13,6 +13,7 @@
 #include <sstream>
 #include <sys/time.h>
 #include <stdarg.h>
+#include <string.h>
 #include "log.hpp"
 #include "fiber.hpp"
 
@@ -63,6 +64,23 @@ uint64_t GetCurrentUS() {//微秒
     struct timeval tv;
     gettimeofday(&tv, NULL);
     return tv.tv_sec * 1000 * 1000uLL + tv.tv_usec;
+}
+
+std::string Time2Str(time_t ts, const std::string& format) {
+    struct tm tm;
+    localtime_r(&ts, &tm);
+    char buf[64];
+    strftime(buf, sizeof(buf), format.c_str(), &tm);
+    return buf;
+}
+
+time_t Str2Time(const char* str, const char* format) {
+    struct tm t;
+    memset(&t, 0, sizeof(t));
+    if(!strptime(str, format, &t)) {
+        return 0;
+    }
+    return mktime(&t);
 }
 
 std::string StringUtil::Format(const char* fmt, ...) {

@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fd_manager.cpp.o"
   "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.o"
   "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/hook.cpp.o"
+  "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/http.cpp.o"
   "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.o"
   "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/log.cpp.o"
   "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/mutex.cpp.o"

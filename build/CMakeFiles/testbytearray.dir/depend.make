@@ -9,6 +9,7 @@ CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.o: ../yxtwebcpp/endian.hpp
 CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.o: ../yxtwebcpp/fd_manager.hpp
 CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.o: ../yxtwebcpp/fiber.hpp
 CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.o: ../yxtwebcpp/hook.hpp
+CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.o: ../yxtwebcpp/http/http.hpp
 CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.o: ../yxtwebcpp/iomanager.hpp
 CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.o: ../yxtwebcpp/macro.hpp

@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-16 18:22:06
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-16 21:02:01
+ * @LastEditTime: 2022-10-17 11:24:02
  * @FilePath: /yxtweb-cpp/yxtwebcpp/http/http.hpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -11,6 +11,8 @@
 #include <string>
 #include <map>
 #include <memory>
+#include <vector>
+#include <boost/lexical_cast.hpp>
 
 namespace YXTWebCpp {
 
@@ -81,7 +83,7 @@ enum HttpStatus {
     #define XX(num, name, string) name = num,
     HTTP_STATUS_MAP(XX)
     #undef XX
-}
+};
 
 /* Request Methods */
 #define HTTP_METHOD_MAP(XX)         \
@@ -188,29 +190,41 @@ public:
     HttpRequest(uint8_t version = 0x11, bool close = true);
 
     std::shared_ptr<HttpResponse> createResponse();//根据请求创建Response
-    HttpMethod getMethod() const { return m_method;}
-    uint8_t getVersion() const { return m_version;}
 
+    //设置Method
+    HttpMethod getMethod() const { return m_method;}
+    void setMethod(HttpMethod v) { m_method = v;}
+    //设置http版本
+    uint8_t getVersion() const { return m_version;}
+    void setVersion(uint8_t v) { m_version = v;}
+    //设置uri
     const std::string& getPath() const { return m_path;}
+    void setPath(const std::string& v) { m_path = v;}
+    //设置fragment
+    void setFragment(const std::string& v) { m_fragment = v;}
+    //设置访问参数
     const std::string& getQuery() const { return m_query;}
+    void setQuery(const std::string& v) { m_query = v;}
+    //设置消息体
     const std::string& getBody() const { return m_body;}
+    void setBody(const std::string& v) { m_body = v;}
+    //设置长连接或短连接
+    bool isClose() const { return m_close;}
+    void setClose(bool v) { m_close = v;}
+    //设置是否使用websocket协议
+    bool isWebsocket() const { return m_websocket;}
+    void setWebsocket(bool v) { m_websocket = v;}
     
+    
+    //关于m_headers,m_params,m_cookies的相关操作
     const MapType& getHeaders() const { return m_headers;}
     const MapType& getParams() const { return m_params;}
     const MapType& getCookies() const { return m_cookies;}
-    void setMethod(HttpMethod v) { m_method = v;}
-    void setVersion(uint8_t v) { m_version = v;}
-    void setPath(const std::string& v) { m_path = v;}
-    void setQuery(const std::string& v) { m_query = v;}
-    void setFragment(const std::string& v) { m_fragment = v;}
-    void setBody(const std::string& v) { m_body = v;}
-    bool isClose() const { return m_close;}
-    void setClose(bool v) { m_close = v;}
-    bool isWebsocket() const { return m_websocket;}
-    void setWebsocket(bool v) { m_websocket = v;}
+        
     void setHeaders(const MapType& v) { m_headers = v;}
     void setParams(const MapType& v) { m_params = v;}
     void setCookies(const MapType& v) { m_cookies = v;}
+
     std::string getHeader(const std::string& key, const std::string& def = "") const;
     std::string getParam(const std::string& key, const std::string& def = "");
     std::string getCookie(const std::string& key, const std::string& def = "");
@@ -280,7 +294,7 @@ private:
     /// 请求路径
     std::string m_path;//uri
     /// 请求参数
-    std::string m_query;//访问参数
+    std::string m_query;//访问参数,如果为空，表示访问参数不放在请求行中（可以放在请求体）
     /// 请求fragment
     std::string m_fragment;
     /// 请求消息体
@@ -292,6 +306,78 @@ private:
     /// 请求Cookie MAP
     MapType m_cookies;//存放cookie中的key value
 };
+
+class HttpResponse {
+public:
+    /// MapType
+    typedef std::map<std::string, std::string, CaseInsensitiveLess> MapType;
+
+    HttpResponse(uint8_t version = 0x11, bool close = true);
+    
+    //设置http版本号
+    uint8_t getVersion() const { return m_version;}
+    void setVersion(uint8_t v) { m_version = v;}
+    //设置响应码
+    HttpStatus getStatus() const { return m_status;}
+    void setStatus(HttpStatus v) { m_status = v;}
+    //设置响应消息
+    const std::string& getReason() const { return m_reason;}
+    void setReason(const std::string& v) { m_reason = v;}
+    //设置响应体
+    const std::string& getBody() const { return m_body;}
+    void setBody(const std::string& v) { m_body = v;}
+
+    //设置长连接或短连接
+    bool isClose() const { return m_close;}
+    void setClose(bool v) { m_close = v;}
+    //设置是否使用websocket协议
+    bool isWebsocket() const { return m_websocket;}
+    void setWebsocket(bool v) { m_websocket = v;}
+
+    //m_headers相关的参数设置
+    const MapType& getHeaders() const { return m_headers;}
+    void setHeaders(const MapType& v) { m_headers = v;}
+    std::string getHeader(const std::string& key, const std::string& def = "") const;
+    void setHeader(const std::string& key, const std::string& val);
+    void delHeader(const std::string& key);
+    template<class T>
+    bool checkGetHeaderAs(const std::string& key, T& val, const T& def = T()) {
+        return checkGetAs(m_headers, key, val, def);
+    }
+    template<class T>
+    T getHeaderAs(const std::string& key, const T& def = T()) {
+        return getAs(m_headers, key, def);
+    }
+
+    std::ostream& dump(std::ostream& os) const;
+    std::string toString() const;
+
+    void setRedirect(const std::string& uri);
+    void setCookie(const std::string& key, const std::string& val,
+                time_t expired = 0, const std::string& path = "",
+                const std::string& domain = "", bool secure = false);
+private:
+    /// 响应状态
+    HttpStatus m_status;
+    /// 版本
+    uint8_t m_version;
+    /// 是否自动关闭
+    bool m_close;
+    /// 是否为websocket
+    bool m_websocket;
+    /// 响应消息体
+    std::string m_body;
+    /// 响应原因
+    std::string m_reason;
+    /// 响应头部MAP
+    MapType m_headers;
+
+    std::vector<std::string> m_cookies;
+};
+
+std::ostream& operator<<(std::ostream& os, const HttpRequest& req);
+
+std::ostream& operator<<(std::ostream& os, const HttpResponse& rsp);
 
 }
 

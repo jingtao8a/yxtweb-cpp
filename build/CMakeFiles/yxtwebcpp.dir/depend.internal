@@ -77,6 +77,15 @@ CMakeFiles/yxtwebcpp.dir/yxtwebcpp/hook.cpp.o
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/thread.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/timer.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/util.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/http.cpp.o
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http.cpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/log.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/mutex.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/nocopyable.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/singleton.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/thread.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/util.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.o
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/fiber.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.cpp
