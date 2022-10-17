@@ -86,6 +86,28 @@ CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http.cpp.o
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/singleton.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/thread.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/util.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http11_parser.cpp.o
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http11_common.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http11_parser.cpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http11_parser.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http_parser.cpp.o
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/config.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http11_common.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http11_parser.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http_parser.cpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http_parser.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpclient_parser.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/log.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/mutex.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/nocopyable.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/singleton.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/thread.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/util.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpclient_parser.cpp.o
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http11_common.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpclient_parser.cpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpclient_parser.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/iomanager.cpp.o
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/fiber.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.cpp

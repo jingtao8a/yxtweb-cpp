@@ -10,6 +10,10 @@ CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/fd_manager.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/fiber.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/hook.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/http/http.hpp
+CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/http/http11_common.hpp
+CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/http/http11_parser.hpp
+CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/http/http_parser.hpp
+CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/http/httpclient_parser.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/iomanager.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/macro.hpp

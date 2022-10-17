@@ -124,6 +124,26 @@ vector
 boost/lexical_cast.hpp
 -
 
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http11_common.hpp
+sys/types.h
+-
+
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http11_parser.hpp
+http11_common.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http11_common.hpp
+
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http_parser.hpp
+http.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http.hpp
+http11_parser.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http11_parser.hpp
+httpclient_parser.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpclient_parser.hpp
+
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpclient_parser.hpp
+http11_common.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http11_common.hpp
+
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.hpp
 scheduler.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/scheduler.hpp
@@ -275,4 +295,10 @@ bytearray.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/bytearray.hpp
 http/http.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http.hpp
+http/http11_parser.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http11_parser.hpp
+http/httpclient_parser.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpclient_parser.hpp
+http/http_parser.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http_parser.hpp
 

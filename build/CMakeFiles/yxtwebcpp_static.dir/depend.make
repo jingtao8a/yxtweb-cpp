@@ -86,6 +86,28 @@ CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http.cpp.o: ../yxtwebcpp/singleto
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http.cpp.o: ../yxtwebcpp/thread.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http.cpp.o: ../yxtwebcpp/util.hpp
 
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http11_parser.cpp.o: ../yxtwebcpp/http/http11_common.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http11_parser.cpp.o: ../yxtwebcpp/http/http11_parser.cpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http11_parser.cpp.o: ../yxtwebcpp/http/http11_parser.hpp
+
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http_parser.cpp.o: ../yxtwebcpp/config.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http_parser.cpp.o: ../yxtwebcpp/http/http.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http_parser.cpp.o: ../yxtwebcpp/http/http11_common.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http_parser.cpp.o: ../yxtwebcpp/http/http11_parser.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http_parser.cpp.o: ../yxtwebcpp/http/http_parser.cpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http_parser.cpp.o: ../yxtwebcpp/http/http_parser.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http_parser.cpp.o: ../yxtwebcpp/http/httpclient_parser.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http_parser.cpp.o: ../yxtwebcpp/log.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http_parser.cpp.o: ../yxtwebcpp/mutex.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http_parser.cpp.o: ../yxtwebcpp/nocopyable.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http_parser.cpp.o: ../yxtwebcpp/singleton.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http_parser.cpp.o: ../yxtwebcpp/thread.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http_parser.cpp.o: ../yxtwebcpp/util.hpp
+
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpclient_parser.cpp.o: ../yxtwebcpp/http/http11_common.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpclient_parser.cpp.o: ../yxtwebcpp/http/httpclient_parser.cpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpclient_parser.cpp.o: ../yxtwebcpp/http/httpclient_parser.hpp
+
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/iomanager.cpp.o: ../yxtwebcpp/fiber.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/iomanager.cpp.o: ../yxtwebcpp/iomanager.cpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/iomanager.cpp.o: ../yxtwebcpp/iomanager.hpp

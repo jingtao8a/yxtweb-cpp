@@ -11,6 +11,10 @@ CMakeFiles/testhttp.dir/tests/testhttp.cpp.o
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/fiber.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/hook.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http11_common.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http11_parser.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http_parser.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpclient_parser.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/log.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/macro.hpp

@@ -10,6 +10,10 @@ CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.o: ../yxtwebcpp/fd_manager.
 CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.o: ../yxtwebcpp/fiber.hpp
 CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.o: ../yxtwebcpp/hook.hpp
 CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.o: ../yxtwebcpp/http/http.hpp
+CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.o: ../yxtwebcpp/http/http11_common.hpp
+CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.o: ../yxtwebcpp/http/http11_parser.hpp
+CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.o: ../yxtwebcpp/http/http_parser.hpp
+CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.o: ../yxtwebcpp/http/httpclient_parser.hpp
 CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.o: ../yxtwebcpp/iomanager.hpp
 CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.o: ../yxtwebcpp/macro.hpp

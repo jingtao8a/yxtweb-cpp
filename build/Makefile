@@ -130,6 +130,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_http_parser
+
+# Build rule for target.
+test_http_parser: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_http_parser
+.PHONY : test_http_parser
+
+# fast build rule for target.
+test_http_parser/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/build
+.PHONY : test_http_parser/fast
+
+#=============================================================================
 # Target rules for targets named testhttp
 
 # Build rule for target.
@@ -220,6 +233,33 @@ tests/test.s: tests/test.cpp.s
 tests/test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cpp.s
 .PHONY : tests/test.cpp.s
+
+tests/test_http_parser.o: tests/test_http_parser.cpp.o
+
+.PHONY : tests/test_http_parser.o
+
+# target to build an object file
+tests/test_http_parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/tests/test_http_parser.cpp.o
+.PHONY : tests/test_http_parser.cpp.o
+
+tests/test_http_parser.i: tests/test_http_parser.cpp.i
+
+.PHONY : tests/test_http_parser.i
+
+# target to preprocess a source file
+tests/test_http_parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/tests/test_http_parser.cpp.i
+.PHONY : tests/test_http_parser.cpp.i
+
+tests/test_http_parser.s: tests/test_http_parser.cpp.s
+
+.PHONY : tests/test_http_parser.s
+
+# target to generate assembly for a file
+tests/test_http_parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/tests/test_http_parser.cpp.s
+.PHONY : tests/test_http_parser.cpp.s
 
 tests/testbytearray.o: tests/testbytearray.cpp.o
 
@@ -515,6 +555,96 @@ yxtwebcpp/http/http.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/http.cpp.s
 .PHONY : yxtwebcpp/http/http.cpp.s
 
+yxtwebcpp/http/http11_parser.o: yxtwebcpp/http/http11_parser.cpp.o
+
+.PHONY : yxtwebcpp/http/http11_parser.o
+
+# target to build an object file
+yxtwebcpp/http/http11_parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http11_parser.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/http11_parser.cpp.o
+.PHONY : yxtwebcpp/http/http11_parser.cpp.o
+
+yxtwebcpp/http/http11_parser.i: yxtwebcpp/http/http11_parser.cpp.i
+
+.PHONY : yxtwebcpp/http/http11_parser.i
+
+# target to preprocess a source file
+yxtwebcpp/http/http11_parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http11_parser.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/http11_parser.cpp.i
+.PHONY : yxtwebcpp/http/http11_parser.cpp.i
+
+yxtwebcpp/http/http11_parser.s: yxtwebcpp/http/http11_parser.cpp.s
+
+.PHONY : yxtwebcpp/http/http11_parser.s
+
+# target to generate assembly for a file
+yxtwebcpp/http/http11_parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http11_parser.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/http11_parser.cpp.s
+.PHONY : yxtwebcpp/http/http11_parser.cpp.s
+
+yxtwebcpp/http/http_parser.o: yxtwebcpp/http/http_parser.cpp.o
+
+.PHONY : yxtwebcpp/http/http_parser.o
+
+# target to build an object file
+yxtwebcpp/http/http_parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http_parser.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/http_parser.cpp.o
+.PHONY : yxtwebcpp/http/http_parser.cpp.o
+
+yxtwebcpp/http/http_parser.i: yxtwebcpp/http/http_parser.cpp.i
+
+.PHONY : yxtwebcpp/http/http_parser.i
+
+# target to preprocess a source file
+yxtwebcpp/http/http_parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http_parser.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/http_parser.cpp.i
+.PHONY : yxtwebcpp/http/http_parser.cpp.i
+
+yxtwebcpp/http/http_parser.s: yxtwebcpp/http/http_parser.cpp.s
+
+.PHONY : yxtwebcpp/http/http_parser.s
+
+# target to generate assembly for a file
+yxtwebcpp/http/http_parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http_parser.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/http_parser.cpp.s
+.PHONY : yxtwebcpp/http/http_parser.cpp.s
+
+yxtwebcpp/http/httpclient_parser.o: yxtwebcpp/http/httpclient_parser.cpp.o
+
+.PHONY : yxtwebcpp/http/httpclient_parser.o
+
+# target to build an object file
+yxtwebcpp/http/httpclient_parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpclient_parser.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpclient_parser.cpp.o
+.PHONY : yxtwebcpp/http/httpclient_parser.cpp.o
+
+yxtwebcpp/http/httpclient_parser.i: yxtwebcpp/http/httpclient_parser.cpp.i
+
+.PHONY : yxtwebcpp/http/httpclient_parser.i
+
+# target to preprocess a source file
+yxtwebcpp/http/httpclient_parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpclient_parser.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpclient_parser.cpp.i
+.PHONY : yxtwebcpp/http/httpclient_parser.cpp.i
+
+yxtwebcpp/http/httpclient_parser.s: yxtwebcpp/http/httpclient_parser.cpp.s
+
+.PHONY : yxtwebcpp/http/httpclient_parser.s
+
+# target to generate assembly for a file
+yxtwebcpp/http/httpclient_parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpclient_parser.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpclient_parser.cpp.s
+.PHONY : yxtwebcpp/http/httpclient_parser.cpp.s
+
 yxtwebcpp/iomanager.o: yxtwebcpp/iomanager.cpp.o
 
 .PHONY : yxtwebcpp/iomanager.o
@@ -764,6 +894,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... test_http_parser"
 	@echo "... testbytearray"
 	@echo "... testhttp"
 	@echo "... yxtwebcpp"
@@ -771,6 +902,9 @@ help:
 	@echo "... tests/test.o"
 	@echo "... tests/test.i"
 	@echo "... tests/test.s"
+	@echo "... tests/test_http_parser.o"
+	@echo "... tests/test_http_parser.i"
+	@echo "... tests/test_http_parser.s"
 	@echo "... tests/testbytearray.o"
 	@echo "... tests/testbytearray.i"
 	@echo "... tests/testbytearray.s"
@@ -801,6 +935,15 @@ help:
 	@echo "... yxtwebcpp/http/http.o"
 	@echo "... yxtwebcpp/http/http.i"
 	@echo "... yxtwebcpp/http/http.s"
+	@echo "... yxtwebcpp/http/http11_parser.o"
+	@echo "... yxtwebcpp/http/http11_parser.i"
+	@echo "... yxtwebcpp/http/http11_parser.s"
+	@echo "... yxtwebcpp/http/http_parser.o"
+	@echo "... yxtwebcpp/http/http_parser.i"
+	@echo "... yxtwebcpp/http/http_parser.s"
+	@echo "... yxtwebcpp/http/httpclient_parser.o"
+	@echo "... yxtwebcpp/http/httpclient_parser.i"
+	@echo "... yxtwebcpp/http/httpclient_parser.s"
 	@echo "... yxtwebcpp/iomanager.o"
 	@echo "... yxtwebcpp/iomanager.i"
 	@echo "... yxtwebcpp/iomanager.s"
