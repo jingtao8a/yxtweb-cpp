@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-15 11:03:57
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-15 16:22:04
+ * @LastEditTime: 2022-10-18 11:04:34
  * @FilePath: /yxtweb-cpp/yxtwebcpp/socket.hpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -30,6 +30,10 @@ public:
     };
     
 public:
+    //创建TCP Socket(满足地址类型)
+    static std::shared_ptr<Socket> CreateTCP(std::shared_ptr<Address> address);
+    //创建UDP Socket(满足地址类型)
+    static std::shared_ptr<Socket> CreateUDP(std::shared_ptr<Address> address);
     //创建一个IPv4的TCP Socket对象,未创建sock fd
     static std::shared_ptr<Socket> CreateTCPSocket();
     //创建一个IPv4的UDP Socket对象,已创建sock fd

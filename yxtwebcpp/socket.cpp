@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-15 11:03:50
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-16 10:38:12
+ * @LastEditTime: 2022-10-18 13:36:27
  * @FilePath: /yxtweb-cpp/yxtwebcpp/socket.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -22,6 +22,19 @@ namespace YXTWebCpp {
 static std::shared_ptr<Logger> g_logger = YXTWebCpp_LOG_NAME("system");
 
 //静态
+
+std::shared_ptr<Socket> Socket::CreateTCP(std::shared_ptr<Address> address) {
+    std::shared_ptr<Socket> sock(new Socket(address->getFamily(), TCP, 0));
+    return sock;
+}
+
+std::shared_ptr<Socket> Socket::CreateUDP(std::shared_ptr<Address> address) {
+    std::shared_ptr<Socket> sock(new Socket(address->getFamily(), UDP, 0));
+    sock->newSock();
+    sock->m_isConnected = true;
+    return sock;
+}
+
 std::shared_ptr<Socket> Socket::CreateTCPSocket() {
     std::shared_ptr<Socket> result = std::make_shared<Socket>(IPv4, TCP, 0);
     return result;
@@ -166,8 +179,10 @@ std::shared_ptr<Socket> Socket::accept() {
             << errno << " errstr=" << strerror(errno);
         return nullptr;
     }
-    int flags = fcntl(newsock, F_GETFL, 0);
-    fcntl(newsock, F_SETFL, flags & ~O_NONBLOCK);//设置为阻塞状态
+    if (!is_hook_enable()) {
+        int flags = fcntl(newsock, F_GETFL, 0);
+        fcntl(newsock, F_SETFL, flags & ~O_NONBLOCK);//设置为阻塞状态
+    }
     if (sock->init(newsock)) {
         return sock;
     }

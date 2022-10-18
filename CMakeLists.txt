@@ -24,6 +24,7 @@ set(LIB_SRC
     yxtwebcpp/http/http11_parser.cpp
     yxtwebcpp/http/httpclient_parser.cpp
     yxtwebcpp/http/http_parser.cpp
+    yxtwebcpp/tcpserver.cpp
 )
 
 add_library(yxtwebcpp SHARED ${LIB_SRC})
@@ -88,17 +89,21 @@ add_dependencies(test yxtwebcpp)
 # target_link_libraries(testB ${LIB_LIB})
 # add_dependencies(testB yxtwebcpp)
 
-add_executable(testbytearray tests/testbytearray.cpp)
-target_link_libraries(testbytearray ${LIB_LIB})
-add_dependencies(testbytearray yxtwebcpp)
+# add_executable(testbytearray tests/testbytearray.cpp)
+# target_link_libraries(testbytearray ${LIB_LIB})
+# add_dependencies(testbytearray yxtwebcpp)
 
-add_executable(testhttp tests/testhttp.cpp)
-target_link_libraries(testhttp ${LIB_LIB})
-add_dependencies(testhttp yxtwebcpp)
+# add_executable(testhttp tests/testhttp.cpp)
+# target_link_libraries(testhttp ${LIB_LIB})
+# add_dependencies(testhttp yxtwebcpp)
 
-add_executable(test_http_parser tests/test_http_parser.cpp)
-target_link_libraries(test_http_parser ${LIB_LIB})
-add_dependencies(test_http_parser yxtwebcpp)
+# add_executable(test_http_parser tests/test_http_parser.cpp)
+# target_link_libraries(test_http_parser ${LIB_LIB})
+# add_dependencies(test_http_parser yxtwebcpp)
+
+add_executable(test_tcpserver tests/test_tcpserver.cpp)
+target_link_libraries(test_tcpserver ${LIB_LIB})
+add_dependencies(test_tcpserver yxtwebcpp)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

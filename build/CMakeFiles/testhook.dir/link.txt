@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/testhook.dir/tests/testhook.cpp.o -o ../bin/testhook  -Wl,-rpath,/home/yuxintao/yxtweb-cpp/lib ../lib/libyxtwebcpp.so -ldl -lpthread -lyaml-cpp 

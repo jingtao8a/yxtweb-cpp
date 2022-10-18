@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-09-17 16:37:43
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-17 10:38:20
+ * @LastEditTime: 2022-10-18 13:03:04
  * @FilePath: /YXTWebCpp/tests/test.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -83,6 +83,23 @@ static int64_t DecodeZigzag64(const uint64_t& v) {
     return (v >> 1) ^ -(v & 1);
 }
 
+
+class He : public std::enable_shared_from_this<He> {
+public:
+    He(int age, std::string name):m_age(age), m_name(name) {}
+
+    void fun() {
+        std::cout << m_age << " " << m_name << std::endl;
+    }
+
+    operator bool() {
+        return true;
+    }
+private:
+    int m_age;
+    std::string m_name;
+};
+
 int main() {
     // std::shared_ptr<YXTWebCpp::Logger> logger(new YXTWebCpp::Logger());
     // std::shared_ptr<YXTWebCpp::FileLogAppender> fileLogAppender(new YXTWebCpp::FileLogAppender("./logtxt.txt"));
@@ -107,7 +124,15 @@ int main() {
     // auto iter = heap.lower_bound(ptr);
     // std::cout << (*iter)->m_a << (*iter)->m_b;
     // std::cout << std::setw(6) << std::setfill('0') << std::hex << 0xABC << " ";
-    std::string str = "yuxintao";
-    std::cout << str.substr(5, -1);
+    // std::string str = "yuxintao";
+    // std::cout << str.substr(5, -1);
+    std::shared_ptr<He> he = std::make_shared<He>(21, "yuxintao");
+    auto funobj = std::bind(&He::fun, he->shared_from_this());
+    funobj();
+    // printf("%p %p %p", &he, he, he.get());
+    // std::shared_ptr<He> n;
+    // std::cout << he.operator bool() << n.operator bool();
+    //shared_ptr对象，用cout输出时，进行了重载，输出的是真实指针的地址
+    //shared_ptr放在判断语句中，调用了operator bool重载，true为有指向对象，false为空
     return 0;
 }

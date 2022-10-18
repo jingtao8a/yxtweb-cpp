@@ -1,7 +1,5 @@
-/home/yuxintao/yxtweb-cpp/build/CMakeFiles/test_http_parser.dir
-/home/yuxintao/yxtweb-cpp/build/CMakeFiles/testhttp.dir
+/home/yuxintao/yxtweb-cpp/build/CMakeFiles/test_tcpserver.dir
 /home/yuxintao/yxtweb-cpp/build/CMakeFiles/edit_cache.dir
-/home/yuxintao/yxtweb-cpp/build/CMakeFiles/testbytearray.dir
 /home/yuxintao/yxtweb-cpp/build/CMakeFiles/test.dir
 /home/yuxintao/yxtweb-cpp/build/CMakeFiles/rebuild_cache.dir
 /home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp_static.dir

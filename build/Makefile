@@ -130,43 +130,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test_http_parser
+# Target rules for targets named test_tcpserver
 
 # Build rule for target.
-test_http_parser: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_http_parser
-.PHONY : test_http_parser
+test_tcpserver: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_tcpserver
+.PHONY : test_tcpserver
 
 # fast build rule for target.
-test_http_parser/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/build
-.PHONY : test_http_parser/fast
-
-#=============================================================================
-# Target rules for targets named testhttp
-
-# Build rule for target.
-testhttp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testhttp
-.PHONY : testhttp
-
-# fast build rule for target.
-testhttp/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testhttp.dir/build.make CMakeFiles/testhttp.dir/build
-.PHONY : testhttp/fast
-
-#=============================================================================
-# Target rules for targets named testbytearray
-
-# Build rule for target.
-testbytearray: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testbytearray
-.PHONY : testbytearray
-
-# fast build rule for target.
-testbytearray/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testbytearray.dir/build.make CMakeFiles/testbytearray.dir/build
-.PHONY : testbytearray/fast
+test_tcpserver/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcpserver.dir/build.make CMakeFiles/test_tcpserver.dir/build
+.PHONY : test_tcpserver/fast
 
 #=============================================================================
 # Target rules for targets named test
@@ -234,86 +208,32 @@ tests/test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cpp.s
 .PHONY : tests/test.cpp.s
 
-tests/test_http_parser.o: tests/test_http_parser.cpp.o
+tests/test_tcpserver.o: tests/test_tcpserver.cpp.o
 
-.PHONY : tests/test_http_parser.o
-
-# target to build an object file
-tests/test_http_parser.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/tests/test_http_parser.cpp.o
-.PHONY : tests/test_http_parser.cpp.o
-
-tests/test_http_parser.i: tests/test_http_parser.cpp.i
-
-.PHONY : tests/test_http_parser.i
-
-# target to preprocess a source file
-tests/test_http_parser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/tests/test_http_parser.cpp.i
-.PHONY : tests/test_http_parser.cpp.i
-
-tests/test_http_parser.s: tests/test_http_parser.cpp.s
-
-.PHONY : tests/test_http_parser.s
-
-# target to generate assembly for a file
-tests/test_http_parser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/tests/test_http_parser.cpp.s
-.PHONY : tests/test_http_parser.cpp.s
-
-tests/testbytearray.o: tests/testbytearray.cpp.o
-
-.PHONY : tests/testbytearray.o
+.PHONY : tests/test_tcpserver.o
 
 # target to build an object file
-tests/testbytearray.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testbytearray.dir/build.make CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.o
-.PHONY : tests/testbytearray.cpp.o
+tests/test_tcpserver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcpserver.dir/build.make CMakeFiles/test_tcpserver.dir/tests/test_tcpserver.cpp.o
+.PHONY : tests/test_tcpserver.cpp.o
 
-tests/testbytearray.i: tests/testbytearray.cpp.i
+tests/test_tcpserver.i: tests/test_tcpserver.cpp.i
 
-.PHONY : tests/testbytearray.i
-
-# target to preprocess a source file
-tests/testbytearray.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testbytearray.dir/build.make CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.i
-.PHONY : tests/testbytearray.cpp.i
-
-tests/testbytearray.s: tests/testbytearray.cpp.s
-
-.PHONY : tests/testbytearray.s
-
-# target to generate assembly for a file
-tests/testbytearray.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testbytearray.dir/build.make CMakeFiles/testbytearray.dir/tests/testbytearray.cpp.s
-.PHONY : tests/testbytearray.cpp.s
-
-tests/testhttp.o: tests/testhttp.cpp.o
-
-.PHONY : tests/testhttp.o
-
-# target to build an object file
-tests/testhttp.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testhttp.dir/build.make CMakeFiles/testhttp.dir/tests/testhttp.cpp.o
-.PHONY : tests/testhttp.cpp.o
-
-tests/testhttp.i: tests/testhttp.cpp.i
-
-.PHONY : tests/testhttp.i
+.PHONY : tests/test_tcpserver.i
 
 # target to preprocess a source file
-tests/testhttp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testhttp.dir/build.make CMakeFiles/testhttp.dir/tests/testhttp.cpp.i
-.PHONY : tests/testhttp.cpp.i
+tests/test_tcpserver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcpserver.dir/build.make CMakeFiles/test_tcpserver.dir/tests/test_tcpserver.cpp.i
+.PHONY : tests/test_tcpserver.cpp.i
 
-tests/testhttp.s: tests/testhttp.cpp.s
+tests/test_tcpserver.s: tests/test_tcpserver.cpp.s
 
-.PHONY : tests/testhttp.s
+.PHONY : tests/test_tcpserver.s
 
 # target to generate assembly for a file
-tests/testhttp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/testhttp.dir/build.make CMakeFiles/testhttp.dir/tests/testhttp.cpp.s
-.PHONY : tests/testhttp.cpp.s
+tests/test_tcpserver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcpserver.dir/build.make CMakeFiles/test_tcpserver.dir/tests/test_tcpserver.cpp.s
+.PHONY : tests/test_tcpserver.cpp.s
 
 yxtwebcpp/address.o: yxtwebcpp/address.cpp.o
 
@@ -795,6 +715,36 @@ yxtwebcpp/socket.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.s
 .PHONY : yxtwebcpp/socket.cpp.s
 
+yxtwebcpp/tcpserver.o: yxtwebcpp/tcpserver.cpp.o
+
+.PHONY : yxtwebcpp/tcpserver.o
+
+# target to build an object file
+yxtwebcpp/tcpserver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/tcpserver.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/tcpserver.cpp.o
+.PHONY : yxtwebcpp/tcpserver.cpp.o
+
+yxtwebcpp/tcpserver.i: yxtwebcpp/tcpserver.cpp.i
+
+.PHONY : yxtwebcpp/tcpserver.i
+
+# target to preprocess a source file
+yxtwebcpp/tcpserver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/tcpserver.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/tcpserver.cpp.i
+.PHONY : yxtwebcpp/tcpserver.cpp.i
+
+yxtwebcpp/tcpserver.s: yxtwebcpp/tcpserver.cpp.s
+
+.PHONY : yxtwebcpp/tcpserver.s
+
+# target to generate assembly for a file
+yxtwebcpp/tcpserver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/tcpserver.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/tcpserver.cpp.s
+.PHONY : yxtwebcpp/tcpserver.cpp.s
+
 yxtwebcpp/thread.o: yxtwebcpp/thread.cpp.o
 
 .PHONY : yxtwebcpp/thread.o
@@ -894,23 +844,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... test_http_parser"
-	@echo "... testbytearray"
-	@echo "... testhttp"
+	@echo "... test_tcpserver"
 	@echo "... yxtwebcpp"
 	@echo "... yxtwebcpp_static"
 	@echo "... tests/test.o"
 	@echo "... tests/test.i"
 	@echo "... tests/test.s"
-	@echo "... tests/test_http_parser.o"
-	@echo "... tests/test_http_parser.i"
-	@echo "... tests/test_http_parser.s"
-	@echo "... tests/testbytearray.o"
-	@echo "... tests/testbytearray.i"
-	@echo "... tests/testbytearray.s"
-	@echo "... tests/testhttp.o"
-	@echo "... tests/testhttp.i"
-	@echo "... tests/testhttp.s"
+	@echo "... tests/test_tcpserver.o"
+	@echo "... tests/test_tcpserver.i"
+	@echo "... tests/test_tcpserver.s"
 	@echo "... yxtwebcpp/address.o"
 	@echo "... yxtwebcpp/address.i"
 	@echo "... yxtwebcpp/address.s"
@@ -959,6 +901,9 @@ help:
 	@echo "... yxtwebcpp/socket.o"
 	@echo "... yxtwebcpp/socket.i"
 	@echo "... yxtwebcpp/socket.s"
+	@echo "... yxtwebcpp/tcpserver.o"
+	@echo "... yxtwebcpp/tcpserver.i"
+	@echo "... yxtwebcpp/tcpserver.s"
 	@echo "... yxtwebcpp/thread.o"
 	@echo "... yxtwebcpp/thread.i"
 	@echo "... yxtwebcpp/thread.s"

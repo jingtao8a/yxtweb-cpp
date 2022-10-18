@@ -230,6 +230,12 @@ nocopyable.hpp
 address.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/address.hpp
 
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/tcpserver.hpp
+socket.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/socket.hpp
+iomanager.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.hpp
+
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/thread.hpp
 thread
 -
@@ -303,4 +309,6 @@ http/httpclient_parser.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpclient_parser.hpp
 http/http_parser.hpp
 /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http_parser.hpp
+tcpserver.hpp
+/home/yuxintao/yxtweb-cpp/yxtwebcpp/tcpserver.hpp
 
