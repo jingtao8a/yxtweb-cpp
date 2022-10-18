@@ -28,6 +28,7 @@ set(LIB_SRC
     yxtwebcpp/streams/stream.cpp
     yxtwebcpp/streams/socket_stream.cpp
     yxtwebcpp/http/httpstream.cpp
+    yxtwebcpp/http/httpserver.cpp
 )
 
 add_library(yxtwebcpp SHARED ${LIB_SRC})
@@ -107,6 +108,10 @@ add_dependencies(test yxtwebcpp)
 add_executable(test_tcpserver tests/test_tcpserver.cpp)
 target_link_libraries(test_tcpserver ${LIB_LIB})
 add_dependencies(test_tcpserver yxtwebcpp)
+
+add_executable(test_httpserver tests/test_httpserver.cpp)
+target_link_libraries(test_httpserver ${LIB_LIB})
+add_dependencies(test_httpserver yxtwebcpp)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

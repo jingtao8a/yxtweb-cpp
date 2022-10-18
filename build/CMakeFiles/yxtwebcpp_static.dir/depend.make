@@ -108,6 +108,32 @@ CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpclient_parser.cpp.o: ../yxtwe
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpclient_parser.cpp.o: ../yxtwebcpp/http/httpclient_parser.cpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpclient_parser.cpp.o: ../yxtwebcpp/http/httpclient_parser.hpp
 
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/address.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/bytearray.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/fiber.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/hook.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/http/http.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/http/http11_common.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/http/http11_parser.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/http/http_parser.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/http/httpclient_parser.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/http/httpserver.cpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/http/httpserver.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/http/httpstream.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/iomanager.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/log.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/mutex.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/nocopyable.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/scheduler.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/singleton.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/socket.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/streams/socket_stream.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/streams/stream.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/tcpserver.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/thread.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/timer.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/util.hpp
+
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpstream.cpp.o: ../yxtwebcpp/address.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpstream.cpp.o: ../yxtwebcpp/bytearray.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpstream.cpp.o: ../yxtwebcpp/hook.hpp

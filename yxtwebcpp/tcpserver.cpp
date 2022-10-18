@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-18 11:00:50
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-18 13:24:17
+ * @LastEditTime: 2022-10-18 20:29:27
  * @FilePath: /yxtweb-cpp/yxtwebcpp/tcpserver.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -95,6 +95,7 @@ void TCPServer::startAccept(std::shared_ptr<Socket> sock) {
     while (!isStop) {
         auto clientSock = sock->accept();//如果阻塞，往IOManger中加入监听事件，并且挂起该协程
         if (clientSock) {
+            clientSock->setRecvTimeout(m_recvTimeout);
             m_worker->schedule(std::bind(&TCPServer::handleClient, shared_from_this(), clientSock));
         }
     }
@@ -102,7 +103,6 @@ void TCPServer::startAccept(std::shared_ptr<Socket> sock) {
 
 void TCPServer::handleClient(std::shared_ptr<Socket> sock) {
     YXTWebCpp_LOG_INFO(g_logger) << "handle client" << sock->toString();
-    sock->setRecvTimeout(m_recvTimeout);
     while (!isStop) {
         std::string buffer;
         buffer.resize(1024);

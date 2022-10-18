@@ -130,6 +130,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_httpserver
+
+# Build rule for target.
+test_httpserver: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_httpserver
+.PHONY : test_httpserver
+
+# fast build rule for target.
+test_httpserver/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpserver.dir/build.make CMakeFiles/test_httpserver.dir/build
+.PHONY : test_httpserver/fast
+
+#=============================================================================
 # Target rules for targets named test_tcpserver
 
 # Build rule for target.
@@ -207,6 +220,33 @@ tests/test.s: tests/test.cpp.s
 tests/test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test.cpp.s
 .PHONY : tests/test.cpp.s
+
+tests/test_httpserver.o: tests/test_httpserver.cpp.o
+
+.PHONY : tests/test_httpserver.o
+
+# target to build an object file
+tests/test_httpserver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpserver.dir/build.make CMakeFiles/test_httpserver.dir/tests/test_httpserver.cpp.o
+.PHONY : tests/test_httpserver.cpp.o
+
+tests/test_httpserver.i: tests/test_httpserver.cpp.i
+
+.PHONY : tests/test_httpserver.i
+
+# target to preprocess a source file
+tests/test_httpserver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpserver.dir/build.make CMakeFiles/test_httpserver.dir/tests/test_httpserver.cpp.i
+.PHONY : tests/test_httpserver.cpp.i
+
+tests/test_httpserver.s: tests/test_httpserver.cpp.s
+
+.PHONY : tests/test_httpserver.s
+
+# target to generate assembly for a file
+tests/test_httpserver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_httpserver.dir/build.make CMakeFiles/test_httpserver.dir/tests/test_httpserver.cpp.s
+.PHONY : tests/test_httpserver.cpp.s
 
 tests/test_tcpserver.o: tests/test_tcpserver.cpp.o
 
@@ -564,6 +604,36 @@ yxtwebcpp/http/httpclient_parser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpclient_parser.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpclient_parser.cpp.s
 .PHONY : yxtwebcpp/http/httpclient_parser.cpp.s
+
+yxtwebcpp/http/httpserver.o: yxtwebcpp/http/httpserver.cpp.o
+
+.PHONY : yxtwebcpp/http/httpserver.o
+
+# target to build an object file
+yxtwebcpp/http/httpserver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpserver.cpp.o
+.PHONY : yxtwebcpp/http/httpserver.cpp.o
+
+yxtwebcpp/http/httpserver.i: yxtwebcpp/http/httpserver.cpp.i
+
+.PHONY : yxtwebcpp/http/httpserver.i
+
+# target to preprocess a source file
+yxtwebcpp/http/httpserver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpserver.cpp.i
+.PHONY : yxtwebcpp/http/httpserver.cpp.i
+
+yxtwebcpp/http/httpserver.s: yxtwebcpp/http/httpserver.cpp.s
+
+.PHONY : yxtwebcpp/http/httpserver.s
+
+# target to generate assembly for a file
+yxtwebcpp/http/httpserver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpserver.cpp.s
+.PHONY : yxtwebcpp/http/httpserver.cpp.s
 
 yxtwebcpp/http/httpstream.o: yxtwebcpp/http/httpstream.cpp.o
 
@@ -934,12 +1004,16 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... test_httpserver"
 	@echo "... test_tcpserver"
 	@echo "... yxtwebcpp"
 	@echo "... yxtwebcpp_static"
 	@echo "... tests/test.o"
 	@echo "... tests/test.i"
 	@echo "... tests/test.s"
+	@echo "... tests/test_httpserver.o"
+	@echo "... tests/test_httpserver.i"
+	@echo "... tests/test_httpserver.s"
 	@echo "... tests/test_tcpserver.o"
 	@echo "... tests/test_tcpserver.i"
 	@echo "... tests/test_tcpserver.s"
@@ -976,6 +1050,9 @@ help:
 	@echo "... yxtwebcpp/http/httpclient_parser.o"
 	@echo "... yxtwebcpp/http/httpclient_parser.i"
 	@echo "... yxtwebcpp/http/httpclient_parser.s"
+	@echo "... yxtwebcpp/http/httpserver.o"
+	@echo "... yxtwebcpp/http/httpserver.i"
+	@echo "... yxtwebcpp/http/httpserver.s"
 	@echo "... yxtwebcpp/http/httpstream.o"
 	@echo "... yxtwebcpp/http/httpstream.i"
 	@echo "... yxtwebcpp/http/httpstream.s"

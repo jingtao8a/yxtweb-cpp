@@ -14,6 +14,7 @@ CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/http/http11_common.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/http/http11_parser.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/http/http_parser.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/http/httpclient_parser.hpp
+CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/http/httpserver.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/iomanager.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/macro.hpp
@@ -22,6 +23,8 @@ CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/nocopyable.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/scheduler.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/singleton.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/socket.hpp
+CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/streams/socket_stream.hpp
+CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/streams/stream.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/tcpserver.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/thread.hpp
 CMakeFiles/test.dir/tests/test.cpp.o: ../yxtwebcpp/timer.hpp
