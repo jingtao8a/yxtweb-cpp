@@ -84,9 +84,9 @@ public:
     std::string toString() const;
     std::string toHexString() const;
 
-    uint64_t getReadBuffers(std::vector<iovec>& buffers, uint64_t len = ~0ull) const;//不会修改m_position
-    uint64_t getReadBuffers(std::vector<iovec>& buffers, uint64_t len, uint64_t position) const;//不会修改m_position
-    uint64_t getWriteBuffers(std::vector<iovec>& buffers, uint64_t len);//不会修改m_position
+    uint64_t getReadBuffers(std::vector<iovec>& buffers, uint64_t len = ~0ull) const;//不会修改m_position，buffers中的缓冲区对应m_position到m_size之间长度为len的可读缓冲区
+    uint64_t getReadBuffers(std::vector<iovec>& buffers, uint64_t len, uint64_t position) const;//不会修改m_position中的缓冲区对应position到m_size之间长度为len的可读缓冲区
+    uint64_t getWriteBuffers(std::vector<iovec>& buffers, uint64_t len);//不会修改m_position,buffers中的缓冲区对应从m_position开始的长度为len的可写区域
     size_t getSize() const { return m_size;}
 private:
     void addCapacity(size_t size);

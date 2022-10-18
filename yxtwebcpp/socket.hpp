@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-15 11:03:57
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-18 11:04:34
+ * @LastEditTime: 2022-10-18 19:29:32
  * @FilePath: /yxtweb-cpp/yxtwebcpp/socket.hpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -122,6 +122,8 @@ protected:
     std::shared_ptr<Address> m_localAddress;//本地地址
     std::shared_ptr<Address> m_remoteAddress;//远端地址
 };
+
+std::ostream& operator<<(std::ostream& os, const Socket& sock); 
 
 }
 

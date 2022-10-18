@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-15 11:03:50
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-18 13:36:27
+ * @LastEditTime: 2022-10-18 19:29:47
  * @FilePath: /yxtweb-cpp/yxtwebcpp/socket.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -460,6 +460,11 @@ bool Socket::init(int sock) {
     getLocalAddress();//由于是已经connect的TCP sockfd， 可以获得两端的address
     getRemoteAddress();
     return true;
+}
+
+std::ostream& operator<<(std::ostream& os, const Socket& sock) {
+    os << sock.toString();
+    return os;
 }
 
 }

@@ -108,6 +108,21 @@ CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpclient_parser.cpp.o
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http11_common.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpclient_parser.cpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpclient_parser.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpstream.cpp.o
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/address.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/bytearray.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/hook.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http11_common.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http11_parser.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http_parser.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpclient_parser.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpstream.cpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpstream.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/nocopyable.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/socket.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/streams/socket_stream.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/streams/stream.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/iomanager.cpp.o
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/fiber.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.cpp
@@ -164,6 +179,20 @@ CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/socket.cpp.o
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/thread.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/timer.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/util.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/socket_stream.cpp.o
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/address.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/bytearray.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/hook.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/nocopyable.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/socket.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/streams/socket_stream.cpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/streams/socket_stream.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/streams/stream.hpp
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/stream.cpp.o
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/bytearray.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/hook.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/streams/stream.cpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/streams/stream.hpp
 CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/tcpserver.cpp.o
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/address.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/config.hpp

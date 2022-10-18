@@ -25,6 +25,9 @@ set(LIB_SRC
     yxtwebcpp/http/httpclient_parser.cpp
     yxtwebcpp/http/http_parser.cpp
     yxtwebcpp/tcpserver.cpp
+    yxtwebcpp/streams/stream.cpp
+    yxtwebcpp/streams/socket_stream.cpp
+    yxtwebcpp/http/httpstream.cpp
 )
 
 add_library(yxtwebcpp SHARED ${LIB_SRC})

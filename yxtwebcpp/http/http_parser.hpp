@@ -2,7 +2,7 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-10-17 16:13:37
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-17 16:18:19
+ * @LastEditTime: 2022-10-18 19:55:06
  * @FilePath: /yxtweb-cpp/yxtwebcpp/http/http_parser.hpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -20,10 +20,10 @@ class HttpRequestParser {
 public:
 
     HttpRequestParser();
-
+    //解析len长度的数据，返回值为已经解析好的数据，未解析完的数据会移动到data的头部
     size_t execute(char* data, size_t len);
 
-    int isFinished();
+    int isFinished();//如果解析为结束，则说明数据报还未接收完成
 
     int hasError(); 
 

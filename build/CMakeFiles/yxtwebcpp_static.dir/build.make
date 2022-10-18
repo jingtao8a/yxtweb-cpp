@@ -336,6 +336,45 @@ CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/tcpserver.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/tcpserver.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yuxintao/yxtweb-cpp/yxtwebcpp/tcpserver.cpp -o CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/tcpserver.cpp.s
 
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/stream.cpp.o: CMakeFiles/yxtwebcpp_static.dir/flags.make
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/stream.cpp.o: ../yxtwebcpp/streams/stream.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yuxintao/yxtweb-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/stream.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/stream.cpp.o -c /home/yuxintao/yxtweb-cpp/yxtwebcpp/streams/stream.cpp
+
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/stream.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/stream.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yuxintao/yxtweb-cpp/yxtwebcpp/streams/stream.cpp > CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/stream.cpp.i
+
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/stream.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/stream.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yuxintao/yxtweb-cpp/yxtwebcpp/streams/stream.cpp -o CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/stream.cpp.s
+
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/socket_stream.cpp.o: CMakeFiles/yxtwebcpp_static.dir/flags.make
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/socket_stream.cpp.o: ../yxtwebcpp/streams/socket_stream.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yuxintao/yxtweb-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/socket_stream.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/socket_stream.cpp.o -c /home/yuxintao/yxtweb-cpp/yxtwebcpp/streams/socket_stream.cpp
+
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/socket_stream.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/socket_stream.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yuxintao/yxtweb-cpp/yxtwebcpp/streams/socket_stream.cpp > CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/socket_stream.cpp.i
+
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/socket_stream.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/socket_stream.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yuxintao/yxtweb-cpp/yxtwebcpp/streams/socket_stream.cpp -o CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/socket_stream.cpp.s
+
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpstream.cpp.o: CMakeFiles/yxtwebcpp_static.dir/flags.make
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpstream.cpp.o: ../yxtwebcpp/http/httpstream.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yuxintao/yxtweb-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpstream.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpstream.cpp.o -c /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpstream.cpp
+
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpstream.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpstream.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpstream.cpp > CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpstream.cpp.i
+
+CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpstream.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpstream.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpstream.cpp -o CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpstream.cpp.s
+
 # Object files for target yxtwebcpp_static
 yxtwebcpp_static_OBJECTS = \
 "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/log.cpp.o" \
@@ -357,7 +396,10 @@ yxtwebcpp_static_OBJECTS = \
 "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http11_parser.cpp.o" \
 "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpclient_parser.cpp.o" \
 "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http_parser.cpp.o" \
-"CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/tcpserver.cpp.o"
+"CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/tcpserver.cpp.o" \
+"CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/stream.cpp.o" \
+"CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/socket_stream.cpp.o" \
+"CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpstream.cpp.o"
 
 # External object files for target yxtwebcpp_static
 yxtwebcpp_static_EXTERNAL_OBJECTS =
@@ -382,9 +424,12 @@ yxtwebcpp_static_EXTERNAL_OBJECTS =
 ../lib/libyxtwebcpp.a: CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpclient_parser.cpp.o
 ../lib/libyxtwebcpp.a: CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/http_parser.cpp.o
 ../lib/libyxtwebcpp.a: CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/tcpserver.cpp.o
+../lib/libyxtwebcpp.a: CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/stream.cpp.o
+../lib/libyxtwebcpp.a: CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/streams/socket_stream.cpp.o
+../lib/libyxtwebcpp.a: CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpstream.cpp.o
 ../lib/libyxtwebcpp.a: CMakeFiles/yxtwebcpp_static.dir/build.make
 ../lib/libyxtwebcpp.a: CMakeFiles/yxtwebcpp_static.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yuxintao/yxtweb-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX static library ../lib/libyxtwebcpp.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yuxintao/yxtweb-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX static library ../lib/libyxtwebcpp.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/yxtwebcpp_static.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/yxtwebcpp_static.dir/link.txt --verbose=$(VERBOSE)
 
