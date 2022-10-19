@@ -120,6 +120,7 @@ CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/http/http
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/http/httpserver.cpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/http/httpserver.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/http/httpstream.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/http/servlet.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/iomanager.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpserver.cpp.o: ../yxtwebcpp/mutex.hpp
@@ -148,6 +149,23 @@ CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpstream.cpp.o: ../yxtwebcpp/nocopyabl
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpstream.cpp.o: ../yxtwebcpp/socket.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpstream.cpp.o: ../yxtwebcpp/streams/socket_stream.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpstream.cpp.o: ../yxtwebcpp/streams/stream.hpp
+
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.o: ../yxtwebcpp/address.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.o: ../yxtwebcpp/bytearray.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.o: ../yxtwebcpp/hook.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.o: ../yxtwebcpp/http/http.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.o: ../yxtwebcpp/http/http11_common.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.o: ../yxtwebcpp/http/http11_parser.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.o: ../yxtwebcpp/http/http_parser.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.o: ../yxtwebcpp/http/httpclient_parser.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.o: ../yxtwebcpp/http/httpstream.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.o: ../yxtwebcpp/http/servlet.cpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.o: ../yxtwebcpp/http/servlet.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.o: ../yxtwebcpp/mutex.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.o: ../yxtwebcpp/nocopyable.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.o: ../yxtwebcpp/socket.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.o: ../yxtwebcpp/streams/socket_stream.hpp
+CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.o: ../yxtwebcpp/streams/stream.hpp
 
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.o: ../yxtwebcpp/fiber.hpp
 CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.o: ../yxtwebcpp/iomanager.cpp

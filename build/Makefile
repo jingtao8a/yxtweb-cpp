@@ -665,6 +665,36 @@ yxtwebcpp/http/httpstream.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpstream.cpp.s
 .PHONY : yxtwebcpp/http/httpstream.cpp.s
 
+yxtwebcpp/http/servlet.o: yxtwebcpp/http/servlet.cpp.o
+
+.PHONY : yxtwebcpp/http/servlet.o
+
+# target to build an object file
+yxtwebcpp/http/servlet.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/servlet.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.o
+.PHONY : yxtwebcpp/http/servlet.cpp.o
+
+yxtwebcpp/http/servlet.i: yxtwebcpp/http/servlet.cpp.i
+
+.PHONY : yxtwebcpp/http/servlet.i
+
+# target to preprocess a source file
+yxtwebcpp/http/servlet.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/servlet.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.i
+.PHONY : yxtwebcpp/http/servlet.cpp.i
+
+yxtwebcpp/http/servlet.s: yxtwebcpp/http/servlet.cpp.s
+
+.PHONY : yxtwebcpp/http/servlet.s
+
+# target to generate assembly for a file
+yxtwebcpp/http/servlet.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp_static.dir/build.make CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/servlet.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/yxtwebcpp.dir/build.make CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.s
+.PHONY : yxtwebcpp/http/servlet.cpp.s
+
 yxtwebcpp/iomanager.o: yxtwebcpp/iomanager.cpp.o
 
 .PHONY : yxtwebcpp/iomanager.o
@@ -1056,6 +1086,9 @@ help:
 	@echo "... yxtwebcpp/http/httpstream.o"
 	@echo "... yxtwebcpp/http/httpstream.i"
 	@echo "... yxtwebcpp/http/httpstream.s"
+	@echo "... yxtwebcpp/http/servlet.o"
+	@echo "... yxtwebcpp/http/servlet.i"
+	@echo "... yxtwebcpp/http/servlet.s"
 	@echo "... yxtwebcpp/iomanager.o"
 	@echo "... yxtwebcpp/iomanager.i"
 	@echo "... yxtwebcpp/iomanager.s"

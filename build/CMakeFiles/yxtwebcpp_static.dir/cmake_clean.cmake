@@ -14,6 +14,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpclient_parser.cpp.o"
   "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpserver.cpp.o"
   "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/httpstream.cpp.o"
+  "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/http/servlet.cpp.o"
   "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/iomanager.cpp.o"
   "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/log.cpp.o"
   "CMakeFiles/yxtwebcpp_static.dir/yxtwebcpp/mutex.cpp.o"

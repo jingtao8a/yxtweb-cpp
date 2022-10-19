@@ -2,12 +2,14 @@
  * @Author: yuxintao 1921056015@qq.com
  * @Date: 2022-09-17 16:37:43
  * @LastEditors: yuxintao 1921056015@qq.com
- * @LastEditTime: 2022-10-18 13:03:04
+ * @LastEditTime: 2022-10-19 12:39:26
  * @FilePath: /YXTWebCpp/tests/test.cpp
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 #include "../yxtwebcpp/yxtwebcpp.hpp"
 #include <iomanip>
+#include <map>
+#include <unordered_map>
 // static bool flag = true;
 
 // static std::shared_ptr<YXTWebCpp::Logger> g_logger = YXTWebCpp_LOG_ROOT();
@@ -126,13 +128,22 @@ int main() {
     // std::cout << std::setw(6) << std::setfill('0') << std::hex << 0xABC << " ";
     // std::string str = "yuxintao";
     // std::cout << str.substr(5, -1);
-    std::shared_ptr<He> he = std::make_shared<He>(21, "yuxintao");
-    auto funobj = std::bind(&He::fun, he->shared_from_this());
-    funobj();
+    // std::shared_ptr<He> he = std::make_shared<He>(21, "yuxintao");
+    // auto funobj = std::bind(&He::fun, he->shared_from_this());
+    // funobj();
     // printf("%p %p %p", &he, he, he.get());
     // std::shared_ptr<He> n;
     // std::cout << he.operator bool() << n.operator bool();
     //shared_ptr对象，用cout输出时，进行了重载，输出的是真实指针的地址
     //shared_ptr放在判断语句中，调用了operator bool重载，true为有指向对象，false为空
+
+    std::map<std::string, int> hash;
+    hash.insert({"12", 12});
+    hash.insert({"13", 13});
+    auto res = hash.erase("11");
+    std::cout << res << std::endl;
+    for (auto& p : hash) {
+        std::cout << p.first << "=" << p.second << std::endl;
+    }
     return 0;
 }

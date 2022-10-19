@@ -16,6 +16,8 @@ CMakeFiles/test_tcpserver.dir/tests/test_tcpserver.cpp.o
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http_parser.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpclient_parser.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpserver.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpstream.hpp
+ /home/yuxintao/yxtweb-cpp/yxtwebcpp/http/servlet.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/log.hpp
  /home/yuxintao/yxtweb-cpp/yxtwebcpp/macro.hpp

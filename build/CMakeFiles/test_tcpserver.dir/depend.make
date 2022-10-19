@@ -15,6 +15,8 @@ CMakeFiles/test_tcpserver.dir/tests/test_tcpserver.cpp.o: ../yxtwebcpp/http/http
 CMakeFiles/test_tcpserver.dir/tests/test_tcpserver.cpp.o: ../yxtwebcpp/http/http_parser.hpp
 CMakeFiles/test_tcpserver.dir/tests/test_tcpserver.cpp.o: ../yxtwebcpp/http/httpclient_parser.hpp
 CMakeFiles/test_tcpserver.dir/tests/test_tcpserver.cpp.o: ../yxtwebcpp/http/httpserver.hpp
+CMakeFiles/test_tcpserver.dir/tests/test_tcpserver.cpp.o: ../yxtwebcpp/http/httpstream.hpp
+CMakeFiles/test_tcpserver.dir/tests/test_tcpserver.cpp.o: ../yxtwebcpp/http/servlet.hpp
 CMakeFiles/test_tcpserver.dir/tests/test_tcpserver.cpp.o: ../yxtwebcpp/iomanager.hpp
 CMakeFiles/test_tcpserver.dir/tests/test_tcpserver.cpp.o: ../yxtwebcpp/log.hpp
 CMakeFiles/test_tcpserver.dir/tests/test_tcpserver.cpp.o: ../yxtwebcpp/macro.hpp
