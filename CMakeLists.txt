@@ -120,6 +120,11 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 
 set(head_files  
+        yxtwebcpp/address.hpp
+        yxtwebcpp/env.hpp
+        yxtwebcpp/nocopyable.hpp
+        yxtwebcpp/singleton.hpp
+        yxtwebcpp/timer.hpp
         yxtwebcpp/log.hpp
         yxtwebcpp/config.hpp
         yxtwebcpp/thread.hpp

@@ -44,6 +44,11 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/yxtwebcpp" TYPE FILE FILES
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/address.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/env.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/nocopyable.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/singleton.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/timer.hpp"
     "/home/yuxintao/yxtweb-cpp/yxtwebcpp/log.hpp"
     "/home/yuxintao/yxtweb-cpp/yxtwebcpp/config.hpp"
     "/home/yuxintao/yxtweb-cpp/yxtwebcpp/thread.hpp"
