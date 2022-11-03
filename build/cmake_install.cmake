@@ -76,6 +76,9 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
     "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpclient_parser.hpp"
     "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http_parser.hpp"
     "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpserver.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http11_common.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpstream.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/servlet.hpp"
     )
 endif()
 

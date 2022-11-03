@@ -149,7 +149,10 @@ set(head_http_files
         yxtwebcpp/http/http11_parser.hpp
         yxtwebcpp/http/httpclient_parser.hpp
         yxtwebcpp/http/http_parser.hpp
-        yxtwebcpp/http/httpserver.hpp)
+        yxtwebcpp/http/httpserver.hpp
+        yxtwebcpp/http/http11_common.hpp
+        yxtwebcpp/http/httpstream.hpp
+        yxtwebcpp/http/servlet.hpp)
 
 set(head_streams_files
         yxtwebcpp/streams/stream.hpp
