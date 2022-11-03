@@ -122,8 +122,8 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 set(head_files
         yxtwebcpp/yxtwebcpp.hpp)
 
-install(FILES ${head_files} DESTINATION  ${CMAKE_BINARY_DIR}/include)
+install(FILES ${head_files} DESTINATION  include)
 install(TARGETS yxtwebcpp yxtwebcpp_static
-        RUNTIME DESTINATION ${CMAKE_BINARY_DIR}/bin
-        LIBRARY DESTINATION ${CMAKE_BINARY_DIR}/lib
-        ARCHIVE DESTINATION ${CMAKE_BINARY_DIR}/lib)
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib)
