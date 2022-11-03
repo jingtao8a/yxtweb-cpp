@@ -43,37 +43,55 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/yuxintao/yxtweb-cpp/build/include/yxtwebcpp.hpp")
-  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
-    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
-  endif()
-  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
-  endif()
-  file(INSTALL DESTINATION "/home/yuxintao/yxtweb-cpp/build/include" TYPE FILE FILES "/home/yuxintao/yxtweb-cpp/yxtwebcpp/yxtwebcpp.hpp")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/yxtwebcpp" TYPE FILE FILES
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/log.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/config.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/thread.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/mutex.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/util.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/macro.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/fiber.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/scheduler.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/hook.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/fd_manager.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/address.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/endian.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/socket.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/bytearray.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/tcpserver.hpp"
+    )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}/home/yuxintao/yxtweb-cpp/build/lib/libyxtwebcpp.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/yuxintao/yxtweb-cpp/build/lib/libyxtwebcpp.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/yxtwebcpp/http" TYPE FILE FILES
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http11_parser.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpclient_parser.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http_parser.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpserver.hpp"
+    )
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/yxtwebcpp/streams" TYPE FILE FILES
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/streams/stream.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/streams/socket_stream.hpp"
+    )
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libyxtwebcpp.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libyxtwebcpp.so")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}/home/yuxintao/yxtweb-cpp/build/lib/libyxtwebcpp.so"
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libyxtwebcpp.so"
          RPATH "")
   endif()
-  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/yuxintao/yxtweb-cpp/build/lib/libyxtwebcpp.so")
-  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
-    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
-  endif()
-  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
-  endif()
-  file(INSTALL DESTINATION "/home/yuxintao/yxtweb-cpp/build/lib" TYPE SHARED_LIBRARY FILES "/home/yuxintao/yxtweb-cpp/lib/libyxtwebcpp.so")
-  if(EXISTS "$ENV{DESTDIR}/home/yuxintao/yxtweb-cpp/build/lib/libyxtwebcpp.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/yuxintao/yxtweb-cpp/build/lib/libyxtwebcpp.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/yuxintao/yxtweb-cpp/lib/libyxtwebcpp.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libyxtwebcpp.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libyxtwebcpp.so")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/yuxintao/yxtweb-cpp/build/lib/libyxtwebcpp.so")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libyxtwebcpp.so")
     endif()
   endif()
 endif()
@@ -82,15 +100,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/yuxintao/yxtweb-cpp/build/lib/libyxtwebcpp.a")
-  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
-    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
-  endif()
-  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
-  endif()
-  file(INSTALL DESTINATION "/home/yuxintao/yxtweb-cpp/build/lib" TYPE STATIC_LIBRARY FILES "/home/yuxintao/yxtweb-cpp/lib/libyxtwebcpp.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/yuxintao/yxtweb-cpp/lib/libyxtwebcpp.a")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
