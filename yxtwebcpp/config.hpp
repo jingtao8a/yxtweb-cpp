@@ -353,7 +353,7 @@ class Config {
                 }
             }
             std::shared_ptr<ConfigVar<T> > v(new ConfigVar<T>(name, default_value, description));//没有的话就新建一个ConfigVar对象
-            ReadScopedLockImpl<RWMutex> guard(getMutex());
+            WriteScopedLockImpl<RWMutex> guard(getMutex());
             getDatas()[name] = v;//存放在map中
             return v;
         }

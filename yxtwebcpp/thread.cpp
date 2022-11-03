@@ -60,7 +60,7 @@ void* Thread::run(void *arg) {
 
     std::function<void()> cb;
     cb.swap(thread->m_cb);
-    thread->m_semaphore.notify();
+    thread->m_semaphore.notify();//Thread初始化才结束
     cb();
     return 0;
 }

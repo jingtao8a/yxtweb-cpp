@@ -21,7 +21,7 @@ public:
 
 void testhttpserver() {
     std::shared_ptr<YXTWebCpp::http::HttpServer> server(new YXTWebCpp::http::HttpServer(true));
-    auto addr = YXTWebCpp::IPAddress::Create("192.168.159.129", 8999);
+    auto addr = YXTWebCpp::IPAddress::Create("192.168.159.130", 8999);
     std::vector<std::shared_ptr<YXTWebCpp::Address> > addrs, fail;
     addrs.push_back(addr);
     server->getServletDispatch()->addServlet("/yu", [](std::shared_ptr<YXTWebCpp::http::HttpRequest> req, 

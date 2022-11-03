@@ -244,7 +244,7 @@ void IOManager::idle() {
             } else {//没有定时器的情况
                 next_timeout = MAX_TIMEOUT;
             }
-            rt = epoll_wait(m_epfd, events, MAX_EVENTS, MAX_TIMEOUT);//最多只阻塞等5sec
+            rt = epoll_wait(m_epfd, events, MAX_EVENTS, next_timeout);//最多只阻塞等1sec
             if (rt < 0 && errno == EINTR) {
             } else {
                 break;
@@ -321,7 +321,7 @@ void IOManager::contextResize(size_t size) {
 
 bool IOManager::stopping(uint64_t& timeout) {
     timeout = getNextTimer();
-    return timeout == ~0uLL
+    return timeout == ~0uLL//没有定时器
         && m_pendingEventCount == 0//监听事件数为0
         && Scheduler::stopping();
 }

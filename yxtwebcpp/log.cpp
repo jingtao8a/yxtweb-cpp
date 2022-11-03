@@ -249,21 +249,21 @@ void LogFormatter::init() {
         //当m_pattern[i] == '%'时
         if((i + 1) < m_pattern.size()) {
             //当m_pattern[i + 1] == '%'时
-            if(m_pattern[i + 1] == '%') {
+            if(m_pattern[i + 1] == '%') {//%%
                 nstr.append(1, '%');
                 continue;
             }
         }
         
         size_t n = i + 1;
-        int fmt_status = 0;//为1表示解析格式
+        int fmt_status = 0;//为1表示解析格式，遇到{进入解析模式
         size_t fmt_begin = 0;
 
         std::string str;
         std::string fmt;
         while(n < m_pattern.size()) {
             if(fmt_status == 0) {
-                if (!isalpha(m_pattern[n]) && m_pattern[n] != '{' && m_pattern[n] != '}') {//非英文字符除了{和}
+                if (!isalpha(m_pattern[n]) && m_pattern[n] != '{' && m_pattern[n] != '}') {//非英文字符且除了{和}的其它字符即[ 、] 、 :、%
                     str = m_pattern.substr(i + 1, n - i - 1);
                     break;
                 } else if (m_pattern[n] == '{') {//这里为{
@@ -274,7 +274,7 @@ void LogFormatter::init() {
                     continue;
                 }
             } else if(fmt_status == 1) {
-                if(m_pattern[n] == '}') {
+                if(m_pattern[n] == '}') {//结束解析模式
                     fmt = m_pattern.substr(fmt_begin + 1, n - fmt_begin - 1);
                     fmt_status = 0;
                     ++n;
@@ -341,7 +341,7 @@ void LogFormatter::init() {
 }
 
 //Logger
-Logger::Logger(const std::string& name) :m_name(name) ,m_level(LogLevel::DEBUG) {
+Logger::Logger(const std::string& name) :m_name(name) ,m_level(LogLevel::DEBUG) {//默认名字是root，默认logger级别是DEBUG
     m_formatter.reset(new LogFormatter("%d{%Y-%m-%d %H:%M:%S}%T%t%T%N%T%F%T[%p]%T[%c]%T%f:%l%T%m%n"));
 }
 
@@ -394,7 +394,7 @@ std::string Logger::toYamlString() {
 
 void Logger::addAppender(std::shared_ptr<LogAppender> appender) {
     ScopedLockImpl<Mutex> guard(m_mutex);
-    if(!appender->getFormatter()) {
+    if(!appender->getFormatter()) {//如果appender没有formatter，使用日志器的formatter
         ScopedLockImpl<Mutex> g(appender->m_mutex);
         appender->m_formatter = m_formatter;
     }
@@ -417,9 +417,9 @@ void Logger::clearAppenders() {
 }
 
 void Logger::log(LogLevel::Level level, std::shared_ptr<LogEvent> event) {
-    if(level >= m_level) {//大于logger的级别时,该日志器才有效
+    if(level >= m_level) {//只有event的level大于logger的level，日志器才会执行
         auto self = shared_from_this();//指向this的shared_ptr
-        ScopedLockImpl<Mutex> guard(m_mutex);
+        ScopedLockImpl<Mutex> guard(m_mutex);//表示这个日志器已经被一个线程占用了
         if(!m_appenders.empty()) {//每个logAppender调用log
             for(auto& i : m_appenders) {
                 i->log(self, level, event);
@@ -504,22 +504,20 @@ std::string StdoutLogAppender::toYamlString() {
 //LoggerManager
 
 LoggerManager::LoggerManager() {
-    m_root.reset(new Logger());
+    m_root.reset(new Logger());//m_root指向一个默认日志器(root DEBUG)
     m_root->addAppender(std::shared_ptr<LogAppender>(new StdoutLogAppender));
 
     m_loggers[m_root->m_name] = m_root;
-
-    init();
 }
 
 std::shared_ptr<Logger> LoggerManager::getLogger(const std::string& name) {
-    ScopedLockImpl<Mutex> guard(m_mutex);
+    ScopedLockImpl<Mutex> guard(m_mutex);//表示一个线程占用了这个LoggerMannger
     auto it = m_loggers.find(name);
     if(it != m_loggers.end()) {//如果找到这个logger，就返回这个logger
         return it->second;
     }
 
-    std::shared_ptr<Logger> logger(new Logger(name));//否则新建一个logger并且返回
+    std::shared_ptr<Logger> logger(new Logger(name));//否则新建一个logger并且返回,那么这个Logger的名字为name，级别为DEBUG
     logger->m_root = m_root;//设置新建的logger中的m_root等于m_root
     m_loggers[name] = logger;
     return logger;
@@ -535,9 +533,6 @@ std::string LoggerManager::toYamlString() {
     std::stringstream ss;
     ss << node;
     return ss.str();
-}
-
-void LoggerManager::init() {
 }
 
 

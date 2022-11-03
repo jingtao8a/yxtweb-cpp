@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
-  "../bin/test_httpserver"
-  "../bin/test_httpserver.pdb"
+  "/home/yuxintao/yxtweb-cpp/bin/test_httpserver"
+  "/home/yuxintao/yxtweb-cpp/bin/test_httpserver.pdb"
   "CMakeFiles/test_httpserver.dir/tests/test_httpserver.cpp.o"
+  "CMakeFiles/test_httpserver.dir/tests/test_httpserver.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

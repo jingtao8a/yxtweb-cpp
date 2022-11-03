@@ -1,44 +1,38 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
-  )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/address.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/address.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/bytearray.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/bytearray.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/config.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/config.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/env.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/env.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/fd_manager.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fd_manager.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/fiber.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/hook.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/hook.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/http.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http11_parser.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/http11_parser.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http_parser.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/http_parser.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpclient_parser.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpclient_parser.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpserver.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpserver.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpstream.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpstream.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/servlet.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/log.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/log.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/mutex.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/mutex.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/scheduler.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/scheduler.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/socket.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/streams/socket_stream.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/streams/socket_stream.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/streams/stream.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/streams/stream.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/tcpserver.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/tcpserver.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/thread.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/thread.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/timer.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/timer.cpp.o"
-  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/util.cpp" "/home/yuxintao/yxtweb-cpp/build/CMakeFiles/yxtwebcpp.dir/yxtwebcpp/util.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# Preprocessor definitions for this target.
-set(CMAKE_TARGET_DEFINITIONS_CXX
-  "yxtwebcpp_EXPORTS"
   )
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/address.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/address.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/address.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/bytearray.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/bytearray.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/bytearray.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/config.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/config.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/config.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/env.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/env.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/env.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/fd_manager.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fd_manager.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fd_manager.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/fiber.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/fiber.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/hook.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/hook.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/hook.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/http.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/http.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http11_parser.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/http11_parser.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/http11_parser.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/http_parser.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/http_parser.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/http_parser.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpclient_parser.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpclient_parser.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpclient_parser.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpserver.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpserver.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpserver.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/httpstream.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpstream.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/httpstream.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/http/servlet.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/http/servlet.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/iomanager.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/iomanager.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/log.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/log.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/log.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/mutex.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/mutex.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/mutex.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/scheduler.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/scheduler.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/scheduler.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/socket.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/socket.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/streams/socket_stream.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/streams/socket_stream.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/streams/socket_stream.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/streams/stream.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/streams/stream.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/streams/stream.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/tcpserver.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/tcpserver.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/tcpserver.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/thread.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/thread.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/thread.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/timer.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/timer.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/timer.cpp.o.d"
+  "/home/yuxintao/yxtweb-cpp/yxtwebcpp/util.cpp" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/util.cpp.o" "gcc" "CMakeFiles/yxtwebcpp.dir/yxtwebcpp/util.cpp.o.d"
   )
 
 # Targets to which this target links.

@@ -65,7 +65,7 @@
 
 namespace YXTWebCpp{
     
-class Logger;
+
 
 class LogLevel {
 public:
@@ -84,10 +84,12 @@ public:
         FATAL = 5
     };
 
-    static const char* ToString(LogLevel::Level level);
+    static const char* ToString(Level level);
     
-    static LogLevel::Level FromString(const std::string& str);
+    static Level FromString(const std::string& str);
 };
+
+class Logger;
 
 class LogEvent {
     public:
@@ -206,7 +208,7 @@ class LogFormatter {
         /// 日志格式模板
         std::string m_pattern;
         /// 日志格式解析后格式
-        std::vector<std::shared_ptr<FormatItem> > m_items;
+        std::vector<std::shared_ptr<FormatItem> > m_items;//根据pattern决定items的摆放顺序
         /// 格式是否有错误
         bool m_error = false;
 };
@@ -257,7 +259,7 @@ friend class LoggerManager;
 public:
     Logger(const std::string& name = "root");//默认构造root logger
 
-    void log(LogLevel::Level level, std::shared_ptr<LogEvent> event);
+    void log(LogLevel::Level level, std::shared_ptr<LogEvent> event);//level就是event的level
 
     void debug(std::shared_ptr<LogEvent> event) {
         log(LogLevel::DEBUG, event);
@@ -330,8 +332,6 @@ public:
     LoggerManager();
 
     std::shared_ptr<Logger> getLogger(const std::string& name);
-
-    void init();
 
     std::shared_ptr<Logger> getRoot() const { return m_root;}
 

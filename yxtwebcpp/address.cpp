@@ -156,6 +156,7 @@ bool Address::GetInterfaceAddresses(std::multimap<std::string, std::pair<std::sh
                     break;
                 case AF_INET6:
                     {
+                        addr = Create(next->ifa_addr, sizeof(next->ifa_addr));
                         in6_addr& netmask = ((sockaddr_in6*)next->ifa_netmask)->sin6_addr;
                         for (int i = 0; i < 16; ++i) {
                             prefix_len += CountNumOfOne(netmask.s6_addr[i]);

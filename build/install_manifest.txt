@@ -1,0 +1,3 @@
+/home/yuxintao/yxtweb-cpp/build/include/yxtwebcpp.hpp
+/home/yuxintao/yxtweb-cpp/build/lib/libyxtwebcpp.so
+/home/yuxintao/yxtweb-cpp/build/lib/libyxtwebcpp.a

@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "../lib/libyxtwebcpp.a"
+  "/home/yuxintao/yxtweb-cpp/lib/libyxtwebcpp.a"
 )

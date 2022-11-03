@@ -50,7 +50,7 @@ namespace YXTWebCpp{
             std::transform(key.begin(), key.end(), key.begin(), ::tolower);//将key变为小写
             std::shared_ptr<ConfigVarBase> var = LookupBase(key);//根据key的值找到对应的ConfigVar变量
 
-            if(var) {
+            if(var) {//该配置变量得存在
                 if(i.second.IsScalar()) {//判断该all_nodes中的子node中是否为标量类型
                     var->fromString(i.second.Scalar());
                 } else {//如果不是标量类型

@@ -1,10 +1,11 @@
 cmake_minimum_required(VERSION 3.18)
+set(CMAKE_CXX_FLAGS "-std=c++11 -g")
 project("yxtwebcpp")
 find_library(YAMLCPP yaml-cpp)
 find_library(PTHREAD pthread)
 message("yaml-cpp", ${YAMLCPP})
 message("pthread", ${PTHREAD})
-set(LIB_SRC 
+set(LIB_SRC
     yxtwebcpp/log.cpp 
     yxtwebcpp/util.cpp 
     yxtwebcpp/config.cpp 
@@ -116,3 +117,13 @@ add_dependencies(test_httpserver yxtwebcpp)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+
+
+set(head_files
+        yxtwebcpp/yxtwebcpp.hpp)
+
+install(FILES ${head_files} DESTINATION  ${CMAKE_BINARY_DIR}/include)
+install(TARGETS yxtwebcpp yxtwebcpp_static
+        RUNTIME DESTINATION ${CMAKE_BINARY_DIR}/bin
+        LIBRARY DESTINATION ${CMAKE_BINARY_DIR}/lib
+        ARCHIVE DESTINATION ${CMAKE_BINARY_DIR}/lib)
