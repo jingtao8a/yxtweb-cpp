@@ -119,10 +119,41 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 
-set(head_files
-        yxtwebcpp/yxtwebcpp.hpp)
+set(head_files  
+        yxtwebcpp/log.hpp
+        yxtwebcpp/config.hpp
+        yxtwebcpp/thread.hpp
+        yxtwebcpp/mutex.hpp
+        yxtwebcpp/util.hpp
+        yxtwebcpp/macro.hpp
+        yxtwebcpp/fiber.hpp
+        yxtwebcpp/scheduler.hpp
+        yxtwebcpp/iomanager.hpp
+        yxtwebcpp/hook.hpp
+        yxtwebcpp/fd_manager.hpp
+        yxtwebcpp/address.hpp
+        yxtwebcpp/endian.hpp
+        yxtwebcpp/socket.hpp
+        yxtwebcpp/bytearray.hpp
+        yxtwebcpp/tcpserver.hpp        
+        yxtwebcpp/yxtwebcpp.hpp
+        )
 
-install(FILES ${head_files} DESTINATION  include)
+set(head_http_files
+        yxtwebcpp/http/http.hpp
+        yxtwebcpp/http/http11_parser.hpp
+        yxtwebcpp/http/httpclient_parser.hpp
+        yxtwebcpp/http/http_parser.hpp
+        yxtwebcpp/http/httpserver.hpp)
+
+set(head_streams_files
+        yxtwebcpp/streams/stream.hpp
+        yxtwebcpp/streams/socket_stream.hpp)
+
+install(FILES ${head_files} DESTINATION  include/yxtwebcpp)
+install(FILES ${head_http_files} DESTINATION include/yxtwebcpp/http)
+install(FILES ${head_streams_files} DESTINATION include/yxtwebcpp/streams)
+
 install(TARGETS yxtwebcpp yxtwebcpp_static
         RUNTIME DESTINATION bin
         LIBRARY DESTINATION lib

@@ -60,6 +60,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
     "/home/yuxintao/yxtweb-cpp/yxtwebcpp/socket.hpp"
     "/home/yuxintao/yxtweb-cpp/yxtwebcpp/bytearray.hpp"
     "/home/yuxintao/yxtweb-cpp/yxtwebcpp/tcpserver.hpp"
+    "/home/yuxintao/yxtweb-cpp/yxtwebcpp/yxtwebcpp.hpp"
     )
 endif()
 

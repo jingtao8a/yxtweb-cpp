@@ -14,6 +14,7 @@
 /usr/local/include/yxtwebcpp/socket.hpp
 /usr/local/include/yxtwebcpp/bytearray.hpp
 /usr/local/include/yxtwebcpp/tcpserver.hpp
+/usr/local/include/yxtwebcpp/yxtwebcpp.hpp
 /usr/local/include/yxtwebcpp/http/http.hpp
 /usr/local/include/yxtwebcpp/http/http11_parser.hpp
 /usr/local/include/yxtwebcpp/http/httpclient_parser.hpp
