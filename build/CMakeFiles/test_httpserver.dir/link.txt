@@ -1,1 +1,0 @@
-/usr/bin/c++ -std=c++11 -g CMakeFiles/test_httpserver.dir/tests/test_httpserver.cpp.o -o /home/yuxintao/yxtweb-cpp/bin/test_httpserver  -Wl,-rpath,/home/yuxintao/yxtweb-cpp/lib /home/yuxintao/yxtweb-cpp/lib/libyxtwebcpp.so -ldl -lpthread -lyaml-cpp 

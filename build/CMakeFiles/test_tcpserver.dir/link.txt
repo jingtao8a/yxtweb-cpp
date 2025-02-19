@@ -1,1 +1,0 @@
-/usr/bin/c++ -std=c++11 -g CMakeFiles/test_tcpserver.dir/tests/test_tcpserver.cpp.o -o /home/yuxintao/yxtweb-cpp/bin/test_tcpserver  -Wl,-rpath,/home/yuxintao/yxtweb-cpp/lib /home/yuxintao/yxtweb-cpp/lib/libyxtwebcpp.so -ldl -lpthread -lyaml-cpp 
