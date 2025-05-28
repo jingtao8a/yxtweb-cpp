@@ -1,5 +1,6 @@
 sylar-framework，make wheels<br>
 ## usage
+软件环境: cmake3.22.1 gcc11.4.0 Ubuntu22.04.5LTS
 使用前需安装外部库yaml-cpp、boost
 1. 安装yaml-cpp
 ```shell
