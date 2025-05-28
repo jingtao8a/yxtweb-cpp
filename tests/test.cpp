@@ -10,26 +10,6 @@
 #include <iomanip>
 #include <map>
 #include <unordered_map>
-// static bool flag = true;
-
-// static std::shared_ptr<YXTWebCpp::Logger> g_logger = YXTWebCpp_LOG_ROOT();
-
-// void fun1() {
-//     YXTWebCpp_LOG_DEBUG(g_logger) << "fun1";
-// }
-
-
-// void thread1() {
-//     while (true) {
-//         YXTWebCpp::Fiber::GetThis();
-//         std::shared_ptr<YXTWebCpp::Fiber> p1(new YXTWebCpp::Fiber(fun1));
-//         sleep(1);
-//         p1->swapIn();
-//         sleep(1);
-//         p1->swapIn();
-//     }
-//     YXTWebCpp_LOG_DEBUG(g_logger) << "end";
-// }
 
 
 class Base {
@@ -103,40 +83,6 @@ private:
 };
 
 int main() {
-    // std::shared_ptr<YXTWebCpp::Logger> logger(new YXTWebCpp::Logger());
-    // std::shared_ptr<YXTWebCpp::FileLogAppender> fileLogAppender(new YXTWebCpp::FileLogAppender("./logtxt.txt"));
-    // logger->addAppender(fileLogAppender);
-    // std::shared_ptr<YXTWebCpp::LogEvent> event = std::make_shared<YXTWebCpp::LogEvent>(logger, YXTWebCpp::LogLevel::Level::DEBUG, "file", 0, 0, 0, 0, 0, "thread");
-    // event->format("haha%d", 100);
-    // logger->log(event->getLevel(), event);
-    
-    // YXTWebCpp::Thread t(thread1, "test");
-    // t.join();
-    // Base* obj = new Son;
-    // obj->Base::fun1();
-    // std::set<int> rbtree{1, 23, 43};
-    // auto it = rbtree.find(3);
-    // rbtree.erase(it);
-    // std::set<std::shared_ptr<Node>, Node::compartor> heap;
-    // heap.insert(std::make_shared<Node>(1, 2));
-    // heap.insert(std::make_shared<Node>(1, 5));
-    // heap.insert(std::make_shared<Node>(3, 4));
-    // auto ptr = std::make_shared<Node>(1, 4);
-
-    // auto iter = heap.lower_bound(ptr);
-    // std::cout << (*iter)->m_a << (*iter)->m_b;
-    // std::cout << std::setw(6) << std::setfill('0') << std::hex << 0xABC << " ";
-    // std::string str = "yuxintao";
-    // std::cout << str.substr(5, -1);
-    // std::shared_ptr<He> he = std::make_shared<He>(21, "yuxintao");
-    // auto funobj = std::bind(&He::fun, he->shared_from_this());
-    // funobj();
-    // printf("%p %p %p", &he, he, he.get());
-    // std::shared_ptr<He> n;
-    // std::cout << he.operator bool() << n.operator bool();
-    //shared_ptr对象，用cout输出时，进行了重载，输出的是真实指针的地址
-    //shared_ptr放在判断语句中，调用了operator bool重载，true为有指向对象，false为空
-
     std::map<std::string, int> hash;
     hash.insert({"12", 12});
     hash.insert({"13", 13});
