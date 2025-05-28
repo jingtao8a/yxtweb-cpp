@@ -21,90 +21,47 @@ private:
 };
 
 template<class T>
-class ScopedLockImpl {
+class ScopedLockImpl : public Nocopyable {
 public:
     ScopedLockImpl(T& mutex):m_mutex(mutex){
-        this->lock();
+        m_mutex.lock();
     }
 
     ~ScopedLockImpl() {
-        unlock();
+        m_mutex.unlock();
     }
 
-    void lock() {
-        if (!m_locked) {
-            m_mutex.lock();
-            m_locked = true;
-        }
-    }
-
-    void unlock() {
-        if (m_locked) {
-            m_mutex.unlock();
-            m_locked = false;
-        }
-    }
 protected:
     T& m_mutex;
-    bool m_locked;
 };
 
 template <class T>
-class ReadScopedLockImpl {
+class ReadScopedLockImpl : public Nocopyable {
 public:
     ReadScopedLockImpl(T& mutex): m_mutex(mutex) {
-        lock();
+        m_mutex.rdlock();
     }
 
     ~ReadScopedLockImpl() {
-        unlock();
+        m_mutex.unlock();
     }
 
-    void lock() {
-        if (!m_locked) {
-            m_mutex.rdlock();
-            m_locked = true;
-        }
-    }
-
-    void unlock() {
-        if (m_locked) {
-            m_mutex.unlock();
-            m_locked = false;
-        }
-    }
 protected:
     T& m_mutex;
-    bool m_locked = false;
 };
 
 template <class T>
-class WriteScopedLockImpl {
+class WriteScopedLockImpl : public Nocopyable {
 public:
     WriteScopedLockImpl(T& mutex): m_mutex(mutex) {
-        lock();
+        m_mutex.wrlock();
     }
 
     ~WriteScopedLockImpl() {
-        unlock();
-    }
-
-    void lock() {
-        if (!m_locked) {
-            m_mutex.wrlock();
-            m_locked = true;
-        }
-    }
-
-    void unlock() {
-        if (m_locked) {
-            m_mutex.unlock();
-            m_locked = false;
-        }
+        m_mutex.unlock();
     }
 protected:
     T& m_mutex;
-    bool m_locked = false;
 };
 
 class Mutex : public Nocopyable{
