@@ -249,21 +249,18 @@ void LogFormatter::init() {
             nstr.append(1, m_pattern[i]);
             continue;
         }
-        //当m_pattern[i] == '%'时
-        if((i + 1) < m_pattern.size()) {
-            //当m_pattern[i + 1] == '%'时
-            if(m_pattern[i + 1] == '%') {//%%
-                nstr.append(1, '%');
-                continue;
-            }
+        //当m_pattern[i] == '%' 且 m_pattern[i + 1] == '%'时，即%%
+        if(i + 1 < m_pattern.size() && m_pattern[i + 1] == '%') {
+            nstr.append(1, '%');
+            continue;
         }
-        
-        size_t n = i + 1;
+        //当m_pattern[i] == '%' 且 m_pattern[i + 1] != '%'时
         int fmt_status = 0;//为1表示解析格式，遇到{进入解析模式
         size_t fmt_begin = 0;
 
         std::string str;
         std::string fmt;
+        size_t n = i + 1;
         while(n < m_pattern.size()) {
             if(fmt_status == 0) {
                 if (!isalpha(m_pattern[n]) && m_pattern[n] != '{' && m_pattern[n] != '}') {//非英文字符且除了{和}的其它字符即[ 、] 、 :、%
