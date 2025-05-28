@@ -46,6 +46,9 @@ LogLevel::Level LogLevel::FromString(const std::string& str) {
     XX(DEBUG, debug);
     XX(INFO, info);
     XX(WARN, warn);
+    XX(ERROR, error);
+    XX(FATAL, fatal)
+
     XX(DEBUG, DEBUG);
     XX(INFO, INFO);
     XX(WARN, WARN);
