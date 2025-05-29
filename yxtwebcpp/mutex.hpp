@@ -138,7 +138,25 @@ public:
         m_mutex.clear();
     }
     ~CASLock() {}
+    /***
+    memory_order_relaxed, 仅保证原子性，无内存顺序约束
+    memory_order_consume, (c++20 already deprecate)
+    memory_order_acquire, 阻止后续的操作排到当前操作之前 (loadload + loadstore（某些架构）)
+    memory_order_release, 阻止之前操作排到当前操作之后   (storestore + loadstore（某些架构）)
+    memory_order_acq_rel, 同时具有 acquire 和 release 语义 
+    memory_order_seq_cst, 全屏障，禁止所有重排
+    常用屏障组合
+    加载操作：通常使用memory_order_acquire
+    存储操作：通常使用memory_order_release
+    读-修改-写操作：通常使用memory_order_acq_rel或memory_order_seq_cst
 
+    loadFence (loadload)
+    storeFence (storestore)
+    acquireFence (loadload + loadstore（某些架构）)
+    releaseFence (storestore + loadstore（某些架构）)
+    fullFence 全屏障，禁止所有重排
+    ***/
+    // 内存屏障的作用为 1.约束同一线程内的指令顺序 2.确保跨线程的内存可见性
     void lock() {
         while (std::atomic_flag_test_and_set_explicit(&m_mutex, std::memory_order_acquire));
     }
