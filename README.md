@@ -1,5 +1,40 @@
-sylar-framework，make wheels<br>
-## usage
+# C++ HIGH PERFORMANCE SERVER FRAMEWORK
+## BENCHMARK
+
+### case1
+参数设置
+服务端worker线程数 100
+Jmeter线程数设置 32
+Jmeter线程启动时间 3
+Jmeter每个线程循环次数 100
+请求设置
+![图片](./resources/image.png)
+实验指标
+指标：尾部延迟、平均吞吐量
+![图片](./resources/image1.png)
+### case2
+参数设置
+服务端worker线程数 100
+Jmeter线程数设置 128
+Jmeter线程启动时间 12
+Jmeter每个线程循环次数 100
+请求设置
+![图片](./resources/image.png)
+实验指标
+指标：尾部延迟、平均吞吐量
+![图片](./resources/image2.png)
+### case3
+参数设置
+服务端worker线程数 100
+Jmeter线程数设置 256
+Jmeter线程启动时间 25
+Jmeter每个线程循环次数 100
+请求设置
+![图片](./resources/image.png)
+实验指标
+指标：尾部延迟、平均吞吐量
+![图片](./resources/image3.png)
+## USAGE
 软件环境: cmake3.22.1 gcc11.4.0 Ubuntu22.04.5LTS
 使用前需安装外部库yaml-cpp、boost
 1. 安装yaml-cpp
