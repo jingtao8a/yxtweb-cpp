@@ -102,7 +102,8 @@ void Fiber::reset(std::function<void()> cb) {//重置协程的挂接执行函数
     m_state = INIT;
 }
 
-void Fiber::swapIn() {
+// 以下函数在use_caller==false时使用
+void Fiber::swapIn() { // 主协程 -> 当前协程
     SetThis(this);
     YXTWebCpp_ASSERT(m_state != EXEC);
     m_state = EXEC;
@@ -111,13 +112,14 @@ void Fiber::swapIn() {
     }
 }
 
-void Fiber::swapOut() {
+void Fiber::swapOut() { // 当前协程 -> 主协程
     SetThis(Scheduler::GetMainFiber());
     if (swapcontext(&m_context, &(Scheduler::GetMainFiber()->m_context))) {
         YXTWebCpp_ASSERT2(false, "swapcontext")
     }
 }
 
+// 以下函数在use_caller==true时使用
 void Fiber::call() {//主协程 -> 当前协程
     SetThis(this);
     YXTWebCpp_ASSERT(m_state != EXEC);

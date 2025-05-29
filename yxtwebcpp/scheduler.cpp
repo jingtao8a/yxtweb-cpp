@@ -101,7 +101,7 @@ void Scheduler::run() {
             while (it != m_fibers.end()) {
                 if (it->threadID != -1 && it->threadID != GetThreadId()) {//如果该协程任务指定了线程ID，并且不是本线程，continue
                     ++it;
-                    tickle_me = true;
+                    tickle_me = true;// 需要执行tick操作
                     continue;
                 }
                 YXTWebCpp_ASSERT(it->fiber || it->cb);
@@ -149,7 +149,7 @@ bool Scheduler::stopping() {
     return m_stopping && m_fibers.empty() && m_activeThreadCount == 0;
 }
 
-void Scheduler::tickle() {
+void Scheduler::tickle() { // 具体逻辑还未实现
     YXTWebCpp_LOG_INFO(g_logger) << "tickle";
 }
 
