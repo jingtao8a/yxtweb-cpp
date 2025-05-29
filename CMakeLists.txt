@@ -3,8 +3,8 @@ set(CMAKE_CXX_FLAGS "-std=c++11 -g")
 project("yxtwebcpp")
 find_library(YAMLCPP yaml-cpp)
 find_library(PTHREAD pthread)
-message("yaml-cpp", ${YAMLCPP})
-message("pthread", ${PTHREAD})
+message("yaml-cpp ${YAMLCPP}")
+message("pthread ${PTHREAD}")
 set(LIB_SRC
     yxtwebcpp/log.cpp 
     yxtwebcpp/util.cpp 
